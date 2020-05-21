@@ -1,5 +1,5 @@
 // TCES 330, Spring 2020
-// Taras Martynyuk, Ben Mulyarchuk, Kevin Nguyen poop
+// Taras Martynyuk, Ben Mulyarchuk, Kevin Nguyen
 // 5/20/2020
 // ProjectB
 // ALU mdule...
