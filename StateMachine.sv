@@ -1,8 +1,10 @@
 // TCES 330, Spring 2020
-// Taras Martynyuk, Ben Mulyarchuk, Kevin Nguyen hong kong
+// Taras Martynyuk, Ben Mulyarchuk, Kevin Nguyen 
 // 5/20/2020
 // ProjectB
-// This is a Verilog description for an 256 x 16 register file
+// State Machine that cycles through a set of staesdepending on the input. The initial state resets the counter, and then goes to the fetch state which grabs the instruction
+// and then depending on what that instruction is, the next state is decided, with the ability to execute multiple commands, labeled by the state names. It runs on the clock that the whole
+// processor uses and outputs all the data necessary for the computaions or exectution of the instruction.
 
 module StateMachine(reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, CurrentState, NextState);
     input logic [15:0] data;                                // input to state machine
@@ -51,7 +53,8 @@ module StateMachine(reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, RF_W_
                 else                      NextState = Halt;
             end
             NOOP:   NextState = Fetch;          // no operations in this state, go back to fetch
-            Load:begin
+            Load_A: NextState = Load_B;         // the Load operation takes two clock cycles to toggle, this is a stopgap to take a clockcycle
+            Load_B:begin
                 D_addr = IR[11:4];              // address being sent to datapath memory to be read/written
                 RF_s = 1;                       // select bit for the mux chooses to load in something from the data Memory
                 RF_W_addr = IR[3:0];            // address in the Register file where the data will be written to
@@ -85,5 +88,35 @@ module StateMachine(reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, RF_W_
         endcase
 endmodule
 
+module StateMachine_tb(reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, CurrentState, NextState);
+    logic [15:0] data;                                   // input to state machine
+    logic PC_clr, PC_up, IR_ld, RF_s, RF_W_en, reset;    // counter clear, count up, reg load, mux select, write, and reset enable signals
+    logic [3:0] RF_W_addr, RF_Ra_addr, RF_Rb_addr;       // write, readA, and readB addresses for Regiester File
+    logic [2:0] Alu_s0;                                  // ALU select bits
+    logic [7:0] D_addr;                                  // address to be written to/read from in Data Memory
+    logic [3:0] CurrentState, NextState;
 
-            
+    StateMachine U1(reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, CurrentState, NextState);
+
+    always begin        // clock signal
+        clk = 0; #10;
+        clk = 1; #10;
+    end
+
+    initial begin                                   // #22 is chosen to go a little over 1 clock cycle
+        @(negedge clk) reset = 1; data = 0;         // reset the state machine to set it to the initial state 
+        @(negedge clk) reset = 0;                   // turn reset bit off to start the cycle with a NOOP input (0)
+        wait(NextState == 1);                       // wait until its about to fetch the next instruction
+        data = 16'b0001_1111_0010_1001; #22;        // move the data in register 15 in reg file into data register 41 (checking the STORE instruction)
+        wait(NextState == 1);                       // wait until its about to fetch the next instruction
+        data = 16'b0010_0000_1010_0111; #22;        // move the data in data memory register 10 to register 7 in reg file (checking the LOAD instruction)
+        wait(NextState == 1);                       // wait until its about to fetch the next instruction
+        data = 16'b0011_0001_0010_0011; #22;        // add the data in the reg file (register 1 + register 2) and store in the 3rd register in reg file (testing ADD instruction)
+        wait(NextState == 1);                       // wait until its about to fetch the next instruction
+        data = 16'b0100_0001_0010_0011; #22;        // subtract data in reg file (data in register 1 - register 2) and store in the 3rd register
+        wait(NextState == 1);                       // wait until its about to fetch the next instruction
+        data = 16'b0101_0000_0000_0000; #90;        // test the HALT instruction to see if it just stays there
+        reset = 1; #22;                             // see if reset signal reset it to the initial state and resets PC counter
+        $stop;
+    end
+endmodule
