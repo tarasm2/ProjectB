@@ -1,0 +1,35 @@
+# Reading C:/intelFPGA_lite/19.1/modelsim_ase/tcl/vsim/pref.tcl
+do runlab_State_Machine.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:19:56 on May 24,2020
+# vlog -reportprogress 300 ./StateMachine.sv 
+# -- Compiling module StateMachine
+# ** Error: ./StateMachine.sv(61): (vlog-2730) Undefined variable: 'RF_W_en'.
+# ** Error: ./StateMachine.sv(67): (vlog-2730) Undefined variable: 'IR'.
+# ** Error: ./StateMachine.sv(75): (vlog-2730) Undefined variable: 'ALU_s0'.
+# ** Error: ./StateMachine.sv(83): (vlog-2730) Undefined variable: 'ALU_s0'.
+# ** Error: ./StateMachine.sv(9): (vlog-2730) Undefined variable: 'ALU_s0'.
+# ** Error: ./StateMachine.sv(9): Identifier must be declared with a port mode: ALU_s0.
+# -- Compiling module StateMachine_tb
+# ** Error: ./StateMachine.sv(91): Identifier must be declared with a port mode: reset.
+# ** Error: ./StateMachine.sv(91): Identifier must be declared with a port mode: data.
+# ** Error: ./StateMachine.sv(91): Identifier must be declared with a port mode: PC_clr.
+# ** Error: ./StateMachine.sv(91): Identifier must be declared with a port mode: PC_up.
+# ** Error: ./StateMachine.sv(91): Identifier must be declared with a port mode: IR_ld.
+# ** Error: ./StateMachine.sv(91): Identifier must be declared with a port mode: D_addr.
+# ** Error: ./StateMachine.sv(91): Identifier must be declared with a port mode: D_wr.
+# ** Error: ./StateMachine.sv(91): Identifier must be declared with a port mode: RF_s.
+# ** Error: ./StateMachine.sv(91): Identifier must be declared with a port mode: RF_W_addr.
+# ** Error: ./StateMachine.sv(91): Identifier must be declared with a port mode: RF_W_en.
+# ** Error: ./StateMachine.sv(91): Identifier must be declared with a port mode: RF_Ra_addr.
+# ** Error: ./StateMachine.sv(91): Identifier must be declared with a port mode: RF_Rb_addr.
+# ** Error: ./StateMachine.sv(91): Identifier must be declared with a port mode: CurrentState.
+# ** Error: ./StateMachine.sv(91): Identifier must be declared with a port mode: NextState.
+# End time: 15:19:56 on May 24,2020, Elapsed time: 0:00:00
+# Errors: 20, Warnings: 0
+# ** Error: C:/intelFPGA_lite/19.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./runlab_State_Machine.do line 7
+# C:/intelFPGA_lite/19.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog "./StateMachine.sv""
