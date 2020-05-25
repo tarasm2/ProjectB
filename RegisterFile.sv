@@ -21,7 +21,7 @@ module RegisterFile
     assign rdDataB = regfile[rdAddrB];      // read dataA (copied to rdDataA)
 
     always @(posedge clk) begin
-    if (write) regfile[wrAddr] <= wrData;   // if write is enabled, write wrData to wrAddr
+    if (writeEn) regfile[wrAddr] <= wrData; // if write is enabled, write wrData to wrAddr
     end
 endmodule
 
@@ -39,11 +39,11 @@ RegisterFile DUT(clk, writeEn, wrAddr, wrData, rdAddrA, rdAddrB, rdDataB, rdData
     end
 
     initial begin
-        @(negedge clk) writeEn = 1, wrAddr = 0, wrData = 1;                             // on first negative edge, setup system to write 1 to first address in reg file
-        @(negedge clk)              wrAddr = 1, wrData = 7;                             // on second negative edge, write a 7 to the second address in the register
-        @(negedge clk) writeEn = 0,                         rdAddrA = 0, rdAddrB = 1;   // read the first and second registers to outbut A and B, respectivly
-        @(negedge clk) writeEn = 1, wrAddr = 0, wrData = 5;                             // overwrite the data in the first register
-        @(negedge clk) writeEn = 0,                         rdAddrA = 0, rdAddrB = 1;   // read the first and second registers to outbut A and B, respectivly to check if it was overwritten
+        @(negedge clk) writeEn = 1; wrAddr = 0; wrData = 1;                             // on first negative edge, setup system to write 1 to first address in reg file
+        @(negedge clk)              wrAddr = 1; wrData = 7;                             // on second negative edge, write a 7 to the second address in the register
+        @(negedge clk) writeEn = 0;                         rdAddrA = 0; rdAddrB = 1;   // read the first and second registers to outbut A and B, respectivly
+        @(negedge clk) writeEn = 1; wrAddr = 0; wrData = 5;                             // overwrite the data in the first register
+        @(negedge clk) writeEn = 0;                         rdAddrA = 0; rdAddrB = 1;   // read the first and second registers to outbut A and B, respectivly to check if it was overwritten
         #22                                                                             // let last instruction execute 
         $stop;
     end

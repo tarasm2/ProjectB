@@ -19,7 +19,7 @@ module PC_Counter(clk, up, clear, address);
 endmodule
 
 //testbench
-module PC_Counter_tb(clk, up, clear, address);
+module PC_Counter_tb();
     logic up, clear, clk;       // increase counter, clock and clear signals
     logic [6:0] address;        // output address
 
@@ -33,7 +33,7 @@ module PC_Counter_tb(clk, up, clear, address);
     initial begin
         clear = 1; up = 0; #22;         // reset the counter
         clear = 0; up = 1; #22;         // start counting up
-        wait(address = 0); #82;         // wait one full cycle and a bit longer to see it loop around
+        wait(address == 0); #82;        // wait one full cycle and a bit longer to see it loop around
         clear = 1;         #22;         // make sure counter resets
         $stop;
     end

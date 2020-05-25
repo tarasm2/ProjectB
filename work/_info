@@ -7,4 +7,244 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/Users/taras/Documents/GitHub/ProjectB
+Z0 dC:/Users/taras/Documents/GitHub/ProjectB
+vInstruc_Reg
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1590396259
+!i10b 1
+!s100 `421_7aV9o:hl?ebVUT=N1
+IMOlV6MbIczcI6lM;<81Kz2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 Instruc_Reg_sv_unit
+S1
+R0
+Z5 w1590396254
+Z6 8./Instruc_Reg.sv
+Z7 F./Instruc_Reg.sv
+L0 7
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1590396259.000000
+Z10 !s107 ./Instruc_Reg.sv|
+Z11 !s90 -reportprogress|300|./Instruc_Reg.sv|
+!i113 1
+Z12 tCvgOpt 0
+n@instruc_@reg
+vInstruc_Reg_tb
+R1
+R2
+!i10b 1
+!s100 ?j`n>;<kN:`of?ccVlLS92
+InlBQ0o_]h>6Sol8P3lCKM2
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 23
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+n@instruc_@reg_tb
+vMux_16_2
+R1
+Z13 !s110 1590395077
+!i10b 1
+!s100 =k?5VLa9JhM8BP9<o?1Sm1
+I@SWcOA`680b^2K^7?mNL53
+R3
+Z14 !s105 Mux_16_2_sv_unit
+S1
+R0
+Z15 w1590395048
+Z16 8./Mux_16_2.sv
+Z17 F./Mux_16_2.sv
+L0 7
+R8
+r1
+!s85 0
+31
+Z18 !s108 1590395077.000000
+Z19 !s107 ./Mux_16_2.sv|
+Z20 !s90 -reportprogress|300|./Mux_16_2.sv|
+!i113 1
+R12
+n@mux_16_2
+vMux_16_2_tb
+R1
+R13
+!i10b 1
+!s100 5F0HE40JGCh021P<j9Da70
+IcT?RYgl1^`=d?gL1hiPRP2
+R3
+R14
+S1
+R0
+R15
+R16
+R17
+L0 16
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!i113 1
+R12
+n@mux_16_2_tb
+vPC_Counter
+R1
+Z21 !s110 1590394607
+!i10b 1
+!s100 [HBChL[bWE:f`kln?[h8Y1
+I25[HIz083Qb_eCkU`SgPY2
+R3
+Z22 !s105 PC_Counter_sv_unit
+S1
+R0
+Z23 w1590394561
+Z24 8./PC_Counter.sv
+Z25 F./PC_Counter.sv
+L0 9
+R8
+r1
+!s85 0
+31
+Z26 !s108 1590394606.000000
+Z27 !s107 ./PC_Counter.sv|
+Z28 !s90 -reportprogress|300|./PC_Counter.sv|
+!i113 1
+R12
+n@p@c_@counter
+vPC_Counter_tb
+R1
+R21
+!i10b 1
+!s100 ?_:9<W>>ebEI?9]1H`BNA1
+Iko3ieYdZWg^jfJHBQ@WfR1
+R3
+R22
+S1
+R0
+R23
+R24
+R25
+L0 22
+R8
+r1
+!s85 0
+31
+R26
+R27
+R28
+!i113 1
+R12
+n@p@c_@counter_tb
+vRegisterFile
+R1
+Z29 !s110 1590391878
+!i10b 1
+!s100 m:XB=^AiD2IUde7CGNGA=2
+IRIjf=McQjMbm5UT4BYz8:1
+R3
+Z30 !s105 RegisterFile_sv_unit
+S1
+R0
+Z31 w1590391791
+Z32 8./RegisterFile.sv
+Z33 F./RegisterFile.sv
+L0 7
+R8
+r1
+!s85 0
+31
+Z34 !s108 1590391878.000000
+Z35 !s107 ./RegisterFile.sv|
+Z36 !s90 -reportprogress|300|./RegisterFile.sv|
+!i113 1
+R12
+n@register@file
+vRegisterFile_tb
+R1
+R29
+!i10b 1
+!s100 n6c3P]B>MBnfC0WVk1z1n3
+IB_L=ij>aUIe`b45>zQIKd2
+R3
+R30
+S1
+R0
+R31
+R32
+R33
+L0 28
+R8
+r1
+!s85 0
+31
+R34
+R35
+R36
+!i113 1
+R12
+n@register@file_tb
+vStateMachine
+R1
+Z37 !s110 1590393779
+!i10b 1
+!s100 0P;@el7SF[B0Y5Cj4^N[K0
+I7L66=KEJQiiaNLA4WzebW1
+R3
+Z38 !s105 StateMachine_sv_unit
+S1
+R0
+Z39 w1590393771
+Z40 8./StateMachine.sv
+Z41 F./StateMachine.sv
+L0 9
+R8
+r1
+!s85 0
+31
+Z42 !s108 1590393779.000000
+Z43 !s107 ./StateMachine.sv|
+Z44 !s90 -reportprogress|300|./StateMachine.sv|
+!i113 1
+R12
+n@state@machine
+vStateMachine_tb
+R1
+R37
+!i10b 1
+!s100 g?<i]zCMY7WUDObSbzz_>0
+IZ69YN_jU^bEidTJeXV5DP1
+R3
+R38
+S1
+R0
+R39
+R40
+R41
+L0 100
+R8
+r1
+!s85 0
+31
+R42
+R43
+R44
+!i113 1
+R12
+n@state@machine_tb
