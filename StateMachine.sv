@@ -14,8 +14,6 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
     output logic [2:0] ALU_s0;                                            // ALU select bits
     output logic [7:0] D_addr;                                            // address to be written to/read from in Data Memory
 
-    //logic [3:0] state, next_s
-
     output logic [3:0] CurrentState, NextState;                     // declaring the two states in the state machine
 
 
@@ -67,7 +65,7 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
                 RF_s = 1;                       // select bit for the mux chooses to load in something from the data Memory
                 RF_W_addr = data[3:0];          // address in the Register file where the data will be written to
                 RF_W_en = 1;                    // enable the write command in the register file to allow writing to it
-                NextState = Load_B;             // Nextstate will go back to fetch next command
+                NextState = Load_B;             // Nextstate will go to the Next load cycle
             end
             Load_B: NextState = Fetch;          // the Load operation takes two clock cycles to toggle, this is a stopgap to take a clockcycle
             Store:begin
