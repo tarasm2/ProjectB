@@ -4,7 +4,7 @@
 // ProjectB
 // decription...
 
-module DataPath(clk, D_Addr, D_WriteEn, MuxS, RegF_W_addr, RegF_W_en, RegF_Ra_addr, RegF_Rb_addr, ALU_S, ALU_A, ALU_B, ALU_Out)
+module DataPath(clk, D_Addr, D_WriteEn, MuxS, RegF_W_addr, RegF_W_en, RegF_Ra_addr, RegF_Rb_addr, ALU_S, ALU_A, ALU_B, ALU_Out);
     input logic clk, RegF_W_en, MuxS, D_WriteEn;                          // clock signal, enable and select bits
     input logic [2:0] ALU_S;                                              // ALU select bit
     input logic [3:0] D_Addr, RegF_W_addr, RegF_Ra_addr, RegF_Rb_addr;    // all the address locations being sent into the datapath
@@ -26,3 +26,19 @@ module DataPath(clk, D_Addr, D_WriteEn, MuxS, RegF_W_addr, RegF_W_en, RegF_Ra_ad
     ALU U4( ALU_A, ALU_B, ALU_S, ALU_Out );                     // instantiating the ALU
 endmodule
 
+module DataPath_tb();
+    logic clk, RegF_W_en, MuxS, D_WriteEn;                          // clock signal, enable and select bits
+    logic [2:0] ALU_S;                                              // ALU select bit
+    logic [3:0] D_Addr, RegF_W_addr, RegF_Ra_addr, RegF_Rb_addr;    // all the address locations being sent into the datapath
+    logic [15:0] ALU_A, ALU_B, ALU_Out;
+
+    DataPath DUT(clk, D_Addr, D_WriteEn, MuxS, RegF_W_addr, RegF_W_en, RegF_Ra_addr, RegF_Rb_addr, ALU_S, ALU_A, ALU_B, ALU_Out);
+
+    always begin        //clock signal
+        clk = 0; #10;
+        clk = 1; #10;
+    end
+
+    initial begin
+        // load data into Reg File
+    end
