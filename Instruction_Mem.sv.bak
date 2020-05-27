@@ -8,7 +8,7 @@ module Instruction_Mem(Clk, Reset, Out);
   input Clk, Reset;
   output [15:0] Out; // 16-bit data to be read
   
-  logic [6:0]addr = 16'd0;
+  logic [6:0]addr = 7'd0;
   
   // using IP Catalog On Chip Memory module
   // 1-port ROM, output registered one clock
@@ -20,11 +20,11 @@ module Instruction_Mem(Clk, Reset, Out);
 	
   always_ff @(posedge Clk) begin
 	 if (Reset)  // active high reset
-			addr <= 16'd0;
-	 else if (addr != 16'd127) 
+			addr <= 7'd0;
+	 else if (addr != 7'd127) 
 	       addr <= addr + 1;
          else
-			 addr <= 16'd0;
+			 addr <= 7'd0;
   end
   
   
