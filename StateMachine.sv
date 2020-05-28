@@ -39,6 +39,7 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
         case(CurrentState)
             Init:begin
                     PC_clr = 1;                 // clear/reset the PC counter
+                    D_wr = 0;
                     NextState = Fetch;          // Next state is Fetch
             end   
             Fetch:begin
@@ -80,6 +81,7 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
                 RF_Ra_addr = data[11:8];        // first number being added
                 RF_Rb_addr = data[7:4];         // second number being added
                 ALU_s0 = 1;                     // tell the ALU to add the two numbers
+                RF_s = 0;                       // input being selected by the Mux is output from ALU
                 NextState = Fetch;              // Nextstate will go back to fetch next command
             end
             Sub:begin
@@ -88,6 +90,7 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
                 RF_Ra_addr= data[11:8];         // number that will be subrtacted from
                 RF_Rb_addr = data[7:4];         // number that will be subtracted from above number
                 ALU_s0 = 2;                     // ALU signal to do the subtracting
+                RF_s = 0;                       // input being selected by the Mux is output from ALU
                 NextState = Fetch;              // Nextstate will go back to fetch next command
             end
             Halt:   NextState = Halt;           // Halt the entire system by constantly staying in the Halt State
@@ -111,7 +114,7 @@ module StateMachine_tb();
     end
 
     initial begin                                   // #22 is chosen to go a little over 1 clock cycle to make wait statements work
-        @(negedge clk) reset = 1; data = 0;         // reset the state machine to set it to the initial state 
+        #10; @(negedge clk) reset = 1;              // reset the state machine to set it to the initial state 
         @(negedge clk) reset = 0; #22;              // turn reset bit off to start the cycle with a NOOP input
         wait(NextState == 1); #22;                  // wait until its about to fetch the next instruction within the NOOP cycle
         data = 16'b0001_1111_0010_1001;             // move the data in register 15 in reg file into data register 41 (checking the STORE instruction)

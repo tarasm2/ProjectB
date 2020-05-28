@@ -15,10 +15,13 @@ add wave -noupdate /ControlUnit_tb/D_addr
 add wave -noupdate /ControlUnit_tb/OutState
 add wave -noupdate /ControlUnit_tb/NextState
 add wave -noupdate /ControlUnit_tb/ALU_s0
+add wave -noupdate /ControlUnit_tb/PC_clr
+add wave -noupdate /ControlUnit_tb/PC_up
+add wave -noupdate /ControlUnit_tb/IR_ld
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {103 ps} 0}
+WaveRestoreCursors {{Cursor 1} {10736 ps} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 150
+configure wave -namecolwidth 291
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
 configure wave -signalnamewidth 0
@@ -32,4 +35,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {0 ps} {1 ns}
+WaveRestoreZoom {0 ps} {102451 ps}
