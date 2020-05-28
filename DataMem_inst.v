@@ -1,4 +1,4 @@
-DataMemory_bb	DataMemory_bb_inst (
+DataMem	DataMem_inst (
 	.address ( address_sig ),
 	.clock ( clock_sig ),
 	.data ( data_sig ),

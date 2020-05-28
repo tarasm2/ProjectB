@@ -5,6 +5,7 @@
 // State Machine that cycles through a set of staesdepending on the input. The initial state resets the counter, and then goes to the fetch state which grabs the instruction
 // and then depending on what that instruction is, the next state is decided, with the ability to execute multiple commands, labeled by the state names. It runs on the clock that the whole
 // processor uses and outputs all the data necessary for the computaions or exectution of the instruction.
+// All the output enable bits are turned off initially in the Fetch block and are enabled when needed in other blocks, and are then turned back of in the Fetch block again
 
 module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, ALU_s0, CurrentState, NextState);
     input logic [15:0] data;                                              // input to state machine
@@ -39,7 +40,6 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
         case(CurrentState)
             Init:begin
                     PC_clr = 1;                 // clear/reset the PC counter
-                    D_wr = 0;
                     NextState = Fetch;          // Next state is Fetch
             end   
             Fetch:begin

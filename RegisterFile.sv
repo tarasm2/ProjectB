@@ -47,5 +47,9 @@ RegisterFile DUT(clk, writeEn, wrAddr, wrData, rdAddrA, rdAddrB, rdDataB, rdData
         #22                                                                             // let last instruction execute 
         $stop;
     end
+
+    initial begin
+        $monitor("Time =%4d A =%16b B =%16b", $time, rdDataA, rdDataB);
+    end
 endmodule
 
