@@ -2,7 +2,6 @@ onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate /ControlUnit_tb/clk
 add wave -noupdate /ControlUnit_tb/reset
-add wave -noupdate /ControlUnit_tb/D_Wr
 add wave -noupdate /ControlUnit_tb/RF_s
 add wave -noupdate /ControlUnit_tb/RF_W_en
 add wave -noupdate /ControlUnit_tb/PC_Out
@@ -18,8 +17,9 @@ add wave -noupdate /ControlUnit_tb/ALU_s0
 add wave -noupdate /ControlUnit_tb/PC_clr
 add wave -noupdate /ControlUnit_tb/PC_up
 add wave -noupdate /ControlUnit_tb/IR_ld
+add wave -noupdate /ControlUnit_tb/D_wr
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {10736 ps} 0}
+WaveRestoreCursors {{Cursor 1} {169 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 291
 configure wave -valuecolwidth 100
@@ -35,4 +35,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {0 ps} {102451 ps}
+WaveRestoreZoom {0 ps} {517 ps}

@@ -115,10 +115,11 @@ module StateMachine_tb();
 
     initial begin                                   // #22 is chosen to go a little over 1 clock cycle to make wait statements work
         #10; @(negedge clk) reset = 1;              // reset the state machine to set it to the initial state 
+        data = 0;                                   // data for NOOP instruction
         @(negedge clk) reset = 0; #22;              // turn reset bit off to start the cycle with a NOOP input
         wait(NextState == 1); #22;                  // wait until its about to fetch the next instruction within the NOOP cycle
         data = 16'b0001_1111_0010_1001;             // move the data in register 15 in reg file into data register 41 (checking the STORE instruction)
-        wait(CurrentState == 6); #22;                // wait until its about to fetch the next instruction
+        wait(CurrentState == 6); #22;               // wait until its about to fetch the next instruction
         data = 16'b0010_0000_1010_0111;             // move the data in data memory register 10 to register 7 in reg file (checking the LOAD instruction)
         wait(CurrentState == 5); #22;               // wait until its about to fetch the next instruction
         data = 16'b0011_0001_0010_0011;             // add the data in the reg file (register 1 + register 2) and store in the 3rd register in reg file (testing ADD instruction)
