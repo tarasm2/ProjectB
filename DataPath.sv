@@ -52,35 +52,33 @@ module DataPath_tb();
     end
 
     initial begin
-        @(posedge clk); D_WriteEn = 0;
-        D_Addr = 0; MuxS = 1; RegF_W_addr = 0; RegF_W_en = 1;                     // load data memory [1] into RF[1]
-        @(posedge clk); D_Addr = 1;                                               // start loading in the next register (accounts for registered Data Mem)  
-        @(posedge clk); D_WriteEn = 0;
-        D_Addr = 1; MuxS = 1; RegF_W_addr = 1; RegF_W_en = 1;                     // load data memory [1] into RF[1]
-        @(posedge clk); D_Addr = 2;                                               // start loading in the next register (accounts for registered Data Mem)  
-        @(posedge clk);
-        D_Addr = 2; MuxS = 1; RegF_W_addr = 2; RegF_W_en = 1;                     // load data memory [2] into RF[2]
-        @(posedge clk); D_Addr = 3;                                               // start loading in the next register (accounts for registered Data Mem)  
-        @(posedge clk);
-        D_Addr = 3; MuxS = 1; RegF_W_addr = 3; RegF_W_en = 1;                     // load data memory [3] into RF[3]
-        @(posedge clk); D_Addr = 4;                                               // start loading in the next register (accounts for registered Data Mem)  
-        @(posedge clk);
-        D_Addr = 4; MuxS = 1; RegF_W_addr = 4; RegF_W_en = 1;                     // load data memory [4] into RF[4]
-        @(posedge clk); 
-        @(posedge clk)
-        RegF_W_addr = 5; RegF_Ra_addr = 1; RegF_Rb_addr = 2; ALU_S = 1; MuxS = 0; // add the data in RF[1] and RF[2] and store into RF[5]
-        @(posedge clk);
-        RegF_W_addr = 6; RegF_Ra_addr = 4; RegF_Rb_addr = 2; ALU_S = 2; MuxS = 0; // subrtact the data in RF[2] from RF[4] and store into RF[6]
-        @(posedge clk); RegF_W_en = 0;
-        D_Addr = 5; RegF_Ra_addr = 5; D_WriteEn = 1;                              // store RF[5] into dataMem[5]
-        @(posedge clk);
-        D_Addr = 6; RegF_Ra_addr  = 6; D_WriteEn = 1;                             // store RF[5] into dataMem[5]. Output of Reg_File (ALU_A) holds this value
-        @(posedge clk);                                                           // show that r_data hold value stored earlier  
-        @(posedge clk);                                                           // show that r_data hold value stored earlier  
+        #52;
+        @(negedge clk); D_WriteEn = 0;
+        D_Addr = 11; MuxS = 1; RegF_W_addr = 1; RegF_W_en = 1;                    // load data memory [11] into RF[1]
+        @(negedge clk); D_Addr = 27;                                              // start loading in the next register (accounts for registered Data Mem)  
+        @(negedge clk); D_WriteEn = 0;
+        D_Addr = 27; MuxS = 1; RegF_W_addr = 2; RegF_W_en = 1;                    // load data memory [27] into RF[2]
+        @(negedge clk); D_Addr = 6;                                               // start loading in the next register (accounts for registered Data Mem)  
+        @(negedge clk);
+        D_Addr = 6; MuxS = 1; RegF_W_addr = 3; RegF_W_en = 1;                     // load data memory [6] into RF[3]
+        @(negedge clk); D_Addr = 138;                                             // start loading in the next register (accounts for registered Data Mem)  
+        @(negedge clk);
+        D_Addr = 138; MuxS = 1; RegF_W_addr = 4; RegF_W_en = 1;                   // load data memory [138] into RF[4]
+        @(negedge clk); D_Addr = 138;                                               // start loading in the next register (accounts for registered Data Mem)  
+        @(negedge clk);
+        @(negedge clk)                                                            // wait another clock cycle to make sure the last register is loaded into  
+        RegF_W_addr = 5; RegF_Ra_addr = 1; RegF_Rb_addr = 4; ALU_S = 2; MuxS = 0; // subrtact the data in RF[2] from RF[1] and store into RF[5]
+        @(negedge clk);
+        RegF_W_addr = 6; RegF_Ra_addr = 3; RegF_Rb_addr = 2; ALU_S = 2; MuxS = 0; // subrtact the data in RF[4] from RF[3] and store into RF[6]
+        @(negedge clk);
+        RegF_W_addr = 0; RegF_Ra_addr = 5; RegF_Rb_addr = 6; ALU_S = 1; MuxS = 0; // add the data in RF[5] and RF[6] and store into RF[0]
+        @(negedge clk); RegF_W_en = 0;                                            // no longer want to write to register, want to read from it, so we turn off RegF_W_en
+        D_Addr = 205; RegF_Ra_addr = 0; D_WriteEn = 1;                            // store RF[5] into dataMem[5]
+        #42;                                                                      // show that dataMem 6 is written to
         $stop;
     end
 
     initial begin
-        $monitor("Time =%4d R_data =%16b W_data =%16b ALU_A=%16b ALU_B =%16b ALU_Out = %16b ALU_S =%3b D_WriteEn =%1b RegF_W_addr =%4b, MuxS =%1b D_Addr =%7b", $time, r_data, wData, ALU_A, ALU_B, ALU_Out, ALU_S, D_WriteEn, RegF_W_addr, MuxS, D_Addr);
+        $monitor("Time =%4d R_data =%16d W_data =%16d ALU_A=%16d ALU_B =%16d ALU_Out = %16d ALU_S =%3b D_WriteEn =%1b RegF_W_addr =%4d, MuxS =%1b D_Addr=%7d", $time, r_data, wData, ALU_A, ALU_B, ALU_Out, ALU_S, D_WriteEn, RegF_W_addr, MuxS, D_Addr);
     end
 endmodule

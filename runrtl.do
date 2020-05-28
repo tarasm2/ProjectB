@@ -18,16 +18,22 @@ vlog -work work +acc "./StateMachine.sv"
 vlog -work work +acc "./PC_Counter.sv"
 vlog -work work +acc "./Instruc_Reg.sv"
 vlog -work work +acc "./ControlUnit.sv"
+vlog -work work +acc "./DataMem.v"
+vlog -work work +acc "./Mux_16_2.sv"
+vlog -work work +acc "./RegisterFile.sv"
+vlog -work work +acc "./ALU.sv"
+vlog -work work +acc "./DataPath.sv"
+vlog -work work +acc "./Processor.sv"
 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
 #     testbench module you want to execute.
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  ControlUnit_tb
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Processor_tb
 
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-do ControlUnit_wave.do
+do wave.do
 
 # Set the window types
 view wave
