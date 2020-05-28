@@ -2,62 +2,47 @@
 // Taras Martynyuk, Ben Mulyarchuk, Kevin Nguyen
 // 5/20/2020
 // ProjectB
-// This is a Verilog description for an 256 x 16 register file
+// This is a sytemverilog file made to read off all the data in the A.mif file
 
-module Instruction_Mem(Clk, Reset, Out);
-  input Clk, Reset;
-  output [15:0] Out; // 16-bit data to be read
-  
-  logic [6:0]addr = 16'd0;
-  
-  // using IP Catalog On Chip Memory module
-  // 1-port ROM, output registered one clock
-  // instance name u1
+module Instruction_Mem(addr, Clk, Out);
+  input Clk;
+  output logic [15:0] Out; // 16-bit data to be read
+  input [6:0] addr;
+
+
+// calling on the ROM created in Quartus
   InstructionMem u1(
 	.address(addr),
 	.clock(Clk),
 	.q(Out));
-	
-  always_ff @(posedge Clk) begin
-	 if (Reset)  // active high reset
-			addr <= 16'd0;
-	 else if (addr != 16'd127) 
-	       addr <= addr + 1;
-         else
-			 addr <= 16'd0;
-  end
   
   
-
 endmodule
 
 // This testbench will check and display readings
 // of data at all locations from 0 to 127
-// the ROM has been initialized using myData.mif
-// the ROM has the output Dout registered for 1 clock cycle 
-// (when do the IP catalog wizerd, you have the option 
-// to register or not register the output)
+// the ROM has been initialized using A.mif
 `timescale 1ns/1ns
 module Instruction_Mem_tb();
  
-  logic Clk, Reset;
-  logic [15:0] Dout;
+  logic Clk;
+  logic [6:0] addr;
+  logic [15:0] Out;
   
   
-  Instruction_Mem DUT(Clk, Reset, Dout);
+  Instruction_Mem DUT(addr, Clk, Out);
   
   always begin
     Clk = 0; #10;
-	 Clk = 1; #10;
+	  Clk = 1; #10;
   end
 
   initial begin
-      Reset = 1; // assert reset
-      #53;
-      Reset = 0; // disassert reset
-		for (int k=0; k<128; k++) begin
-		@(posedge Clk); 
-		#5 $display(k, $time, Dout);
+    addr = 0;                       // Start at address 0
+		for (int k=0; k<6; k++) begin   // loop through 6 addresses
+		@(posedge Clk);           
+		#5 $display(k, $time, Out);     // display index, time, Output of Instuction Data
+    addr = k + 1;                   // next address location
 		end
       $stop;
   end  

@@ -1,5 +1,5 @@
 # Reading C:/intelFPGA_lite/19.1/modelsim_ase/tcl/vsim/pref.tcl
-do runrtl_InstuctionMemory.do
+do runrtl_ControlUnit_1.do
 # 
 # Get rid of current work lib
 # if {[file exists rtl_work]} {
@@ -18,60 +18,91 @@ do runrtl_InstuctionMemory.do
 #     their own "vlog" line below.
 # vlog -work work +acc "./Instruction_Mem.sv"
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:36:38 on May 27,2020
+# Start time: 16:50:15 on May 27,2020
 # vlog -reportprogress 300 -work work "+acc" ./Instruction_Mem.sv 
 # -- Compiling module Instruction_Mem
 # -- Compiling module Instruction_Mem_tb
 # 
 # Top level modules:
 # 	Instruction_Mem_tb
-# End time: 00:36:38 on May 27,2020, Elapsed time: 0:00:00
+# End time: 16:50:15 on May 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -work work +acc "./InstructionMem.v"
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:36:39 on May 27,2020
+# Start time: 16:50:16 on May 27,2020
 # vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
 # -- Compiling module InstructionMem
 # 
 # Top level modules:
 # 	InstructionMem
-# End time: 00:36:39 on May 27,2020, Elapsed time: 0:00:00
+# End time: 16:50:16 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Instruc_Reg.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:50:17 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruc_Reg.sv 
+# -- Compiling module Instruc_Reg
+# -- Compiling module Instruc_Reg_tb
+# 
+# Top level modules:
+# 	Instruc_Reg_tb
+# End time: 16:50:17 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./PC_Counter.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:50:18 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./PC_Counter.sv 
+# -- Compiling module PC_Counter
+# -- Compiling module PC_Counter_tb
+# 
+# Top level modules:
+# 	PC_Counter_tb
+# End time: 16:50:19 on May 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ControlUnit_1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:50:19 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./ControlUnit_1.sv 
+# -- Compiling module ControlUnit_1
+# -- Compiling module ControlUnit_1_tb
+# 
+# Top level modules:
+# 	ControlUnit_1_tb
+# End time: 16:50:20 on May 27,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
 #     testbench module you want to execute.
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Instruction_Mem_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Instruction_Mem_tb 
-# Start time: 00:36:39 on May 27,2020
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  ControlUnit_1_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug ControlUnit_1_tb 
+# Start time: 16:50:20 on May 27,2020
 # Loading sv_std.std
-# Loading work.Instruction_Mem_tb
+# Loading work.ControlUnit_1_tb
+# Loading work.ControlUnit_1
 # Loading work.Instruction_Mem
 # Loading work.InstructionMem
 # Loading altera_mf_ver.altsyncram
+# Loading work.Instruc_Reg
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./Instruction_Mem.sv(16): [PCDPC] - Port size (16) does not match connection size (7) for port 'q'. The port definition is at: ./InstructionMem.v(43).
-#    Time: 0 ps  Iteration: 0  Instance: /Instruction_Mem_tb/DUT/u1 File: ./InstructionMem.v
 # 
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-# do Instruction_Mem_wave.do
+# do ControlUnit_1_wave.do
 # onerror {resume}
 # quietly WaveActivateNextPane {} 0
-# add wave -noupdate /Test_tb/Clk
-# ** Error: (vish-4014) No objects found matching '/Test_tb/Clk'.
-# Executing ONERROR command at macro ./Instruction_Mem_wave.do line 3
-# add wave -noupdate /Test_tb/Reset
-# ** Error: (vish-4014) No objects found matching '/Test_tb/Reset'.
-# Executing ONERROR command at macro ./Instruction_Mem_wave.do line 4
-# add wave -noupdate /Test_tb/Dout
-# ** Error: (vish-4014) No objects found matching '/Test_tb/Dout'.
-# Executing ONERROR command at macro ./Instruction_Mem_wave.do line 5
+# add wave -noupdate /ControlUnit_1_tb/clk
+# add wave -noupdate /ControlUnit_1_tb/PC_clr
+# add wave -noupdate /ControlUnit_1_tb/PC_up
+# add wave -noupdate /ControlUnit_1_tb/IR_ld
+# add wave -noupdate /ControlUnit_1_tb/IR_Out
+# add wave -noupdate /ControlUnit_1_tb/data
+# add wave -noupdate /ControlUnit_1_tb/addr
 # TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {74 ps} 0}
+# WaveRestoreCursors {{Cursor 1} {43 ps} 0}
 # quietly wave cursor active 1
 # configure wave -namecolwidth 150
 # configure wave -valuecolwidth 100
@@ -99,149 +130,23 @@ do runrtl_InstuctionMemory.do
 # 
 # Run the simulation
 # run -all
-#           0                  75  0
-#           1                  95  0
-#           2                 115  0
-#           3                 135  0
-#           4                 155  0
-#           5                 175  0
-#           6                 195  0
-#           7                 215  0
-#           8                 235  0
-#           9                 255  0
-#          10                 275  0
-#          11                 295  0
-#          12                 315  0
-#          13                 335  0
-#          14                 355  0
-#          15                 375  0
-#          16                 395  0
-#          17                 415  0
-#          18                 435  0
-#          19                 455  0
-#          20                 475  0
-#          21                 495  0
-#          22                 515  0
-#          23                 535  0
-#          24                 555  0
-#          25                 575  0
-#          26                 595  0
-#          27                 615  0
-#          28                 635  0
-#          29                 655  0
-#          30                 675  0
-#          31                 695  0
-#          32                 715  0
-#          33                 735  0
-#          34                 755  0
-#          35                 775  0
-#          36                 795  0
-#          37                 815  0
-#          38                 835  0
-#          39                 855  0
-#          40                 875  0
-#          41                 895  0
-#          42                 915  0
-#          43                 935  0
-#          44                 955  0
-#          45                 975  0
-#          46                 995  0
-#          47                1015  0
-#          48                1035  0
-#          49                1055  0
-#          50                1075  0
-#          51                1095  0
-#          52                1115  0
-#          53                1135  0
-#          54                1155  0
-#          55                1175  0
-#          56                1195  0
-#          57                1215  0
-#          58                1235  0
-#          59                1255  0
-#          60                1275  0
-#          61                1295  0
-#          62                1315  0
-#          63                1335  0
-#          64                1355  0
-#          65                1375  0
-#          66                1395  0
-#          67                1415  0
-#          68                1435  0
-#          69                1455  0
-#          70                1475  0
-#          71                1495  0
-#          72                1515  0
-#          73                1535  0
-#          74                1555  0
-#          75                1575  0
-#          76                1595  0
-#          77                1615  0
-#          78                1635  0
-#          79                1655  0
-#          80                1675  0
-#          81                1695  0
-#          82                1715  0
-#          83                1735  0
-#          84                1755  0
-#          85                1775  0
-#          86                1795  0
-#          87                1815  0
-#          88                1835  0
-#          89                1855  0
-#          90                1875  0
-#          91                1895  0
-#          92                1915  0
-#          93                1935  0
-#          94                1955  0
-#          95                1975  0
-#          96                1995  0
-#          97                2015  0
-#          98                2035  0
-#          99                2055  0
-#         100                2075  0
-#         101                2095  0
-#         102                2115  0
-#         103                2135  0
-#         104                2155  0
-#         105                2175  0
-#         106                2195  0
-#         107                2215  0
-#         108                2235  0
-#         109                2255  0
-#         110                2275  0
-#         111                2295  0
-#         112                2315  0
-#         113                2335  0
-#         114                2355  0
-#         115                2375  0
-#         116                2395  0
-#         117                2415  0
-#         118                2435  0
-#         119                2455  0
-#         120                2475  0
-#         121                2495  0
-#         122                2515  0
-#         123                2535  0
-#         124                2555  0
-#         125                2575  0
-#         126                2595  0
-#         127                2615  0
-# ** Note: $stop    : ./Instruction_Mem.sv(62)
-#    Time: 2615 ns  Iteration: 0  Instance: /Instruction_Mem_tb
-# Break in Module Instruction_Mem_tb at ./Instruction_Mem.sv line 62
+#           0                  15    x
+#           1                  35    x
+#           2                  55    x
+#           3                  75    x
+#           4                  95    x
+#           5                 115    x
+# ** Note: $stop    : ./ControlUnit_1.sv(57)
+#    Time: 115 ns  Iteration: 0  Instance: /ControlUnit_1_tb
+# Break in Module ControlUnit_1_tb at ./ControlUnit_1.sv line 57
 # 
 # View the entire wave display
 # wave zoomfull
 # 0 ps
-# 2745750 ps
+# 120750 ps
 # 
 # End
-add wave -position end  sim:/Instruction_Mem_tb/Clk
-add wave -position end  sim:/Instruction_Mem_tb/Reset
-add wave -position end  sim:/Instruction_Mem_tb/Dout
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/taras/Documents/GitHub/ProjectB/Instruction_Mem_wave.do
-do runrtl_InstuctionMemory.do
+do runrtl_ControlUnit_1.do
 # 
 # Get rid of current work lib
 # if {[file exists rtl_work]} {
@@ -264,56 +169,93 @@ do runrtl_InstuctionMemory.do
 #     their own "vlog" line below.
 # vlog -work work +acc "./Instruction_Mem.sv"
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:38:41 on May 27,2020
+# Start time: 16:53:11 on May 27,2020
 # vlog -reportprogress 300 -work work "+acc" ./Instruction_Mem.sv 
 # -- Compiling module Instruction_Mem
 # -- Compiling module Instruction_Mem_tb
 # 
 # Top level modules:
 # 	Instruction_Mem_tb
-# End time: 00:38:41 on May 27,2020, Elapsed time: 0:00:00
+# End time: 16:53:11 on May 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -work work +acc "./InstructionMem.v"
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:38:42 on May 27,2020
+# Start time: 16:53:11 on May 27,2020
 # vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
 # -- Compiling module InstructionMem
 # 
 # Top level modules:
 # 	InstructionMem
-# End time: 00:38:42 on May 27,2020, Elapsed time: 0:00:00
+# End time: 16:53:12 on May 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Instruc_Reg.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:53:12 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruc_Reg.sv 
+# -- Compiling module Instruc_Reg
+# -- Compiling module Instruc_Reg_tb
+# 
+# Top level modules:
+# 	Instruc_Reg_tb
+# End time: 16:53:12 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./PC_Counter.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:53:13 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./PC_Counter.sv 
+# -- Compiling module PC_Counter
+# -- Compiling module PC_Counter_tb
+# 
+# Top level modules:
+# 	PC_Counter_tb
+# End time: 16:53:13 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ControlUnit_1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:53:14 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./ControlUnit_1.sv 
+# -- Compiling module ControlUnit_1
+# -- Compiling module ControlUnit_1_tb
+# 
+# Top level modules:
+# 	ControlUnit_1_tb
+# End time: 16:53:14 on May 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
 #     testbench module you want to execute.
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Instruction_Mem_tb
-# End time: 00:38:44 on May 27,2020, Elapsed time: 0:02:05
-# Errors: 9, Warnings: 1
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Instruction_Mem_tb 
-# Start time: 00:38:44 on May 27,2020
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  ControlUnit_1_tb
+# End time: 16:53:17 on May 27,2020, Elapsed time: 0:02:57
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug ControlUnit_1_tb 
+# Start time: 16:53:18 on May 27,2020
 # Loading sv_std.std
-# Loading work.Instruction_Mem_tb
+# Loading work.ControlUnit_1_tb
+# Loading work.ControlUnit_1
 # Loading work.Instruction_Mem
 # Loading work.InstructionMem
 # Loading altera_mf_ver.altsyncram
+# Loading work.Instruc_Reg
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./Instruction_Mem.sv(16): [PCDPC] - Port size (16) does not match connection size (7) for port 'q'. The port definition is at: ./InstructionMem.v(43).
-#    Time: 0 ps  Iteration: 0  Instance: /Instruction_Mem_tb/DUT/u1 File: ./InstructionMem.v
 # 
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-# do Instruction_Mem_wave.do
+# do ControlUnit_1_wave.do
 # onerror {resume}
 # quietly WaveActivateNextPane {} 0
-# add wave -noupdate /Instruction_Mem_tb/Clk
-# add wave -noupdate /Instruction_Mem_tb/Reset
-# add wave -noupdate /Instruction_Mem_tb/Dout
+# add wave -noupdate /ControlUnit_1_tb/clk
+# add wave -noupdate /ControlUnit_1_tb/PC_clr
+# add wave -noupdate /ControlUnit_1_tb/PC_up
+# add wave -noupdate /ControlUnit_1_tb/IR_ld
+# add wave -noupdate /ControlUnit_1_tb/IR_Out
+# add wave -noupdate /ControlUnit_1_tb/data
+# add wave -noupdate /ControlUnit_1_tb/addr
 # TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {297758 ps} 0}
+# WaveRestoreCursors {{Cursor 1} {43 ps} 0}
 # quietly wave cursor active 1
 # configure wave -namecolwidth 150
 # configure wave -valuecolwidth 100
@@ -329,7 +271,7 @@ do runrtl_InstuctionMemory.do
 # configure wave -timeline 0
 # configure wave -timelineunits ps
 # update
-# WaveRestoreZoom {0 ps} {2745750 ps}
+# WaveRestoreZoom {0 ps} {1 ns}
 # 
 # Set the window types
 # view wave
@@ -341,145 +283,23 @@ do runrtl_InstuctionMemory.do
 # 
 # Run the simulation
 # run -all
-#           0                  75  0
-#           1                  95  0
-#           2                 115  0
-#           3                 135  0
-#           4                 155  0
-#           5                 175  0
-#           6                 195  0
-#           7                 215  0
-#           8                 235  0
-#           9                 255  0
-#          10                 275  0
-#          11                 295  0
-#          12                 315  0
-#          13                 335  0
-#          14                 355  0
-#          15                 375  0
-#          16                 395  0
-#          17                 415  0
-#          18                 435  0
-#          19                 455  0
-#          20                 475  0
-#          21                 495  0
-#          22                 515  0
-#          23                 535  0
-#          24                 555  0
-#          25                 575  0
-#          26                 595  0
-#          27                 615  0
-#          28                 635  0
-#          29                 655  0
-#          30                 675  0
-#          31                 695  0
-#          32                 715  0
-#          33                 735  0
-#          34                 755  0
-#          35                 775  0
-#          36                 795  0
-#          37                 815  0
-#          38                 835  0
-#          39                 855  0
-#          40                 875  0
-#          41                 895  0
-#          42                 915  0
-#          43                 935  0
-#          44                 955  0
-#          45                 975  0
-#          46                 995  0
-#          47                1015  0
-#          48                1035  0
-#          49                1055  0
-#          50                1075  0
-#          51                1095  0
-#          52                1115  0
-#          53                1135  0
-#          54                1155  0
-#          55                1175  0
-#          56                1195  0
-#          57                1215  0
-#          58                1235  0
-#          59                1255  0
-#          60                1275  0
-#          61                1295  0
-#          62                1315  0
-#          63                1335  0
-#          64                1355  0
-#          65                1375  0
-#          66                1395  0
-#          67                1415  0
-#          68                1435  0
-#          69                1455  0
-#          70                1475  0
-#          71                1495  0
-#          72                1515  0
-#          73                1535  0
-#          74                1555  0
-#          75                1575  0
-#          76                1595  0
-#          77                1615  0
-#          78                1635  0
-#          79                1655  0
-#          80                1675  0
-#          81                1695  0
-#          82                1715  0
-#          83                1735  0
-#          84                1755  0
-#          85                1775  0
-#          86                1795  0
-#          87                1815  0
-#          88                1835  0
-#          89                1855  0
-#          90                1875  0
-#          91                1895  0
-#          92                1915  0
-#          93                1935  0
-#          94                1955  0
-#          95                1975  0
-#          96                1995  0
-#          97                2015  0
-#          98                2035  0
-#          99                2055  0
-#         100                2075  0
-#         101                2095  0
-#         102                2115  0
-#         103                2135  0
-#         104                2155  0
-#         105                2175  0
-#         106                2195  0
-#         107                2215  0
-#         108                2235  0
-#         109                2255  0
-#         110                2275  0
-#         111                2295  0
-#         112                2315  0
-#         113                2335  0
-#         114                2355  0
-#         115                2375  0
-#         116                2395  0
-#         117                2415  0
-#         118                2435  0
-#         119                2455  0
-#         120                2475  0
-#         121                2495  0
-#         122                2515  0
-#         123                2535  0
-#         124                2555  0
-#         125                2575  0
-#         126                2595  0
-#         127                2615  0
-# ** Note: $stop    : ./Instruction_Mem.sv(62)
-#    Time: 2615 ns  Iteration: 0  Instance: /Instruction_Mem_tb
-# Break in Module Instruction_Mem_tb at ./Instruction_Mem.sv line 62
+#           0                  15    0
+#           1                  35 8223
+#           2                  5512579
+#           3                  7519088
+#           4                  95 5120
+#           5                 11520480
+# ** Note: $stop    : ./ControlUnit_1.sv(57)
+#    Time: 115 ns  Iteration: 0  Instance: /ControlUnit_1_tb
+# Break in Module ControlUnit_1_tb at ./ControlUnit_1.sv line 57
 # 
 # View the entire wave display
 # wave zoomfull
 # 0 ps
-# 2745750 ps
+# 120750 ps
 # 
 # End
-do runrtl_InstuctionMemory.do
+do runrtl_ControlUnit_1.do
 # 
 # Get rid of current work lib
 # if {[file exists rtl_work]} {
@@ -498,56 +318,93 @@ do runrtl_InstuctionMemory.do
 #     their own "vlog" line below.
 # vlog -work work +acc "./Instruction_Mem.sv"
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:42 on May 27,2020
+# Start time: 16:54:36 on May 27,2020
 # vlog -reportprogress 300 -work work "+acc" ./Instruction_Mem.sv 
 # -- Compiling module Instruction_Mem
 # -- Compiling module Instruction_Mem_tb
 # 
 # Top level modules:
 # 	Instruction_Mem_tb
-# End time: 00:39:42 on May 27,2020, Elapsed time: 0:00:00
+# End time: 16:54:36 on May 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -work work +acc "./InstructionMem.v"
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:39:42 on May 27,2020
+# Start time: 16:54:37 on May 27,2020
 # vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
 # -- Compiling module InstructionMem
 # 
 # Top level modules:
 # 	InstructionMem
-# End time: 00:39:42 on May 27,2020, Elapsed time: 0:00:00
+# End time: 16:54:38 on May 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Instruc_Reg.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:54:39 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruc_Reg.sv 
+# -- Compiling module Instruc_Reg
+# -- Compiling module Instruc_Reg_tb
+# 
+# Top level modules:
+# 	Instruc_Reg_tb
+# End time: 16:54:39 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./PC_Counter.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:54:40 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./PC_Counter.sv 
+# -- Compiling module PC_Counter
+# -- Compiling module PC_Counter_tb
+# 
+# Top level modules:
+# 	PC_Counter_tb
+# End time: 16:54:40 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ControlUnit_1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:54:41 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./ControlUnit_1.sv 
+# -- Compiling module ControlUnit_1
+# -- Compiling module ControlUnit_1_tb
+# 
+# Top level modules:
+# 	ControlUnit_1_tb
+# End time: 16:54:41 on May 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
 #     testbench module you want to execute.
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Instruction_Mem_tb
-# End time: 00:39:44 on May 27,2020, Elapsed time: 0:01:00
-# Errors: 0, Warnings: 1
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Instruction_Mem_tb 
-# Start time: 00:39:44 on May 27,2020
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  ControlUnit_1_tb
+# End time: 16:54:47 on May 27,2020, Elapsed time: 0:01:29
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug ControlUnit_1_tb 
+# Start time: 16:54:47 on May 27,2020
 # Loading sv_std.std
-# Loading work.Instruction_Mem_tb
+# Loading work.ControlUnit_1_tb
+# Loading work.ControlUnit_1
 # Loading work.Instruction_Mem
 # Loading work.InstructionMem
 # Loading altera_mf_ver.altsyncram
+# Loading work.Instruc_Reg
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./Instruction_Mem.sv(16): [PCDPC] - Port size (16) does not match connection size (7) for port 'q'. The port definition is at: ./InstructionMem.v(43).
-#    Time: 0 ps  Iteration: 0  Instance: /Instruction_Mem_tb/DUT/u1 File: ./InstructionMem.v
 # 
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-# do Instruction_Mem_wave.do
+# do ControlUnit_1_wave.do
 # onerror {resume}
 # quietly WaveActivateNextPane {} 0
-# add wave -noupdate /Instruction_Mem_tb/Clk
-# add wave -noupdate /Instruction_Mem_tb/Reset
-# add wave -noupdate /Instruction_Mem_tb/Dout
+# add wave -noupdate /ControlUnit_1_tb/clk
+# add wave -noupdate /ControlUnit_1_tb/PC_clr
+# add wave -noupdate /ControlUnit_1_tb/PC_up
+# add wave -noupdate /ControlUnit_1_tb/IR_ld
+# add wave -noupdate /ControlUnit_1_tb/IR_Out
+# add wave -noupdate /ControlUnit_1_tb/data
+# add wave -noupdate /ControlUnit_1_tb/addr
 # TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {297758 ps} 0}
+# WaveRestoreCursors {{Cursor 1} {43 ps} 0}
 # quietly wave cursor active 1
 # configure wave -namecolwidth 150
 # configure wave -valuecolwidth 100
@@ -563,7 +420,7 @@ do runrtl_InstuctionMemory.do
 # configure wave -timeline 0
 # configure wave -timelineunits ps
 # update
-# WaveRestoreZoom {0 ps} {2745750 ps}
+# WaveRestoreZoom {0 ps} {1 ns}
 # 
 # Set the window types
 # view wave
@@ -575,385 +432,30 @@ do runrtl_InstuctionMemory.do
 # 
 # Run the simulation
 # run -all
-#           0                  75  1
-#           1                  95  2
-#           2                 115  3
-#           3                 135  0
-#           4                 155  0
-#           5                 175  0
-#           6                 195  0
-#           7                 215  0
-#           8                 235  0
-#           9                 255  0
-#          10                 275  0
-#          11                 295  0
-#          12                 315  0
-#          13                 335  0
-#          14                 355  0
-#          15                 375  0
-#          16                 395  0
-#          17                 415  0
-#          18                 435  0
-#          19                 455  0
-#          20                 475  0
-#          21                 495  0
-#          22                 515  0
-#          23                 535  0
-#          24                 555  0
-#          25                 575  0
-#          26                 595  0
-#          27                 615  0
-#          28                 635  0
-#          29                 655  0
-#          30                 675  0
-#          31                 695  0
-#          32                 715  0
-#          33                 735  0
-#          34                 755  0
-#          35                 775  0
-#          36                 795  0
-#          37                 815  0
-#          38                 835  0
-#          39                 855  0
-#          40                 875  0
-#          41                 895  0
-#          42                 915  0
-#          43                 935  0
-#          44                 955  0
-#          45                 975  0
-#          46                 995  0
-#          47                1015  0
-#          48                1035  0
-#          49                1055  0
-#          50                1075  0
-#          51                1095  0
-#          52                1115  0
-#          53                1135  0
-#          54                1155  0
-#          55                1175  0
-#          56                1195  0
-#          57                1215  0
-#          58                1235  0
-#          59                1255  0
-#          60                1275  0
-#          61                1295  0
-#          62                1315  0
-#          63                1335  0
-#          64                1355  0
-#          65                1375  0
-#          66                1395  0
-#          67                1415  0
-#          68                1435  0
-#          69                1455  0
-#          70                1475  0
-#          71                1495  0
-#          72                1515  0
-#          73                1535  0
-#          74                1555  0
-#          75                1575  0
-#          76                1595  0
-#          77                1615  0
-#          78                1635  0
-#          79                1655  0
-#          80                1675  0
-#          81                1695  0
-#          82                1715  0
-#          83                1735  0
-#          84                1755  0
-#          85                1775  0
-#          86                1795  0
-#          87                1815  0
-#          88                1835  0
-#          89                1855  0
-#          90                1875  0
-#          91                1895  0
-#          92                1915  0
-#          93                1935  0
-#          94                1955  0
-#          95                1975  0
-#          96                1995  0
-#          97                2015  0
-#          98                2035  0
-#          99                2055  0
-#         100                2075  0
-#         101                2095  0
-#         102                2115  0
-#         103                2135  0
-#         104                2155  0
-#         105                2175  0
-#         106                2195  0
-#         107                2215  0
-#         108                2235  0
-#         109                2255  0
-#         110                2275  0
-#         111                2295  0
-#         112                2315  0
-#         113                2335  0
-#         114                2355  0
-#         115                2375  0
-#         116                2395  0
-#         117                2415  0
-#         118                2435  0
-#         119                2455  0
-#         120                2475  0
-#         121                2495  0
-#         122                2515  0
-#         123                2535  0
-#         124                2555  0
-#         125                2575  0
-#         126                2595  0
-#         127                2615  0
-# ** Note: $stop    : ./Instruction_Mem.sv(62)
-#    Time: 2615 ns  Iteration: 0  Instance: /Instruction_Mem_tb
-# Break in Module Instruction_Mem_tb at ./Instruction_Mem.sv line 62
+#           0                  15    x
+#           1                  35    x
+#           2                  55    x
+#           3                  75    x
+#           4                  95    x
+#           5                 115    x
+# ** Note: $stop    : ./ControlUnit_1.sv(57)
+#    Time: 115 ns  Iteration: 0  Instance: /ControlUnit_1_tb
+# Break in Module ControlUnit_1_tb at ./ControlUnit_1.sv line 57
 # 
 # View the entire wave display
 # wave zoomfull
 # 0 ps
-# 2745750 ps
+# 120750 ps
 # 
 # End
-do runrtl_InstuctionMemory.do
+do runrtl_ControlUnit_1.do
 # 
 # Get rid of current work lib
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
-# 
-# Create work library and map it to 'work'
-# vlib rtl_work
-# vmap work rtl_work
-# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
-# vmap work rtl_work 
-# Modifying modelsim.ini
-# 
-# Compile Verilog
-#     All Verilog files that are part of this design should have
-#     their own "vlog" line below.
-# vlog -work work +acc "./Instruction_Mem.sv"
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:40:32 on May 27,2020
-# vlog -reportprogress 300 -work work "+acc" ./Instruction_Mem.sv 
-# -- Compiling module Instruction_Mem
-# -- Compiling module Instruction_Mem_tb
-# 
-# Top level modules:
-# 	Instruction_Mem_tb
-# End time: 00:40:32 on May 27,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -work work +acc "./InstructionMem.v"
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:40:33 on May 27,2020
-# vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
-# -- Compiling module InstructionMem
-# 
-# Top level modules:
-# 	InstructionMem
-# End time: 00:40:33 on May 27,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# Call vsim to invoke simulator
-#     Make sure the last item on the line is the name of the
-#     testbench module you want to execute.
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Instruction_Mem_tb
-# End time: 00:40:35 on May 27,2020, Elapsed time: 0:00:51
-# Errors: 0, Warnings: 1
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Instruction_Mem_tb 
-# Start time: 00:40:35 on May 27,2020
-# Loading sv_std.std
-# Loading work.Instruction_Mem_tb
-# Loading work.Instruction_Mem
-# Loading work.InstructionMem
-# Loading altera_mf_ver.altsyncram
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./Instruction_Mem.sv(16): [PCDPC] - Port size (16) does not match connection size (7) for port 'q'. The port definition is at: ./InstructionMem.v(43).
-#    Time: 0 ps  Iteration: 0  Instance: /Instruction_Mem_tb/DUT/u1 File: ./InstructionMem.v
-# 
-# Source the wave do file
-#     This should be the file that sets up the signal window for
-#     the module you are testing.
-# do Instruction_Mem_wave.do
-# onerror {resume}
-# quietly WaveActivateNextPane {} 0
-# add wave -noupdate /Instruction_Mem_tb/Clk
-# add wave -noupdate /Instruction_Mem_tb/Reset
-# add wave -noupdate /Instruction_Mem_tb/Dout
-# TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {297758 ps} 0}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 150
-# configure wave -valuecolwidth 100
-# configure wave -justifyvalue left
-# configure wave -signalnamewidth 0
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
-# configure wave -timeline 0
-# configure wave -timelineunits ps
-# update
-# WaveRestoreZoom {0 ps} {2745750 ps}
-# 
-# Set the window types
-# view wave
-# .main_pane.wave.interior.cs.body.pw.wf
-# view structure
-# .main_pane.structure.interior.cs.body.struct
-# view signals
-# .main_pane.objects.interior.cs.body.tree
-# 
-# Run the simulation
-# run -all
-#           0                  75  1
-#           1                  95  1
-#           2                 115  1
-#           3                 135  1
-#           4                 155  1
-#           5                 175  1
-#           6                 195  1
-#           7                 215  1
-#           8                 235  1
-#           9                 255  1
-#          10                 275  1
-#          11                 295  1
-#          12                 315  1
-#          13                 335  1
-#          14                 355  1
-#          15                 375  1
-#          16                 395  1
-#          17                 415  1
-#          18                 435  1
-#          19                 455  1
-#          20                 475  1
-#          21                 495  1
-#          22                 515  1
-#          23                 535  1
-#          24                 555  1
-#          25                 575  1
-#          26                 595  1
-#          27                 615  1
-#          28                 635  1
-#          29                 655  1
-#          30                 675  1
-#          31                 695  1
-#          32                 715  1
-#          33                 735  1
-#          34                 755  1
-#          35                 775  1
-#          36                 795  1
-#          37                 815  1
-#          38                 835  1
-#          39                 855  1
-#          40                 875  1
-#          41                 895  1
-#          42                 915  1
-#          43                 935  1
-#          44                 955  1
-#          45                 975  1
-#          46                 995  1
-#          47                1015  1
-#          48                1035  1
-#          49                1055  1
-#          50                1075  1
-#          51                1095  1
-#          52                1115  1
-#          53                1135  1
-#          54                1155  1
-#          55                1175  1
-#          56                1195  1
-#          57                1215  1
-#          58                1235  1
-#          59                1255  1
-#          60                1275  1
-#          61                1295  1
-#          62                1315  1
-#          63                1335  1
-#          64                1355  1
-#          65                1375  1
-#          66                1395  1
-#          67                1415  1
-#          68                1435  1
-#          69                1455  1
-#          70                1475  1
-#          71                1495  1
-#          72                1515  1
-#          73                1535  1
-#          74                1555  1
-#          75                1575  1
-#          76                1595  1
-#          77                1615  1
-#          78                1635  1
-#          79                1655  1
-#          80                1675  1
-#          81                1695  1
-#          82                1715  1
-#          83                1735  1
-#          84                1755  1
-#          85                1775  1
-#          86                1795  1
-#          87                1815  1
-#          88                1835  1
-#          89                1855  1
-#          90                1875  1
-#          91                1895  1
-#          92                1915  1
-#          93                1935  1
-#          94                1955  1
-#          95                1975  1
-#          96                1995  1
-#          97                2015  1
-#          98                2035  1
-#          99                2055  1
-#         100                2075  1
-#         101                2095  1
-#         102                2115  1
-#         103                2135  1
-#         104                2155  1
-#         105                2175  1
-#         106                2195  1
-#         107                2215  1
-#         108                2235  1
-#         109                2255  1
-#         110                2275  1
-#         111                2295  1
-#         112                2315  1
-#         113                2335  1
-#         114                2355  1
-#         115                2375  1
-#         116                2395  1
-#         117                2415  1
-#         118                2435  1
-#         119                2455  1
-#         120                2475  1
-#         121                2495  1
-#         122                2515  1
-#         123                2535  1
-#         124                2555  1
-#         125                2575  1
-#         126                2595  1
-#         127                2615  1
-# ** Note: $stop    : ./Instruction_Mem.sv(51)
-#    Time: 2615 ns  Iteration: 0  Instance: /Instruction_Mem_tb
-# Break in Module Instruction_Mem_tb at ./Instruction_Mem.sv line 51
-# 
-# View the entire wave display
-# wave zoomfull
-# 0 ps
-# 2745750 ps
-# 
-# End
-do runrtl_InstuctionMemory.do
-# 
-# Get rid of current work lib
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
-# }
-# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib.qdb".
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qpg".
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qtl".
 # Error 133: Unable to remove directory "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work".
 # 
 # Create work library and map it to 'work'
@@ -970,56 +472,97 @@ do runrtl_InstuctionMemory.do
 #     their own "vlog" line below.
 # vlog -work work +acc "./Instruction_Mem.sv"
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:41:40 on May 27,2020
+# Start time: 16:56:00 on May 27,2020
 # vlog -reportprogress 300 -work work "+acc" ./Instruction_Mem.sv 
 # -- Compiling module Instruction_Mem
 # -- Compiling module Instruction_Mem_tb
 # 
 # Top level modules:
 # 	Instruction_Mem_tb
-# End time: 00:41:40 on May 27,2020, Elapsed time: 0:00:00
+# End time: 16:56:00 on May 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -work work +acc "./InstructionMem.v"
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:41:41 on May 27,2020
+# Start time: 16:56:01 on May 27,2020
 # vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
 # -- Compiling module InstructionMem
 # 
 # Top level modules:
 # 	InstructionMem
-# End time: 00:41:41 on May 27,2020, Elapsed time: 0:00:00
+# End time: 16:56:01 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Instruc_Reg.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:56:02 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruc_Reg.sv 
+# -- Compiling module Instruc_Reg
+# -- Compiling module Instruc_Reg_tb
+# 
+# Top level modules:
+# 	Instruc_Reg_tb
+# End time: 16:56:02 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./PC_Counter.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:56:03 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./PC_Counter.sv 
+# -- Compiling module PC_Counter
+# -- Compiling module PC_Counter_tb
+# 
+# Top level modules:
+# 	PC_Counter_tb
+# End time: 16:56:03 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ControlUnit_1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:56:04 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./ControlUnit_1.sv 
+# -- Compiling module ControlUnit_1
+# -- Compiling module ControlUnit_1_tb
+# 
+# Top level modules:
+# 	ControlUnit_1_tb
+# End time: 16:56:04 on May 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
 #     testbench module you want to execute.
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Instruction_Mem_tb
-# End time: 00:41:43 on May 27,2020, Elapsed time: 0:01:08
-# Errors: 0, Warnings: 1
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Instruction_Mem_tb 
-# Start time: 00:41:43 on May 27,2020
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  ControlUnit_1_tb
+# End time: 16:56:07 on May 27,2020, Elapsed time: 0:01:20
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug ControlUnit_1_tb 
+# Start time: 16:56:07 on May 27,2020
 # Loading sv_std.std
-# Loading work.Instruction_Mem_tb
+# Loading work.ControlUnit_1_tb
+# Loading work.ControlUnit_1
 # Loading work.Instruction_Mem
 # Loading work.InstructionMem
 # Loading altera_mf_ver.altsyncram
+# Loading work.Instruc_Reg
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./Instruction_Mem.sv(16): [PCDPC] - Port size (16) does not match connection size (7) for port 'q'. The port definition is at: ./InstructionMem.v(43).
-#    Time: 0 ps  Iteration: 0  Instance: /Instruction_Mem_tb/DUT/u1 File: ./InstructionMem.v
+# ** Warning: (vsim-3839) ./ControlUnit_1.sv(55): Variable '/ControlUnit_1_tb/addr', driven via a port connection, is multiply driven. See ./ControlUnit_1.sv(27).
+#    Time: 0 ps  Iteration: 0  Instance: /ControlUnit_1_tb File: ./ControlUnit_1.sv
+# ** Warning: (vsim-3839) ./ControlUnit_1.sv(51): Variable '/ControlUnit_1_tb/addr', driven via a port connection, is multiply driven. See ./ControlUnit_1.sv(27).
+#    Time: 0 ps  Iteration: 0  Instance: /ControlUnit_1_tb File: ./ControlUnit_1.sv
 # 
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-# do Instruction_Mem_wave.do
+# do ControlUnit_1_wave.do
 # onerror {resume}
 # quietly WaveActivateNextPane {} 0
-# add wave -noupdate /Instruction_Mem_tb/Clk
-# add wave -noupdate /Instruction_Mem_tb/Reset
-# add wave -noupdate /Instruction_Mem_tb/Dout
+# add wave -noupdate /ControlUnit_1_tb/clk
+# add wave -noupdate /ControlUnit_1_tb/PC_clr
+# add wave -noupdate /ControlUnit_1_tb/PC_up
+# add wave -noupdate /ControlUnit_1_tb/IR_ld
+# add wave -noupdate /ControlUnit_1_tb/IR_Out
+# add wave -noupdate /ControlUnit_1_tb/data
+# add wave -noupdate /ControlUnit_1_tb/addr
 # TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {297758 ps} 0}
+# WaveRestoreCursors {{Cursor 1} {43 ps} 0}
 # quietly wave cursor active 1
 # configure wave -namecolwidth 150
 # configure wave -valuecolwidth 100
@@ -1035,7 +578,7 @@ do runrtl_InstuctionMemory.do
 # configure wave -timeline 0
 # configure wave -timelineunits ps
 # update
-# WaveRestoreZoom {0 ps} {2745750 ps}
+# WaveRestoreZoom {0 ps} {1 ns}
 # 
 # Set the window types
 # view wave
@@ -1047,145 +590,178 @@ do runrtl_InstuctionMemory.do
 # 
 # Run the simulation
 # run -all
-#           0                  75  1
-#           1                  95  2
-#           2                 115  3
-#           3                 135  0
-#           4                 155  0
-#           5                 175  0
-#           6                 195  0
-#           7                 215  0
-#           8                 235  0
-#           9                 255  0
-#          10                 275  0
-#          11                 295  0
-#          12                 315  0
-#          13                 335  0
-#          14                 355  0
-#          15                 375  0
-#          16                 395  0
-#          17                 415  0
-#          18                 435  0
-#          19                 455  0
-#          20                 475  0
-#          21                 495  0
-#          22                 515  0
-#          23                 535  0
-#          24                 555  0
-#          25                 575  0
-#          26                 595  0
-#          27                 615  0
-#          28                 635  0
-#          29                 655  0
-#          30                 675  0
-#          31                 695  0
-#          32                 715  0
-#          33                 735  0
-#          34                 755  0
-#          35                 775  0
-#          36                 795  0
-#          37                 815  0
-#          38                 835  0
-#          39                 855  0
-#          40                 875  0
-#          41                 895  0
-#          42                 915  0
-#          43                 935  0
-#          44                 955  0
-#          45                 975  0
-#          46                 995  0
-#          47                1015  0
-#          48                1035  0
-#          49                1055  0
-#          50                1075  0
-#          51                1095  0
-#          52                1115  0
-#          53                1135  0
-#          54                1155  0
-#          55                1175  0
-#          56                1195  0
-#          57                1215  0
-#          58                1235  0
-#          59                1255  0
-#          60                1275  0
-#          61                1295  0
-#          62                1315  0
-#          63                1335  0
-#          64                1355  0
-#          65                1375  0
-#          66                1395  0
-#          67                1415  0
-#          68                1435  0
-#          69                1455  0
-#          70                1475  0
-#          71                1495  0
-#          72                1515  0
-#          73                1535  0
-#          74                1555  0
-#          75                1575  0
-#          76                1595  0
-#          77                1615  0
-#          78                1635  0
-#          79                1655  0
-#          80                1675  0
-#          81                1695  0
-#          82                1715  0
-#          83                1735  0
-#          84                1755  0
-#          85                1775  0
-#          86                1795  0
-#          87                1815  0
-#          88                1835  0
-#          89                1855  0
-#          90                1875  0
-#          91                1895  0
-#          92                1915  0
-#          93                1935  0
-#          94                1955  0
-#          95                1975  0
-#          96                1995  0
-#          97                2015  0
-#          98                2035  0
-#          99                2055  0
-#         100                2075  0
-#         101                2095  0
-#         102                2115  0
-#         103                2135  0
-#         104                2155  0
-#         105                2175  0
-#         106                2195  0
-#         107                2215  0
-#         108                2235  0
-#         109                2255  0
-#         110                2275  0
-#         111                2295  0
-#         112                2315  0
-#         113                2335  0
-#         114                2355  0
-#         115                2375  0
-#         116                2395  0
-#         117                2415  0
-#         118                2435  0
-#         119                2455  0
-#         120                2475  0
-#         121                2495  0
-#         122                2515  0
-#         123                2535  0
-#         124                2555  0
-#         125                2575  0
-#         126                2595  0
-#         127                2615  0
-# ** Note: $stop    : ./Instruction_Mem.sv(62)
-#    Time: 2615 ns  Iteration: 0  Instance: /Instruction_Mem_tb
-# Break in Module Instruction_Mem_tb at ./Instruction_Mem.sv line 62
+#           0                  15    x
+#           1                  35    x
+#           2                  55    x
+#           3                  75    x
+#           4                  95    x
+#           5                 115    x
+# ** Note: $stop    : ./ControlUnit_1.sv(57)
+#    Time: 115 ns  Iteration: 0  Instance: /ControlUnit_1_tb
+# Break in Module ControlUnit_1_tb at ./ControlUnit_1.sv line 57
 # 
 # View the entire wave display
 # wave zoomfull
 # 0 ps
-# 2745750 ps
+# 120750 ps
 # 
 # End
-do runrtl_InstuctionMemory.do
+do runrtl_ControlUnit_1.do
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qpg".
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qtl".
+# Error 133: Unable to remove directory "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# ** Error: (vlib-35) Failed to create directory "rtl_work".
+# File exists. (errno = EEXIST)
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Instruction_Mem.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:56:58 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruction_Mem.sv 
+# -- Compiling module Instruction_Mem
+# -- Compiling module Instruction_Mem_tb
+# 
+# Top level modules:
+# 	Instruction_Mem_tb
+# End time: 16:56:58 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./InstructionMem.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:56:59 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
+# -- Compiling module InstructionMem
+# 
+# Top level modules:
+# 	InstructionMem
+# End time: 16:56:59 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Instruc_Reg.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:57:00 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruc_Reg.sv 
+# -- Compiling module Instruc_Reg
+# -- Compiling module Instruc_Reg_tb
+# 
+# Top level modules:
+# 	Instruc_Reg_tb
+# End time: 16:57:00 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./PC_Counter.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:57:01 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./PC_Counter.sv 
+# -- Compiling module PC_Counter
+# -- Compiling module PC_Counter_tb
+# 
+# Top level modules:
+# 	PC_Counter_tb
+# End time: 16:57:01 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ControlUnit_1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:57:01 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./ControlUnit_1.sv 
+# -- Compiling module ControlUnit_1
+# -- Compiling module ControlUnit_1_tb
+# 
+# Top level modules:
+# 	ControlUnit_1_tb
+# End time: 16:57:02 on May 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  ControlUnit_1_tb
+# End time: 16:57:04 on May 27,2020, Elapsed time: 0:00:57
+# Errors: 0, Warnings: 2
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug ControlUnit_1_tb 
+# Start time: 16:57:05 on May 27,2020
+# Loading sv_std.std
+# Loading work.ControlUnit_1_tb
+# Loading work.ControlUnit_1
+# Loading work.Instruction_Mem
+# Loading work.InstructionMem
+# Loading altera_mf_ver.altsyncram
+# Loading work.Instruc_Reg
+# Loading work.PC_Counter
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do ControlUnit_1_wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /ControlUnit_1_tb/clk
+# add wave -noupdate /ControlUnit_1_tb/PC_clr
+# add wave -noupdate /ControlUnit_1_tb/PC_up
+# add wave -noupdate /ControlUnit_1_tb/IR_ld
+# add wave -noupdate /ControlUnit_1_tb/IR_Out
+# add wave -noupdate /ControlUnit_1_tb/data
+# add wave -noupdate /ControlUnit_1_tb/addr
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {43 ps} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 150
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ps
+# update
+# WaveRestoreZoom {0 ps} {1 ns}
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+#           0                  15    x
+#           1                  35    x
+#           2                  55    x
+#           3                  75    x
+#           4                  95    x
+#           5                 115    x
+# ** Note: $stop    : ./ControlUnit_1.sv(57)
+#    Time: 115 ns  Iteration: 0  Instance: /ControlUnit_1_tb
+# Break in Module ControlUnit_1_tb at ./ControlUnit_1.sv line 57
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 120750 ps
+# 
+# End
+do runrtl_ControlUnit_1.do
 # 
 # Get rid of current work lib
 # if {[file exists rtl_work]} {
@@ -1204,56 +780,96 @@ do runrtl_InstuctionMemory.do
 #     their own "vlog" line below.
 # vlog -work work +acc "./Instruction_Mem.sv"
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:42:17 on May 27,2020
+# Start time: 16:58:10 on May 27,2020
 # vlog -reportprogress 300 -work work "+acc" ./Instruction_Mem.sv 
 # -- Compiling module Instruction_Mem
 # -- Compiling module Instruction_Mem_tb
 # 
 # Top level modules:
 # 	Instruction_Mem_tb
-# End time: 00:42:17 on May 27,2020, Elapsed time: 0:00:00
+# End time: 16:58:10 on May 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -work work +acc "./InstructionMem.v"
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:42:17 on May 27,2020
+# Start time: 16:58:11 on May 27,2020
 # vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
 # -- Compiling module InstructionMem
 # 
 # Top level modules:
 # 	InstructionMem
-# End time: 00:42:17 on May 27,2020, Elapsed time: 0:00:00
+# End time: 16:58:11 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Instruc_Reg.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:58:12 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruc_Reg.sv 
+# -- Compiling module Instruc_Reg
+# -- Compiling module Instruc_Reg_tb
+# 
+# Top level modules:
+# 	Instruc_Reg_tb
+# End time: 16:58:12 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./PC_Counter.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:58:13 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./PC_Counter.sv 
+# -- Compiling module PC_Counter
+# -- Compiling module PC_Counter_tb
+# 
+# Top level modules:
+# 	PC_Counter_tb
+# End time: 16:58:14 on May 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ControlUnit_1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:58:15 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./ControlUnit_1.sv 
+# -- Compiling module ControlUnit_1
+# -- Compiling module ControlUnit_1_tb
+# 
+# Top level modules:
+# 	ControlUnit_1_tb
+# End time: 16:58:15 on May 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
 #     testbench module you want to execute.
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Instruction_Mem_tb
-# End time: 00:42:19 on May 27,2020, Elapsed time: 0:00:36
-# Errors: 0, Warnings: 1
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Instruction_Mem_tb 
-# Start time: 00:42:19 on May 27,2020
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  ControlUnit_1_tb
+# End time: 16:58:21 on May 27,2020, Elapsed time: 0:01:16
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug ControlUnit_1_tb 
+# Start time: 16:58:21 on May 27,2020
 # Loading sv_std.std
-# Loading work.Instruction_Mem_tb
+# Loading work.ControlUnit_1_tb
+# Loading work.ControlUnit_1
 # Loading work.Instruction_Mem
 # Loading work.InstructionMem
 # Loading altera_mf_ver.altsyncram
+# Loading work.Instruc_Reg
+# Loading work.PC_Counter
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3015) ./Instruction_Mem.sv(47): [PCDPC] - Port size (16) does not match connection size (7) for port 'Out'. The port definition is at: ./Instruction_Mem.sv(7).
-#    Time: 0 ps  Iteration: 0  Instance: /Instruction_Mem_tb/DUT File: ./Instruction_Mem.sv
+# ** Warning: (vsim-3839) ./ControlUnit_1.sv(15): Variable '/ControlUnit_1_tb/DUT/addr', driven via a port connection, is multiply driven. See ./ControlUnit_1.sv(27).
+#    Time: 0 ps  Iteration: 0  Instance: /ControlUnit_1_tb/DUT/U3 File: ./PC_Counter.sv
 # 
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-# do Instruction_Mem_wave.do
+# do ControlUnit_1_wave.do
 # onerror {resume}
 # quietly WaveActivateNextPane {} 0
-# add wave -noupdate /Instruction_Mem_tb/Clk
-# add wave -noupdate /Instruction_Mem_tb/Reset
-# add wave -noupdate /Instruction_Mem_tb/Dout
+# add wave -noupdate /ControlUnit_1_tb/clk
+# add wave -noupdate /ControlUnit_1_tb/PC_clr
+# add wave -noupdate /ControlUnit_1_tb/PC_up
+# add wave -noupdate /ControlUnit_1_tb/IR_ld
+# add wave -noupdate /ControlUnit_1_tb/IR_Out
+# add wave -noupdate /ControlUnit_1_tb/data
+# add wave -noupdate /ControlUnit_1_tb/addr
 # TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {297758 ps} 0}
+# WaveRestoreCursors {{Cursor 1} {43 ps} 0}
 # quietly wave cursor active 1
 # configure wave -namecolwidth 150
 # configure wave -valuecolwidth 100
@@ -1269,7 +885,7 @@ do runrtl_InstuctionMemory.do
 # configure wave -timeline 0
 # configure wave -timelineunits ps
 # update
-# WaveRestoreZoom {0 ps} {2745750 ps}
+# WaveRestoreZoom {0 ps} {1 ns}
 # 
 # Set the window types
 # view wave
@@ -1281,145 +897,187 @@ do runrtl_InstuctionMemory.do
 # 
 # Run the simulation
 # run -all
-#           0                  75  1
-#           1                  95  2
-#           2                 115  3
-#           3                 135  0
-#           4                 155  0
-#           5                 175  0
-#           6                 195  0
-#           7                 215  0
-#           8                 235  0
-#           9                 255  0
-#          10                 275  0
-#          11                 295  0
-#          12                 315  0
-#          13                 335  0
-#          14                 355  0
-#          15                 375  0
-#          16                 395  0
-#          17                 415  0
-#          18                 435  0
-#          19                 455  0
-#          20                 475  0
-#          21                 495  0
-#          22                 515  0
-#          23                 535  0
-#          24                 555  0
-#          25                 575  0
-#          26                 595  0
-#          27                 615  0
-#          28                 635  0
-#          29                 655  0
-#          30                 675  0
-#          31                 695  0
-#          32                 715  0
-#          33                 735  0
-#          34                 755  0
-#          35                 775  0
-#          36                 795  0
-#          37                 815  0
-#          38                 835  0
-#          39                 855  0
-#          40                 875  0
-#          41                 895  0
-#          42                 915  0
-#          43                 935  0
-#          44                 955  0
-#          45                 975  0
-#          46                 995  0
-#          47                1015  0
-#          48                1035  0
-#          49                1055  0
-#          50                1075  0
-#          51                1095  0
-#          52                1115  0
-#          53                1135  0
-#          54                1155  0
-#          55                1175  0
-#          56                1195  0
-#          57                1215  0
-#          58                1235  0
-#          59                1255  0
-#          60                1275  0
-#          61                1295  0
-#          62                1315  0
-#          63                1335  0
-#          64                1355  0
-#          65                1375  0
-#          66                1395  0
-#          67                1415  0
-#          68                1435  0
-#          69                1455  0
-#          70                1475  0
-#          71                1495  0
-#          72                1515  0
-#          73                1535  0
-#          74                1555  0
-#          75                1575  0
-#          76                1595  0
-#          77                1615  0
-#          78                1635  0
-#          79                1655  0
-#          80                1675  0
-#          81                1695  0
-#          82                1715  0
-#          83                1735  0
-#          84                1755  0
-#          85                1775  0
-#          86                1795  0
-#          87                1815  0
-#          88                1835  0
-#          89                1855  0
-#          90                1875  0
-#          91                1895  0
-#          92                1915  0
-#          93                1935  0
-#          94                1955  0
-#          95                1975  0
-#          96                1995  0
-#          97                2015  0
-#          98                2035  0
-#          99                2055  0
-#         100                2075  0
-#         101                2095  0
-#         102                2115  0
-#         103                2135  0
-#         104                2155  0
-#         105                2175  0
-#         106                2195  0
-#         107                2215  0
-#         108                2235  0
-#         109                2255  0
-#         110                2275  0
-#         111                2295  0
-#         112                2315  0
-#         113                2335  0
-#         114                2355  0
-#         115                2375  0
-#         116                2395  0
-#         117                2415  0
-#         118                2435  0
-#         119                2455  0
-#         120                2475  0
-#         121                2495  0
-#         122                2515  0
-#         123                2535  0
-#         124                2555  0
-#         125                2575  0
-#         126                2595  0
-#         127                2615  0
-# ** Note: $stop    : ./Instruction_Mem.sv(62)
-#    Time: 2615 ns  Iteration: 0  Instance: /Instruction_Mem_tb
-# Break in Module Instruction_Mem_tb at ./Instruction_Mem.sv line 62
+#           0                  15    0
+#           1                  35 8223
+#           2                  5512579
+#           3                  7519088
+#           4                  95 5120
+#           5                 11520480
+# ** Note: $stop    : ./ControlUnit_1.sv(57)
+#    Time: 115 ns  Iteration: 0  Instance: /ControlUnit_1_tb
+# Break in Module ControlUnit_1_tb at ./ControlUnit_1.sv line 57
 # 
 # View the entire wave display
 # wave zoomfull
 # 0 ps
-# 2745750 ps
+# 120750 ps
 # 
 # End
-do runrtl_InstuctionMemory.do
+do runrtl_ControlUnit_1.do
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qpg".
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qtl".
+# Error 133: Unable to remove directory "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# ** Error: (vlib-35) Failed to create directory "rtl_work".
+# File exists. (errno = EEXIST)
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Instruction_Mem.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:59:11 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruction_Mem.sv 
+# -- Compiling module Instruction_Mem
+# -- Compiling module Instruction_Mem_tb
+# 
+# Top level modules:
+# 	Instruction_Mem_tb
+# End time: 16:59:11 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./InstructionMem.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:59:12 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
+# -- Compiling module InstructionMem
+# 
+# Top level modules:
+# 	InstructionMem
+# End time: 16:59:12 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Instruc_Reg.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:59:13 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruc_Reg.sv 
+# -- Compiling module Instruc_Reg
+# -- Compiling module Instruc_Reg_tb
+# 
+# Top level modules:
+# 	Instruc_Reg_tb
+# End time: 16:59:13 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./PC_Counter.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:59:13 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./PC_Counter.sv 
+# -- Compiling module PC_Counter
+# -- Compiling module PC_Counter_tb
+# 
+# Top level modules:
+# 	PC_Counter_tb
+# End time: 16:59:14 on May 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ControlUnit_1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 16:59:14 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./ControlUnit_1.sv 
+# -- Compiling module ControlUnit_1
+# -- Compiling module ControlUnit_1_tb
+# 
+# Top level modules:
+# 	ControlUnit_1_tb
+# End time: 16:59:14 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  ControlUnit_1_tb
+# End time: 16:59:18 on May 27,2020, Elapsed time: 0:00:57
+# Errors: 0, Warnings: 1
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug ControlUnit_1_tb 
+# Start time: 16:59:18 on May 27,2020
+# Loading sv_std.std
+# Loading work.ControlUnit_1_tb
+# Loading work.ControlUnit_1
+# Loading work.Instruction_Mem
+# Loading work.InstructionMem
+# Loading altera_mf_ver.altsyncram
+# Loading work.Instruc_Reg
+# Loading work.PC_Counter
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3839) ./ControlUnit_1.sv(15): Variable '/ControlUnit_1_tb/DUT/addr', driven via a port connection, is multiply driven. See ./ControlUnit_1.sv(27).
+#    Time: 0 ps  Iteration: 0  Instance: /ControlUnit_1_tb/DUT/U3 File: ./PC_Counter.sv
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do ControlUnit_1_wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /ControlUnit_1_tb/clk
+# add wave -noupdate /ControlUnit_1_tb/PC_clr
+# add wave -noupdate /ControlUnit_1_tb/PC_up
+# add wave -noupdate /ControlUnit_1_tb/IR_ld
+# add wave -noupdate /ControlUnit_1_tb/IR_Out
+# add wave -noupdate /ControlUnit_1_tb/data
+# add wave -noupdate /ControlUnit_1_tb/addr
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {43 ps} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 150
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ps
+# update
+# WaveRestoreZoom {0 ps} {1 ns}
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+#           0                  75    0    0
+#           1                  95    0    0
+#           2                 115    0    0
+#           3                 135    0    0
+#           4                 155    0    0
+#           5                 175    0    0
+#           6                 195    0    0
+#           0                 235    0    0
+#           1                 255    0    0
+#           2                 275    0    0
+#           3                 295    0    0
+#           4                 315    0    0
+#           5                 335    0    0
+# ** Note: $stop    : ./ControlUnit_1.sv(46)
+#    Time: 335 ns  Iteration: 0  Instance: /ControlUnit_1_tb
+# Break in Module ControlUnit_1_tb at ./ControlUnit_1.sv line 46
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 351750 ps
+# 
+# End
+do runrtl_ControlUnit_1.do
 # 
 # Get rid of current work lib
 # if {[file exists rtl_work]} {
@@ -1438,39 +1096,75 @@ do runrtl_InstuctionMemory.do
 #     their own "vlog" line below.
 # vlog -work work +acc "./Instruction_Mem.sv"
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:43:25 on May 27,2020
+# Start time: 17:00:15 on May 27,2020
 # vlog -reportprogress 300 -work work "+acc" ./Instruction_Mem.sv 
 # -- Compiling module Instruction_Mem
 # -- Compiling module Instruction_Mem_tb
 # 
 # Top level modules:
 # 	Instruction_Mem_tb
-# End time: 00:43:25 on May 27,2020, Elapsed time: 0:00:00
+# End time: 17:00:15 on May 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -work work +acc "./InstructionMem.v"
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:43:26 on May 27,2020
+# Start time: 17:00:16 on May 27,2020
 # vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
 # -- Compiling module InstructionMem
 # 
 # Top level modules:
 # 	InstructionMem
-# End time: 00:43:26 on May 27,2020, Elapsed time: 0:00:00
+# End time: 17:00:17 on May 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Instruc_Reg.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:00:17 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruc_Reg.sv 
+# -- Compiling module Instruc_Reg
+# -- Compiling module Instruc_Reg_tb
+# 
+# Top level modules:
+# 	Instruc_Reg_tb
+# End time: 17:00:18 on May 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./PC_Counter.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:00:19 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./PC_Counter.sv 
+# -- Compiling module PC_Counter
+# -- Compiling module PC_Counter_tb
+# 
+# Top level modules:
+# 	PC_Counter_tb
+# End time: 17:00:19 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ControlUnit_1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:00:20 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./ControlUnit_1.sv 
+# -- Compiling module ControlUnit_1
+# -- Compiling module ControlUnit_1_tb
+# 
+# Top level modules:
+# 	ControlUnit_1_tb
+# End time: 17:00:20 on May 27,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
 #     testbench module you want to execute.
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Instruction_Mem_tb
-# End time: 00:43:27 on May 27,2020, Elapsed time: 0:01:08
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  ControlUnit_1_tb
+# End time: 17:00:25 on May 27,2020, Elapsed time: 0:01:07
 # Errors: 0, Warnings: 1
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Instruction_Mem_tb 
-# Start time: 00:43:28 on May 27,2020
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug ControlUnit_1_tb 
+# Start time: 17:00:25 on May 27,2020
 # Loading sv_std.std
-# Loading work.Instruction_Mem_tb
+# Loading work.ControlUnit_1_tb
+# Loading work.ControlUnit_1
 # Loading work.Instruction_Mem
 # Loading work.InstructionMem
 # Loading altera_mf_ver.altsyncram
+# Loading work.Instruc_Reg
+# Loading work.PC_Counter
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
@@ -1478,14 +1172,18 @@ do runrtl_InstuctionMemory.do
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-# do Instruction_Mem_wave.do
+# do ControlUnit_1_wave.do
 # onerror {resume}
 # quietly WaveActivateNextPane {} 0
-# add wave -noupdate /Instruction_Mem_tb/Clk
-# add wave -noupdate /Instruction_Mem_tb/Reset
-# add wave -noupdate /Instruction_Mem_tb/Dout
+# add wave -noupdate /ControlUnit_1_tb/clk
+# add wave -noupdate /ControlUnit_1_tb/PC_clr
+# add wave -noupdate /ControlUnit_1_tb/PC_up
+# add wave -noupdate /ControlUnit_1_tb/IR_ld
+# add wave -noupdate /ControlUnit_1_tb/IR_Out
+# add wave -noupdate /ControlUnit_1_tb/data
+# add wave -noupdate /ControlUnit_1_tb/addr
 # TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {297758 ps} 0}
+# WaveRestoreCursors {{Cursor 1} {43 ps} 0}
 # quietly wave cursor active 1
 # configure wave -namecolwidth 150
 # configure wave -valuecolwidth 100
@@ -1501,7 +1199,7 @@ do runrtl_InstuctionMemory.do
 # configure wave -timeline 0
 # configure wave -timelineunits ps
 # update
-# WaveRestoreZoom {0 ps} {2745750 ps}
+# WaveRestoreZoom {0 ps} {1 ns}
 # 
 # Set the window types
 # view wave
@@ -1513,143 +1211,1174 @@ do runrtl_InstuctionMemory.do
 # 
 # Run the simulation
 # run -all
-#           0                  75    1
-#           1                  95    2
-#           2                 115    3
-#           3                 135    0
-#           4                 155    0
-#           5                 175    0
-#           6                 195    0
-#           7                 215    0
-#           8                 235    0
-#           9                 255    0
-#          10                 275    0
-#          11                 295    0
-#          12                 315    0
-#          13                 335    0
-#          14                 355    0
-#          15                 375    0
-#          16                 395    0
-#          17                 415    0
-#          18                 435    0
-#          19                 455    0
-#          20                 475    0
-#          21                 495    0
-#          22                 515    0
-#          23                 535    0
-#          24                 555    0
-#          25                 575    0
-#          26                 595    0
-#          27                 615    0
-#          28                 635    0
-#          29                 655    0
-#          30                 675    0
-#          31                 695    0
-#          32                 715    0
-#          33                 735    0
-#          34                 755    0
-#          35                 775    0
-#          36                 795    0
-#          37                 815    0
-#          38                 835    0
-#          39                 855    0
-#          40                 875    0
-#          41                 895    0
-#          42                 915    0
-#          43                 935    0
-#          44                 955    0
-#          45                 975    0
-#          46                 995    0
-#          47                1015    0
-#          48                1035    0
-#          49                1055    0
-#          50                1075    0
-#          51                1095    0
-#          52                1115    0
-#          53                1135    0
-#          54                1155    0
-#          55                1175    0
-#          56                1195    0
-#          57                1215    0
-#          58                1235    0
-#          59                1255    0
-#          60                1275    0
-#          61                1295    0
-#          62                1315    0
-#          63                1335    0
-#          64                1355    0
-#          65                1375    0
-#          66                1395    0
-#          67                1415    0
-#          68                1435    0
-#          69                1455    0
-#          70                1475    0
-#          71                1495    0
-#          72                1515    0
-#          73                1535    0
-#          74                1555    0
-#          75                1575    0
-#          76                1595    0
-#          77                1615    0
-#          78                1635    0
-#          79                1655    0
-#          80                1675    0
-#          81                1695    0
-#          82                1715    0
-#          83                1735    0
-#          84                1755    0
-#          85                1775    0
-#          86                1795    0
-#          87                1815    0
-#          88                1835    0
-#          89                1855    0
-#          90                1875    0
-#          91                1895    0
-#          92                1915    0
-#          93                1935    0
-#          94                1955    0
-#          95                1975    0
-#          96                1995    0
-#          97                2015    0
-#          98                2035    0
-#          99                2055    0
-#         100                2075    0
-#         101                2095    0
-#         102                2115    0
-#         103                2135    0
-#         104                2155    0
-#         105                2175    0
-#         106                2195    0
-#         107                2215    0
-#         108                2235    0
-#         109                2255    0
-#         110                2275    0
-#         111                2295    0
-#         112                2315    0
-#         113                2335    0
-#         114                2355    0
-#         115                2375    0
-#         116                2395    0
-#         117                2415    0
-#         118                2435    0
-#         119                2455    0
-#         120                2475    0
-#         121                2495    0
-#         122                2515    0
-#         123                2535    0
-#         124                2555    0
-#         125                2575    0
-#         126                2595    0
-#         127                2615    0
-# ** Note: $stop    : ./Instruction_Mem.sv(62)
-#    Time: 2615 ns  Iteration: 0  Instance: /Instruction_Mem_tb
-# Break in Module Instruction_Mem_tb at ./Instruction_Mem.sv line 62
+#           0                  75    0    0
+#           1                  95    0    0
+#           2                 115    0    0
+#           3                 135    0    0
+#           4                 155    0    0
+#           5                 175    0    0
+#           6                 195    0    0
+#           0                 235    0    0
+#           1                 255    0    0
+#           2                 275    0    0
+#           3                 295    0    0
+#           4                 315    0    0
+#           5                 335    0    0
+# ** Note: $stop    : ./ControlUnit_1.sv(46)
+#    Time: 335 ns  Iteration: 0  Instance: /ControlUnit_1_tb
+# Break in Module ControlUnit_1_tb at ./ControlUnit_1.sv line 46
 # 
 # View the entire wave display
 # wave zoomfull
 # 0 ps
-# 2745750 ps
+# 351750 ps
 # 
 # End
-# End time: 00:44:05 on May 27,2020, Elapsed time: 0:00:37
+do runrtl_ControlUnit_1.do
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qpg".
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qtl".
+# Error 133: Unable to remove directory "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# ** Error: (vlib-35) Failed to create directory "rtl_work".
+# File exists. (errno = EEXIST)
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Instruction_Mem.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:02:53 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruction_Mem.sv 
+# -- Compiling module Instruction_Mem
+# -- Compiling module Instruction_Mem_tb
+# 
+# Top level modules:
+# 	Instruction_Mem_tb
+# End time: 17:02:54 on May 27,2020, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
+# vlog -work work +acc "./InstructionMem.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:02:54 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
+# -- Compiling module InstructionMem
+# 
+# Top level modules:
+# 	InstructionMem
+# End time: 17:02:55 on May 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Instruc_Reg.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:02:56 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruc_Reg.sv 
+# -- Compiling module Instruc_Reg
+# -- Compiling module Instruc_Reg_tb
+# 
+# Top level modules:
+# 	Instruc_Reg_tb
+# End time: 17:02:57 on May 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./PC_Counter.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:02:58 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./PC_Counter.sv 
+# -- Compiling module PC_Counter
+# -- Compiling module PC_Counter_tb
+# 
+# Top level modules:
+# 	PC_Counter_tb
+# End time: 17:02:58 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ControlUnit_1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:02:59 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./ControlUnit_1.sv 
+# -- Compiling module ControlUnit_1
+# -- Compiling module ControlUnit_1_tb
+# 
+# Top level modules:
+# 	ControlUnit_1_tb
+# End time: 17:02:59 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  ControlUnit_1_tb
+# End time: 17:03:06 on May 27,2020, Elapsed time: 0:02:41
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug ControlUnit_1_tb 
+# Start time: 17:03:06 on May 27,2020
+# Loading sv_std.std
+# Loading work.ControlUnit_1_tb
+# Loading work.ControlUnit_1
+# Loading work.Instruction_Mem
+# Loading work.InstructionMem
+# Loading altera_mf_ver.altsyncram
+# Loading work.Instruc_Reg
+# Loading work.PC_Counter
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do ControlUnit_1_wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /ControlUnit_1_tb/clk
+# add wave -noupdate /ControlUnit_1_tb/PC_clr
+# add wave -noupdate /ControlUnit_1_tb/PC_up
+# add wave -noupdate /ControlUnit_1_tb/IR_ld
+# add wave -noupdate /ControlUnit_1_tb/IR_Out
+# add wave -noupdate /ControlUnit_1_tb/data
+# add wave -noupdate /ControlUnit_1_tb/addr
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {43 ps} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 150
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ps
+# update
+# WaveRestoreZoom {0 ps} {1 ns}
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+#           0                  75    0    0
+#           1                  95 8223    0
+#           2                 11512579 8223
+#           3                 1351908812579
+#           4                 155 512019088
+#           5                 17520480 5120
+#           6                 195    020480
+#           0                 235    020480
+#           1                 255    020480
+#           2                 275    020480
+#           3                 295    020480
+#           4                 315    020480
+#           5                 335    020480
+# ** Note: $stop    : ./ControlUnit_1.sv(46)
+#    Time: 335 ns  Iteration: 0  Instance: /ControlUnit_1_tb
+# Break in Module ControlUnit_1_tb at ./ControlUnit_1.sv line 46
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 351750 ps
+# 
+# End
+do runrtl_ControlUnit_1.do
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qpg".
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qtl".
+# Error 133: Unable to remove directory "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# ** Error: (vlib-35) Failed to create directory "rtl_work".
+# File exists. (errno = EEXIST)
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Instruction_Mem.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:04:47 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruction_Mem.sv 
+# -- Compiling module Instruction_Mem
+# -- Compiling module Instruction_Mem_tb
+# 
+# Top level modules:
+# 	Instruction_Mem_tb
+# End time: 17:04:48 on May 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./InstructionMem.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:04:48 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
+# -- Compiling module InstructionMem
+# 
+# Top level modules:
+# 	InstructionMem
+# End time: 17:04:48 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Instruc_Reg.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:04:49 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruc_Reg.sv 
+# -- Compiling module Instruc_Reg
+# -- Compiling module Instruc_Reg_tb
+# 
+# Top level modules:
+# 	Instruc_Reg_tb
+# End time: 17:04:49 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./PC_Counter.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:04:50 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./PC_Counter.sv 
+# -- Compiling module PC_Counter
+# -- Compiling module PC_Counter_tb
+# 
+# Top level modules:
+# 	PC_Counter_tb
+# End time: 17:04:50 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ControlUnit_1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:04:51 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./ControlUnit_1.sv 
+# -- Compiling module ControlUnit_1
+# -- Compiling module ControlUnit_1_tb
+# 
+# Top level modules:
+# 	ControlUnit_1_tb
+# End time: 17:04:51 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  ControlUnit_1_tb
+# End time: 17:05:03 on May 27,2020, Elapsed time: 0:01:57
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug ControlUnit_1_tb 
+# Start time: 17:05:03 on May 27,2020
+# Loading sv_std.std
+# Loading work.ControlUnit_1_tb
+# Loading work.ControlUnit_1
+# Loading work.Instruction_Mem
+# Loading work.InstructionMem
+# Loading altera_mf_ver.altsyncram
+# Loading work.Instruc_Reg
+# Loading work.PC_Counter
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do ControlUnit_1_wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /ControlUnit_1_tb/clk
+# add wave -noupdate /ControlUnit_1_tb/PC_clr
+# add wave -noupdate /ControlUnit_1_tb/PC_up
+# add wave -noupdate /ControlUnit_1_tb/IR_ld
+# add wave -noupdate /ControlUnit_1_tb/IR_Out
+# add wave -noupdate /ControlUnit_1_tb/data
+# add wave -noupdate /ControlUnit_1_tb/addr
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {43 ps} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 150
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ps
+# update
+# WaveRestoreZoom {0 ps} {1 ns}
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+#           0                  75    0       0
+#           1                  95 8223       0
+#           2                 11512579    8223
+#           3                 13519088   12579
+#           4                 155 5120   19088
+#           5                 17520480    5120
+#           6                 195    0   20480
+#           0                 235    0   20480
+#           1                 255    0   20480
+#           2                 275    0   20480
+#           3                 295    0   20480
+#           4                 315    0   20480
+#           5                 335    0   20480
+# ** Note: $stop    : ./ControlUnit_1.sv(46)
+#    Time: 335 ns  Iteration: 0  Instance: /ControlUnit_1_tb
+# Break in Module ControlUnit_1_tb at ./ControlUnit_1.sv line 46
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 351750 ps
+# 
+# End
+do runrtl_ControlUnit_1.do
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qpg".
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qtl".
+# Error 133: Unable to remove directory "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# ** Error: (vlib-35) Failed to create directory "rtl_work".
+# File exists. (errno = EEXIST)
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Instruction_Mem.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:07:18 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruction_Mem.sv 
+# -- Compiling module Instruction_Mem
+# -- Compiling module Instruction_Mem_tb
+# 
+# Top level modules:
+# 	Instruction_Mem_tb
+# End time: 17:07:18 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./InstructionMem.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:07:19 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
+# -- Compiling module InstructionMem
+# 
+# Top level modules:
+# 	InstructionMem
+# End time: 17:07:19 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Instruc_Reg.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:07:20 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruc_Reg.sv 
+# -- Compiling module Instruc_Reg
+# -- Compiling module Instruc_Reg_tb
+# 
+# Top level modules:
+# 	Instruc_Reg_tb
+# End time: 17:07:21 on May 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./PC_Counter.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:07:21 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./PC_Counter.sv 
+# -- Compiling module PC_Counter
+# -- Compiling module PC_Counter_tb
+# 
+# Top level modules:
+# 	PC_Counter_tb
+# End time: 17:07:21 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ControlUnit_1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:07:22 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./ControlUnit_1.sv 
+# -- Compiling module ControlUnit_1
+# -- Compiling module ControlUnit_1_tb
+# 
+# Top level modules:
+# 	ControlUnit_1_tb
+# End time: 17:07:22 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  ControlUnit_1_tb
+# End time: 17:07:29 on May 27,2020, Elapsed time: 0:02:26
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug ControlUnit_1_tb 
+# Start time: 17:07:29 on May 27,2020
+# Loading sv_std.std
+# Loading work.ControlUnit_1_tb
+# Loading work.ControlUnit_1
+# Loading work.Instruction_Mem
+# Loading work.InstructionMem
+# Loading altera_mf_ver.altsyncram
+# Loading work.Instruc_Reg
+# Loading work.PC_Counter
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do ControlUnit_1_wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /ControlUnit_1_tb/clk
+# add wave -noupdate /ControlUnit_1_tb/PC_clr
+# add wave -noupdate /ControlUnit_1_tb/PC_up
+# add wave -noupdate /ControlUnit_1_tb/IR_ld
+# add wave -noupdate /ControlUnit_1_tb/IR_Out
+# add wave -noupdate /ControlUnit_1_tb/data
+# add wave -noupdate /ControlUnit_1_tb/addr
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {43 ps} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 150
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ps
+# update
+# WaveRestoreZoom {0 ps} {1 ns}
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+#           0                  75    0       0
+#           1                  95 8223       0
+#           2                 11512579    8223
+#           3                 13519088   12579
+#           4                 155 5120   19088
+#           5                 17520480    5120
+#           6                 195    0   20480
+# //////////////////
+# With IR_load turned off:
+#           0                 235    0   20480
+#           1                 255    0   20480
+#           2                 275    0   20480
+#           3                 295    0   20480
+#           4                 315    0   20480
+#           5                 335    0   20480
+# ** Note: $stop    : ./ControlUnit_1.sv(48)
+#    Time: 335 ns  Iteration: 0  Instance: /ControlUnit_1_tb
+# Break in Module ControlUnit_1_tb at ./ControlUnit_1.sv line 48
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 351750 ps
+# 
+# End
+do runrtl_ControlUnit_1.do
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qpg".
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qtl".
+# Error 133: Unable to remove directory "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# ** Error: (vlib-35) Failed to create directory "rtl_work".
+# File exists. (errno = EEXIST)
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Instruction_Mem.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:08:08 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruction_Mem.sv 
+# -- Compiling module Instruction_Mem
+# -- Compiling module Instruction_Mem_tb
+# 
+# Top level modules:
+# 	Instruction_Mem_tb
+# End time: 17:08:08 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./InstructionMem.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:08:08 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
+# -- Compiling module InstructionMem
+# 
+# Top level modules:
+# 	InstructionMem
+# End time: 17:08:09 on May 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Instruc_Reg.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:08:09 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruc_Reg.sv 
+# -- Compiling module Instruc_Reg
+# -- Compiling module Instruc_Reg_tb
+# 
+# Top level modules:
+# 	Instruc_Reg_tb
+# End time: 17:08:09 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./PC_Counter.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:08:10 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./PC_Counter.sv 
+# -- Compiling module PC_Counter
+# -- Compiling module PC_Counter_tb
+# 
+# Top level modules:
+# 	PC_Counter_tb
+# End time: 17:08:10 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ControlUnit_1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:08:11 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./ControlUnit_1.sv 
+# -- Compiling module ControlUnit_1
+# -- Compiling module ControlUnit_1_tb
+# 
+# Top level modules:
+# 	ControlUnit_1_tb
+# End time: 17:08:11 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  ControlUnit_1_tb
+# End time: 17:08:18 on May 27,2020, Elapsed time: 0:00:49
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug ControlUnit_1_tb 
+# Start time: 17:08:19 on May 27,2020
+# Loading sv_std.std
+# Loading work.ControlUnit_1_tb
+# Loading work.ControlUnit_1
+# Loading work.Instruction_Mem
+# Loading work.InstructionMem
+# Loading altera_mf_ver.altsyncram
+# Loading work.Instruc_Reg
+# Loading work.PC_Counter
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do ControlUnit_1_wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /ControlUnit_1_tb/clk
+# add wave -noupdate /ControlUnit_1_tb/PC_clr
+# add wave -noupdate /ControlUnit_1_tb/PC_up
+# add wave -noupdate /ControlUnit_1_tb/IR_ld
+# add wave -noupdate /ControlUnit_1_tb/IR_Out
+# add wave -noupdate /ControlUnit_1_tb/data
+# add wave -noupdate /ControlUnit_1_tb/addr
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {43 ps} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 150
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ps
+# update
+# WaveRestoreZoom {0 ps} {1 ns}
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+#           0                  75      0       0
+#           1                  95   8223       0
+#           2                 115  12579    8223
+#           3                 135  19088   12579
+#           4                 155   5120   19088
+#           5                 175  20480    5120
+#           6                 195      0   20480
+# ///////////////////////////////////////////////////////////////
+#                With IR_load turned off:
+#           0                 235       0   20480
+#           1                 255       0   20480
+#           2                 275       0   20480
+#           3                 295       0   20480
+#           4                 315       0   20480
+#           5                 335       0   20480
+# ** Note: $stop    : ./ControlUnit_1.sv(48)
+#    Time: 335 ns  Iteration: 0  Instance: /ControlUnit_1_tb
+# Break in Module ControlUnit_1_tb at ./ControlUnit_1.sv line 48
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 351750 ps
+# 
+# End
+do runrtl_ControlUnit_1.do
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qpg".
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qtl".
+# Error 133: Unable to remove directory "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# ** Error: (vlib-35) Failed to create directory "rtl_work".
+# File exists. (errno = EEXIST)
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Instruction_Mem.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:35:37 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruction_Mem.sv 
+# -- Compiling module Instruction_Mem
+# -- Compiling module Instruction_Mem_tb
+# 
+# Top level modules:
+# 	Instruction_Mem_tb
+# End time: 17:35:38 on May 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./InstructionMem.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:35:38 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
+# -- Compiling module InstructionMem
+# 
+# Top level modules:
+# 	InstructionMem
+# End time: 17:35:38 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Instruc_Reg.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:35:38 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruc_Reg.sv 
+# -- Compiling module Instruc_Reg
+# -- Compiling module Instruc_Reg_tb
+# 
+# Top level modules:
+# 	Instruc_Reg_tb
+# End time: 17:35:38 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./PC_Counter.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:35:39 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./PC_Counter.sv 
+# -- Compiling module PC_Counter
+# -- Compiling module PC_Counter_tb
+# 
+# Top level modules:
+# 	PC_Counter_tb
+# End time: 17:35:39 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ControlUnit_1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:35:39 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./ControlUnit_1.sv 
+# -- Compiling module ControlUnit_1
+# -- Compiling module ControlUnit_1_tb
+# 
+# Top level modules:
+# 	ControlUnit_1_tb
+# End time: 17:35:40 on May 27,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  ControlUnit_1_tb
+# End time: 17:35:46 on May 27,2020, Elapsed time: 0:27:27
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug ControlUnit_1_tb 
+# Start time: 17:35:46 on May 27,2020
+# Loading sv_std.std
+# Loading work.ControlUnit_1_tb
+# Loading work.ControlUnit_1
+# Loading work.Instruction_Mem
+# Loading work.InstructionMem
+# Loading altera_mf_ver.altsyncram
+# Loading work.Instruc_Reg
+# Loading work.PC_Counter
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do ControlUnit_1_wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /ControlUnit_1_tb/clk
+# add wave -noupdate /ControlUnit_1_tb/PC_clr
+# add wave -noupdate /ControlUnit_1_tb/PC_up
+# add wave -noupdate /ControlUnit_1_tb/IR_ld
+# add wave -noupdate /ControlUnit_1_tb/IR_Out
+# add wave -noupdate /ControlUnit_1_tb/data
+# add wave -noupdate /ControlUnit_1_tb/addr
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {43 ps} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 150
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ps
+# update
+# WaveRestoreZoom {0 ps} {1 ns}
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+#           0                  35      0       x
+#           1                  55   8223       0
+#           2                  75  12579    8223
+#           3                  95  19088   12579
+#           4                 115   5120   19088
+#           5                 135  20480    5120
+#           6                 155      0   20480
+# ///////////////////////////////////////////////////////////////
+#                With IR_load turned off:
+#           0                 195       0   20480
+#           1                 215       0   20480
+#           2                 235       0   20480
+#           3                 255       0   20480
+#           4                 275       0   20480
+#           5                 295       0   20480
+# ** Note: $stop    : ./ControlUnit_1.sv(48)
+#    Time: 295 ps  Iteration: 0  Instance: /ControlUnit_1_tb
+# Break in Module ControlUnit_1_tb at ./ControlUnit_1.sv line 48
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 310 ps
+# 
+# End
+# WARNING: No extended dataflow license exists
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+do runrtl_ControlUnit_1.do
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib.qdb".
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qdb".
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qpg".
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qtl".
+# Error 133: Unable to remove directory "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# ** Error: (vlib-35) Failed to create directory "rtl_work".
+# File exists. (errno = EEXIST)
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Instruction_Mem.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:38:24 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruction_Mem.sv 
+# -- Compiling module Instruction_Mem
+# -- Compiling module Instruction_Mem_tb
+# 
+# Top level modules:
+# 	Instruction_Mem_tb
+# End time: 17:38:24 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./InstructionMem.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:38:24 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
+# -- Compiling module InstructionMem
+# 
+# Top level modules:
+# 	InstructionMem
+# End time: 17:38:24 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Instruc_Reg.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:38:25 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruc_Reg.sv 
+# -- Compiling module Instruc_Reg
+# -- Compiling module Instruc_Reg_tb
+# 
+# Top level modules:
+# 	Instruc_Reg_tb
+# End time: 17:38:25 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./PC_Counter.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:38:25 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./PC_Counter.sv 
+# -- Compiling module PC_Counter
+# -- Compiling module PC_Counter_tb
+# 
+# Top level modules:
+# 	PC_Counter_tb
+# End time: 17:38:25 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ControlUnit_1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:38:26 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./ControlUnit_1.sv 
+# -- Compiling module ControlUnit_1
+# -- Compiling module ControlUnit_1_tb
+# 
+# Top level modules:
+# 	ControlUnit_1_tb
+# End time: 17:38:26 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  ControlUnit_1_tb
+# End time: 17:38:30 on May 27,2020, Elapsed time: 0:02:44
+# Errors: 1, Warnings: 1
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug ControlUnit_1_tb 
+# Start time: 17:38:30 on May 27,2020
+# Loading sv_std.std
+# Loading work.ControlUnit_1_tb
+# Loading work.ControlUnit_1
+# Loading work.Instruction_Mem
+# Loading work.InstructionMem
+# Loading altera_mf_ver.altsyncram
+# Loading work.Instruc_Reg
+# Loading work.PC_Counter
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do ControlUnit_1_wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /ControlUnit_1_tb/clk
+# add wave -noupdate /ControlUnit_1_tb/PC_clr
+# add wave -noupdate /ControlUnit_1_tb/PC_up
+# add wave -noupdate /ControlUnit_1_tb/IR_ld
+# add wave -noupdate /ControlUnit_1_tb/IR_Out
+# add wave -noupdate /ControlUnit_1_tb/data
+# add wave -noupdate /ControlUnit_1_tb/addr
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {43 ps} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 150
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ps
+# update
+# WaveRestoreZoom {0 ps} {1 ns}
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+#           0                  75      0       0
+#           1                  95   8223       0
+#           2                 115  12579    8223
+#           3                 135  19088   12579
+#           4                 155   5120   19088
+#           5                 175  20480    5120
+#           6                 195      0   20480
+# ///////////////////////////////////////////////////////////////
+#                With IR_load turned off:
+#           0                 235       0   20480
+#           1                 255       0   20480
+#           2                 275       0   20480
+#           3                 295       0   20480
+#           4                 315       0   20480
+#           5                 335       0   20480
+# ** Note: $stop    : ./ControlUnit_1.sv(48)
+#    Time: 335 ps  Iteration: 0  Instance: /ControlUnit_1_tb
+# Break in Module ControlUnit_1_tb at ./ControlUnit_1.sv line 48
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 352 ps
+# 
+# End
+do runrtl_ControlUnit_1.do
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qpg".
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib1_0.qtl".
+# Error 133: Unable to remove directory "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# ** Error: (vlib-35) Failed to create directory "rtl_work".
+# File exists. (errno = EEXIST)
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Instruction_Mem.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:47:59 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruction_Mem.sv 
+# -- Compiling module Instruction_Mem
+# -- Compiling module Instruction_Mem_tb
+# 
+# Top level modules:
+# 	Instruction_Mem_tb
+# End time: 17:47:59 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./InstructionMem.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:47:59 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
+# -- Compiling module InstructionMem
+# 
+# Top level modules:
+# 	InstructionMem
+# End time: 17:47:59 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./Instruc_Reg.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:48:00 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./Instruc_Reg.sv 
+# -- Compiling module Instruc_Reg
+# -- Compiling module Instruc_Reg_tb
+# 
+# Top level modules:
+# 	Instruc_Reg_tb
+# End time: 17:48:00 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./PC_Counter.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:48:01 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./PC_Counter.sv 
+# -- Compiling module PC_Counter
+# -- Compiling module PC_Counter_tb
+# 
+# Top level modules:
+# 	PC_Counter_tb
+# End time: 17:48:01 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./ControlUnit_1.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:48:02 on May 27,2020
+# vlog -reportprogress 300 -work work "+acc" ./ControlUnit_1.sv 
+# -- Compiling module ControlUnit_1
+# -- Compiling module ControlUnit_1_tb
+# 
+# Top level modules:
+# 	ControlUnit_1_tb
+# End time: 17:48:02 on May 27,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  ControlUnit_1_tb
+# End time: 17:48:07 on May 27,2020, Elapsed time: 0:09:37
+# Errors: 0, Warnings: 0
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug ControlUnit_1_tb 
+# Start time: 17:48:07 on May 27,2020
+# Loading sv_std.std
+# Loading work.ControlUnit_1_tb
+# Loading work.ControlUnit_1
+# Loading work.Instruction_Mem
+# Loading work.InstructionMem
+# Loading altera_mf_ver.altsyncram
+# Loading work.Instruc_Reg
+# Loading work.PC_Counter
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do ControlUnit_1_wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /ControlUnit_1_tb/clk
+# add wave -noupdate /ControlUnit_1_tb/PC_clr
+# add wave -noupdate /ControlUnit_1_tb/PC_up
+# add wave -noupdate /ControlUnit_1_tb/IR_ld
+# add wave -noupdate /ControlUnit_1_tb/IR_Out
+# add wave -noupdate /ControlUnit_1_tb/data
+# add wave -noupdate /ControlUnit_1_tb/addr
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {43 ps} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 150
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ps
+# update
+# WaveRestoreZoom {0 ps} {1 ns}
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+#           0                  72      0       0
+#           1                  92   8223       0
+#           2                 112  12579    8223
+#           3                 132  19088   12579
+#           4                 152   5120   19088
+#           5                 172  20480    5120
+#           6                 192      0   20480
+# ///////////////////////////////////////////////////////////////
+#                With IR_load turned off:
+#           0                 232       0   20480
+#           1                 252       0   20480
+#           2                 272       0   20480
+#           3                 292       0   20480
+#           4                 312       0   20480
+#           5                 332       0   20480
+# ** Note: $stop    : ./ControlUnit_1.sv(48)
+#    Time: 332 ps  Iteration: 0  Instance: /ControlUnit_1_tb
+# Break in Module ControlUnit_1_tb at ./ControlUnit_1.sv line 48
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 349 ps
+# 
+# End

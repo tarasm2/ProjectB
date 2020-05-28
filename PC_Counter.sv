@@ -11,8 +11,8 @@ module PC_Counter(clk, up, clear, address);
     output logic [6:0] address;       // output address
 
     always@(posedge clk) begin
-        if(clear) address <= 0;                     // if clear is on, reset couner
-        else if (up) address <= (address + 1);      // if up is on, increament counter
+        if(clear) address <= 7'b0;                     // if clear is on, reset couner
+        else if (up) address <= (address + 1'b1);      // if up is on, increament counter
         else address <= address;                    // else stay at same count
     end
 
