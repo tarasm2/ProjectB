@@ -7,7 +7,7 @@
 module Mux_3w_8_to_1(R, S, T, U, V, W, X, Y, M, S0, S1, S2);
 	input S0, S1, S2;							// select bits
 	input [15:0] R, S, T, U, V, W, X, Y;		// 16 bit inputs
-	output [15:0] M;								// 16 bit output
+	output [15:0] M;							// 16 bit output
 	
 	//instantiating three 8 to 1 muxes to create a 3 bit wide 8 to 1 mux
 	Mux_8_to_1 U1(R[0], S[0], T[0],U[0], V[0], W[0], X[0], Y[0], M[0], S0, S1, S2);

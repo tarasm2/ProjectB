@@ -55,30 +55,35 @@ module DataPath_tb();
         #52;
         @(negedge clk); D_WriteEn = 0;
         D_Addr = 11; MuxS = 1; RegF_W_addr = 1; RegF_W_en = 1;                    // load data memory [11] into RF[1]
-        @(negedge clk); D_Addr = 27;                                              // start loading in the next register (accounts for registered Data Mem)  
+        @(negedge clk); D_WriteEn = 0;                                            // (LOAD_B)
+        @(posedge clk); #2; $display("Time =%4d R_data =%16d W_data =%16d ALU_A=%16d ALU_B =%16d ALU_Out = %16d ALU_S =%3b D_WriteEn =%1b RegF_W_addr =%4d, MuxS =%1b D_Addr=%7d", $time, r_data, wData, ALU_A, ALU_B, ALU_Out, ALU_S, D_WriteEn, RegF_W_addr, MuxS, D_Addr);  
         @(negedge clk); D_WriteEn = 0;
         D_Addr = 27; MuxS = 1; RegF_W_addr = 2; RegF_W_en = 1;                    // load data memory [27] into RF[2]
-        @(negedge clk); D_Addr = 6;                                               // start loading in the next register (accounts for registered Data Mem)  
-        @(negedge clk);
+        @(negedge clk); D_WriteEn = 0;                                            // (LOAD_B)
+        @(posedge clk); #2; $display("Time =%4d R_data =%16d W_data =%16d ALU_A=%16d ALU_B =%16d ALU_Out = %16d ALU_S =%3b D_WriteEn =%1b RegF_W_addr =%4d, MuxS =%1b D_Addr=%7d", $time, r_data, wData, ALU_A, ALU_B, ALU_Out, ALU_S, D_WriteEn, RegF_W_addr, MuxS, D_Addr);  
+        @(negedge clk); D_WriteEn = 0;
         D_Addr = 6; MuxS = 1; RegF_W_addr = 3; RegF_W_en = 1;                     // load data memory [6] into RF[3]
-        @(negedge clk); D_Addr = 138;                                             // start loading in the next register (accounts for registered Data Mem)  
-        @(negedge clk);
-        D_Addr = 138; MuxS = 1; RegF_W_addr = 4; RegF_W_en = 1;                   // load data memory [138] into RF[4]
-        @(negedge clk); D_Addr = 138;                                               // start loading in the next register (accounts for registered Data Mem)  
-        @(negedge clk);
-        @(negedge clk)                                                            // wait another clock cycle to make sure the last register is loaded into  
+        @(negedge clk); D_WriteEn = 0;                                            // (LOAD_B)
+        @(posedge clk); #2; $display("Time =%4d R_data =%16d W_data =%16d ALU_A=%16d ALU_B =%16d ALU_Out = %16d ALU_S =%3b D_WriteEn =%1b RegF_W_addr =%4d, MuxS =%1b D_Addr=%7d", $time, r_data, wData, ALU_A, ALU_B, ALU_Out, ALU_S, D_WriteEn, RegF_W_addr, MuxS, D_Addr);  
+        @(negedge clk); D_WriteEn = 0;
+        D_Addr = 138; MuxS = 1; RegF_W_addr = 4; RegF_W_en = 1;                   // load data memory [27] into RF[2]
+        @(negedge clk); D_WriteEn = 0;                                            // (LOAD_B)
+        @(posedge clk); #2; $display("Time =%4d R_data =%16d W_data =%16d ALU_A=%16d ALU_B =%16d ALU_Out = %16d ALU_S =%3b D_WriteEn =%1b RegF_W_addr =%4d, MuxS =%1b D_Addr=%7d", $time, r_data, wData, ALU_A, ALU_B, ALU_Out, ALU_S, D_WriteEn, RegF_W_addr, MuxS, D_Addr);  
+        @(negedge clk)                                                            // wait a little bit of time to not have conflicting $display outputs  
         RegF_W_addr = 5; RegF_Ra_addr = 1; RegF_Rb_addr = 4; ALU_S = 2; MuxS = 0; // subrtact the data in RF[2] from RF[1] and store into RF[5]
-        @(negedge clk);
+        @(posedge clk); #2; $display("Time =%4d R_data =%16d W_data =%16d ALU_A=%16d ALU_B =%16d ALU_Out = %16d ALU_S =%3b D_WriteEn =%1b RegF_W_addr =%4d, MuxS =%1b D_Addr=%7d", $time, r_data, wData, ALU_A, ALU_B, ALU_Out, ALU_S, D_WriteEn, RegF_W_addr, MuxS, D_Addr);            
+        @(negedge clk)
         RegF_W_addr = 6; RegF_Ra_addr = 3; RegF_Rb_addr = 2; ALU_S = 2; MuxS = 0; // subrtact the data in RF[4] from RF[3] and store into RF[6]
-        @(negedge clk);
+        @(posedge clk); #2; $display("Time =%4d R_data =%16d W_data =%16d ALU_A=%16d ALU_B =%16d ALU_Out = %16d ALU_S =%3b D_WriteEn =%1b RegF_W_addr =%4d, MuxS =%1b D_Addr=%7d", $time, r_data, wData, ALU_A, ALU_B, ALU_Out, ALU_S, D_WriteEn, RegF_W_addr, MuxS, D_Addr);        
+        @(negedge clk)                                                            // start next instruction  
         RegF_W_addr = 0; RegF_Ra_addr = 5; RegF_Rb_addr = 6; ALU_S = 1; MuxS = 0; // add the data in RF[5] and RF[6] and store into RF[0]
+        @(posedge clk); #2; $display("Time =%4d R_data =%16d W_data =%16d ALU_A=%16d ALU_B =%16d ALU_Out = %16d ALU_S =%3b D_WriteEn =%1b RegF_W_addr =%4d, MuxS =%1b D_Addr=%7d", $time, r_data, wData, ALU_A, ALU_B, ALU_Out, ALU_S, D_WriteEn, RegF_W_addr, MuxS, D_Addr);        
         @(negedge clk); RegF_W_en = 0;                                            // no longer want to write to register, want to read from it, so we turn off RegF_W_en
         D_Addr = 205; RegF_Ra_addr = 0; D_WriteEn = 1;                            // store RF[5] into dataMem[5]
         #42;                                                                      // show that dataMem 6 is written to
+        @(posedge clk); #2; $display("Time =%4d R_data =%16d W_data =%16d ALU_A=%16d ALU_B =%16d ALU_Out = %16d ALU_S =%3b D_WriteEn =%1b RegF_W_addr =%4d, MuxS =%1b D_Addr=%7d", $time, r_data, wData, ALU_A, ALU_B, ALU_Out, ALU_S, D_WriteEn, RegF_W_addr, MuxS, D_Addr);    
         $stop;
     end
+    
 
-    initial begin
-        $monitor("Time =%4d R_data =%16d W_data =%16d ALU_A=%16d ALU_B =%16d ALU_Out = %16d ALU_S =%3b D_WriteEn =%1b RegF_W_addr =%4d, MuxS =%1b D_Addr=%7d", $time, r_data, wData, ALU_A, ALU_B, ALU_Out, ALU_S, D_WriteEn, RegF_W_addr, MuxS, D_Addr);
-    end
 endmodule

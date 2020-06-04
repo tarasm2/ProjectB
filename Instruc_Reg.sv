@@ -37,7 +37,7 @@ module Instruc_Reg_tb();
     initial begin
         data = 15; load = 1; #22;       // set the data input to a value and let it be loaded into the register
         data = 0;  load = 0; #20;       // set load to 0 and data to a different value to make sure the output and register both hold the old value
-                   load = 1; #20;       // set load to 1 and make sure that the new value takes over the old value in the register
+                   load = 1; #22;       // set load to 1 and make sure that the new value takes over the old value in the register
         $stop;
     end
 endmodule
