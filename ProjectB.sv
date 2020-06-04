@@ -12,17 +12,17 @@ module ProjectB(SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7, KEY, L
     output [15:0] LEDR;             // Red LED outputs
     output [3:0] LEDG;              // Green LED output
     output [0:6] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7;    //Hexidecimal display outputs
-    logic Bo;                       // wire between buttonsync and keyfilter
-    logic F_out;                    // wire from keyfilter to clock inpout of processor
-    logic [15:0] ALU_A, ALU_B, ALU_Out, IR_Out, MUX_Out;    // 16-bit outputs of processor and output of MUX
-    logic [7:0] PC_Out, NextState, CurrentState;            // 8-bit outputs of processor
+    logic Bo;                                                       // wire between buttonsync and keyfilter
+    logic F_out;                                                    // wire from keyfilter to clock inpout of processor
+    logic [15:0] ALU_A, ALU_B, ALU_Out, IR_Out, MUX_Out;            // 16-bit outputs of processor and output of MUX
+    logic [7:0] PC_Out, NextState, CurrentState;                    // 8-bit outputs of processor
 
-    assign LEDR = SW;               // connecting switch inputs to red LEDs
-    assign LEDG = KEY;              // connecting button inputs to green LEDs
+    assign LEDR = SW;                                               // connecting switch inputs to red LEDs
+    assign LEDG = KEY;                                              // connecting button inputs to green LEDs
 
-    ButtonSync U1(KEY[2], CLOCK_50, Bo);  // instantiating buttonsync module
+    ButtonSync U1(KEY[2], CLOCK_50, Bo);                            // instantiating buttonsync module
 
-    KeyFilter U2(Bo, CLOCK_50, F_out);      // instantiating Keyfilter Module
+    KeyFilter U2(Bo, CLOCK_50, F_out);                              // instantiating Keyfilter Module
 
     //Processor( clk, Reset, IR_Out, PC_Out, State, NextState, ALU_A, ALU_B, ALU_Out);
     Processor U3(F_out, KEY[0], IR_Out, PC_Out, CurrentState, NextState, ALU_A, ALU_B, ALU_Out);
@@ -32,13 +32,13 @@ module ProjectB(SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7, KEY, L
 
     // /Decoder (data, seg);
     Decoder U5(MUX_Out[15:12], HEX7);   // Decoding all the infor being sent to the board into HEX numbers
-    Decoder U6(MUX_Out[11:8], HEX6);
-    Decoder U7(MUX_Out[7:4], HEX5);
-    Decoder U8(MUX_Out[3:0], HEX4);
-    Decoder U9(IR_Out[15:12], HEX3);
-    Decoder U10(IR_Out[11:8], HEX2);
-    Decoder U11(IR_Out[7:4], HEX1);
-    Decoder U12(IR_Out[3:0], HEX0);
+    Decoder U6(MUX_Out[11:8],  HEX6);
+    Decoder U7(MUX_Out[7:4],   HEX5);
+    Decoder U8(MUX_Out[3:0],   HEX4);
+    Decoder U9(IR_Out[15:12],  HEX3);
+    Decoder U10(IR_Out[11:8],  HEX2);
+    Decoder U11(IR_Out[7:4],   HEX1);
+    Decoder U12(IR_Out[3:0],   HEX0);
 endmodule
 
 

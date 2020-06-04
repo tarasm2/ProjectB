@@ -6,7 +6,8 @@
 
 module Data_Mem(addr, Clk, Out, D_wr, data);
   input Clk, D_wr;
-  output logic [15:0] Out, data; // 16-bit data to be read
+  input logic [15:0] data;
+  output logic [15:0] Out; // 16-bit data to be read
   input logic [7:0] addr;
 
 
@@ -15,15 +16,15 @@ module Data_Mem(addr, Clk, Out, D_wr, data);
 	.address(addr),
 	.clock(Clk),
 	.q(Out),
-    .wren(D_wr),
-    .data(data));
+  .wren(D_wr),
+  .data(data));
   
   
 endmodule
 
 // This testbench will check and display readings
 // of data at all locations from 0 to 127
-// the ROM has been initialized using A.mif
+// the RAM has been initialized using A.mif
 `timescale 1ns/1ns
 module Data_Mem_tb();
  
@@ -35,18 +36,17 @@ module Data_Mem_tb();
   Data_Mem DUT(addr, Clk, Out, D_wr, data);
   
   always begin  // clock signal
-    Clk = 0; #10;
+  Clk = 0; #10;
 	Clk = 1; #10;
   end
 
   initial begin
     addr = 0; D_wr = 0;                         // Start at address 0
-    data = 15;                                  // data being sent in
-		for (int k=0; k<6; k++) begin           // loop through 6 addresses
+		for (int k=0; k<255; k++) begin              // loop through first 10 addresses
 		@(posedge Clk);           
-		#5 $display(k, $time, data,,,,, Out);   // display index, time, Output of Data Memory
+		#5 $display(k, $time, data,,,,, Out);       // display index, time, Output of Data Memory
     addr = k + 1;                               // next address location
 		end
-      $stop;
+    $stop;
   end  
 endmodule
