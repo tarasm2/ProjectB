@@ -15,7 +15,7 @@ module ControlUnit(reset, clk, OutState, NextState, D_addr, D_wr,RF_s, RF_W_en, 
     output logic [2:0] ALU_s0;                              // ALU select bit
     output logic D_wr, RF_s, RF_W_en, PC_clr, PC_up, IR_ld; // single bit outputs
     output logic [15:0] IR_Out, data;                       // Data sent to state machine from Instruction Reg, data sent into IR from Instruction memory 
-    output logic [6:0] PC_Out;                              // PC address being sent to Instruction memory
+    output logic [7:0] PC_Out;                              // PC address being sent to Instruction memory
 
     //InstMemory (address, clock,	q);
     InstructionMem U1(PC_Out, clk, data);
@@ -41,7 +41,7 @@ module ControlUnit_tb();
     logic [2:0] ALU_s0;                              // ALU select bit
     logic D_wr, RF_s, RF_W_en, PC_clr, PC_up, IR_ld; // single bit outputs
     logic [15:0] IR_Out, data;                       // Data sent to state machine from Instruction Reg, data sent into IR from Instruction memory 
-    logic [6:0] PC_Out;                              // PC address being sent to Instruction memory
+    logic [7:0] PC_Out;                              // PC address being sent to Instruction memory
 
     ControlUnit DUT(reset, clk, OutState, NextState, D_addr, D_wr, RF_s, RF_W_en, RF_Ra_addr, RF_Rb_addr, RF_W_addr, ALU_s0, PC_Out, PC_clr, PC_up, IR_ld, IR_Out, data);
 

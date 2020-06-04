@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'KeyFilter:U2|Out'
+Slack : -8.543
+TNS   : -2110.048
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -3.462
+TNS   : -107.457
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.425
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'KeyFilter:U2|Out'
+Slack : 0.487
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -51.830
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'KeyFilter:U2|Out'
+Slack : -2.693
+TNS   : -398.240
+
+Type  : Slow 1200mV 0C Model Setup 'KeyFilter:U2|Out'
+Slack : -7.720
+TNS   : -1902.462
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -3.089
+TNS   : -95.394
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.385
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'KeyFilter:U2|Out'
+Slack : 0.440
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -51.830
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'KeyFilter:U2|Out'
+Slack : -2.649
+TNS   : -397.360
+
+Type  : Fast 1200mV 0C Model Setup 'KeyFilter:U2|Out'
+Slack : -3.783
+TNS   : -914.157
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.157
+TNS   : -34.075
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.191
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'KeyFilter:U2|Out'
+Slack : 0.228
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -43.466
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'KeyFilter:U2|Out'
+Slack : -1.000
+TNS   : -288.000
+
+------------------------------------------------------------

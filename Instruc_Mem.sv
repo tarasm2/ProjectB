@@ -41,7 +41,7 @@ endmodule
 module Instruc_Mem_tb();
  
   logic Clk, Reset;
-  logic [6:0] Dout;
+  logic [7:0] Dout;
   
   
   Instruc_Mem DUT(Clk, Reset, Dout);
@@ -55,7 +55,7 @@ module Instruc_Mem_tb();
       Reset = 1; // assert reset
       #53;
       Reset = 0; // disassert reset
-		for (int k=0; k<128; k++) begin
+		for (int k=0; k<255; k++) begin
 		@(posedge Clk); 
 		#5 $display(k, $time, Dout);
 		end

@@ -21,7 +21,7 @@ endmodule
 //testbench
 module PC_Counter_tb();
     logic up, clear, clk;       // increase counter, clock and clear signals
-    logic [8:0] address;        // output address
+    logic [7:0] address;        // output address
 
     PC_Counter U1(clk, up, clear, address);
 

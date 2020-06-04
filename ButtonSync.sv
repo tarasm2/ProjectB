@@ -2,21 +2,22 @@
 // Taras Martynyuk, Ben Mulyarchuk, Kevin Nguyen
 // 5/26/2020
 // ProjectB
-// Button Synchronizer...
+// Button Synchronizer module that works with two flip flops and a state machine. It is used to minimize the chance of a metastable voltage.
+// The first flip flop takes the input. If it is metastable, the next flip flop and FSM should be able to stabilize it to a usable range (0 or 1).
 	
-	module ButtonSync( Clock, Bi, Bo);
+	module ButtonSync( Clock, In, Bo);
 		
-		input Clock, Bi;		//system clock and input
-		output logic Bo; 		//system output
+		input Clock, In;		   //system clock and input Bi to State machine and module
+		output logic Bo; 			//system output
+		logic Q, Bi;
 		
-		
-		localparam A = 2'd0,
-					  B = 2'd1,
-					  C = 2'd2;
+		localparam  A = 2'd0,
+					B = 2'd1,
+					C = 2'd2;
 					  
-		logic [1:0] State = A, NextState;
+		logic [1:0] State, NextState;
 		
-		//combination logic
+		//combination logic for state machine
 		always_comb begin
 		
 			Bo = 1'b0;					//system output (default)
@@ -27,7 +28,6 @@
 				A: 
 					if (Bi) NextState = B;
 					else NextState = A;
-					
 				
 				B: begin
 					Bo = 1'b1;
@@ -39,15 +39,15 @@
 					if (Bi) NextState = C;
 					else NextState = A;
 				
-				default: begin
-					NextState = A;
-				end
+				default:NextState = A;
 				
 			endcase
 		end
-		//state register
+		//state register and flip flops
 		always_ff @( posedge Clock ) begin
 			State <= NextState;
+			Q     <= In;
+			Bi    <= Q;
 		end
 		
 	endmodule

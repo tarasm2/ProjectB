@@ -19,16 +19,16 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
 
 
         localparam                          // declaring all the states within the state machine
-            Init   = 0,
-            Fetch  = 1,
-            Decode = 2,
-            NOOP   = 3,
-            Load_A = 4,
-            Load_B = 5,
-            Store  = 6,
-            Add    = 7,
-            Sub    = 8,
-            Halt   = 9;
+            Init   = 4'd0,
+            Fetch  = 4'd1,
+            Decode = 4'd2,
+            NOOP   = 4'd3,
+            Load_A = 4'd4,
+            Load_B = 4'd5,
+            Store  = 4'd6,
+            Add    = 4'd7,
+            Sub    = 4'd8,
+            Halt   = 4'd9;
 
     // state register
     always_ff@(posedge clk)
@@ -36,7 +36,20 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
         else       CurrentState <= NextState;                                              
     
     // next state logic
-    always_comb
+    always_comb begin
+
+                D_wr = 0;                   // this and all lower signals in fetch are created to avoid inferred latches by setting these values to
+                RF_W_en = 0;                // a constant value.
+                D_addr = 0;                 
+                RF_s = 0;                   
+                RF_Ra_addr = 0;
+                RF_Rb_addr = 0;
+                ALU_s0 = 0;
+                RF_W_addr = 0;
+                IR_ld = 0;
+                PC_clr = 0;
+                PC_up = 0;
+
         case(CurrentState)
             Init:begin
                     PC_clr = 1;                 // clear/reset the PC counter
@@ -46,8 +59,6 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
                     PC_clr = 0;                 // stop the clear signal from going to the PC counter
                     PC_up = 1;                  // increment PC counter
                     IR_ld = 1;                  // load in data from memory
-                    D_wr = 0;                   // disable being able to write to data if it was enabled elsewhere
-                    RF_W_en = 0;                // disable being able to write to reg file if it was enabled elsewhere
                     NextState = Decode;         // decode state next
             end
             Decode:begin                        // depending on first four numbers of input, choose which operation is going to be done
@@ -66,10 +77,16 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
                 RF_s = 1;                       // select bit for the mux chooses to load in something from the data Memory
                 RF_W_addr = data[3:0];          // address in the Register file where the data will be written to
                 RF_W_en = 1;                    // enable the write command in the register file to allow writing to it
-                NextState = Load_B;             // Nextstate will go to the Next load cycle
+                NextState = Load_B;             // Nextstate will go to the Next load cycle                                 
             end
-            Load_B: NextState = Fetch;          // the Load operation takes two clock cycles to toggle, this is a stopgap to take a clockcycle
-            Store:begin
+            Load_B: begin
+                D_addr = data[11:4];            // address being sent to datapath memory to be read/written
+                RF_s = 1;                       // select bit for the mux chooses to load in something from the data Memory
+                RF_W_addr = data[3:0];          // address in the Register file where the data will be written to
+                RF_W_en = 1;                    // enable the write command in the register file to allow writing to it
+                NextState = Fetch;              // the Load operation takes two clock cycles to toggle, this is a stopgap to take a clockcycle
+            end
+				Store:begin
                 D_addr = data[7:0];             // address being sent to datapath memory where the information will be stored within it
                 D_wr = 1;                       // write enable bit for data memory
                 RF_Ra_addr = data[11:8];        // data being saved from register to data memeory
@@ -96,6 +113,7 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
             Halt:   NextState = Halt;           // Halt the entire system by constantly staying in the Halt State
             default: NextState = Init;          // initial case is our default case
         endcase
+    end
 endmodule
 
 module StateMachine_tb();
