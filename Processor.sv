@@ -11,7 +11,7 @@ module Processor( clk, Reset, IR_Out, PC_Out, State, NextState, ALU_A, ALU_B, AL
     input clk;                  // processor clock
     input Reset;                // system reset
     output [15:0] IR_Out;       // Instruction register
-    output [7:0] PC_Out;        // Program counter
+    output [6:0] PC_Out;        // Program counter
     output [3:0] State;         // FSM current state
     output [3:0] NextState;     // FSM next state (or 0 if you don’t use one)
     output [15:0] ALU_A;        // ALU A-Side Input
@@ -39,7 +39,7 @@ module Processor_tb();
     logic clk;                  // processor clock
     logic Reset;                // system reset
     logic [15:0] IR_Out;       // Instruction register
-    logic [7:0] PC_Out;        // Program counter
+    logic [6:0] PC_Out;        // Program counter
     logic [3:0] State;         // FSM current state
     logic [3:0] NextState;     // FSM next state (or 0 if you don’t use one)
     logic [15:0] ALU_A;        // ALU A-Side Input
@@ -61,6 +61,6 @@ module Processor_tb();
         $stop;
     end
     initial begin
-        $monitor("Time =%0t IR_Out =%16b PC_Out =%4d State =%3d NextState =%3d ALU_A =%7d ALU_B =%7d ALU_Out =%7d", $time, IR_Out, PC_Out, State, NextState, ALU_A, ALU_B, ALU_Out);
+        $monitor("Time =%0t IR_Out =%5h PC_Out =%4d State =%3d NextState =%3d ALU_A =%7d ALU_B =%7d ALU_Out =%7d", $time, IR_Out, PC_Out, State, NextState, ALU_A, ALU_B, ALU_Out);
     end
 endmodule

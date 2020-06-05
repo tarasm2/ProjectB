@@ -1,14 +1,14 @@
-Fitter Status : Successful - Fri Jun 05 00:17:51 2020
+Fitter Status : Successful - Fri Jun 05 01:45:29 2020
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : ProjectB
 Top-level Entity Name : ProjectB
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 602 / 114,480 ( < 1 % )
-    Total combinational functions : 597 / 114,480 ( < 1 % )
-    Dedicated logic registers : 304 / 114,480 ( < 1 % )
-Total registers : 304
+Total logic elements : 598 / 114,480 ( < 1 % )
+    Total combinational functions : 595 / 114,480 ( < 1 % )
+    Dedicated logic registers : 303 / 114,480 ( < 1 % )
+Total registers : 303
 Total pins : 101 / 529 ( 19 % )
 Total virtual pins : 0
 Total memory bits : 6,144 / 3,981,312 ( < 1 % )

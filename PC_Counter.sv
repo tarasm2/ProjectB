@@ -8,7 +8,7 @@
 
 module PC_Counter(clk, up, clear, address);
     input logic up, clear, clk;       // increase counter, clock and clear signals
-    output logic [7:0] address;       // output address
+    output logic [6:0] address;       // output address
 
     always@(posedge clk) begin
         if(clear) address <= 8'b0;                     // if clear is on, reset couner

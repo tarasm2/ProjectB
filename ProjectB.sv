@@ -13,10 +13,10 @@ module ProjectB(SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7, KEY, L
     output [3:0] LEDG;              // Green LED output
     output [0:6] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7;    //Hexidecimal display outputs
     logic Bo;                                                       // wire between buttonsync and keyfilter
-    logic F_out;                                                    // wire from keyfilter to clock inpout of processor
-    logic Strobe;                                                   // Strobe not connected to anything
+    logic F_out;                                                    // wire from keyfilter to clock input of processor
+    logic Strobe;                                            // Strobe not connected to anything
     logic [15:0] ALU_A, ALU_B, ALU_Out, IR_Out, MUX_Out;            // 16-bit outputs of processor and output of MUX
-    logic [7:0] PC_Out;                                             // 8-bit outputs of processor
+    logic [6:0] PC_Out;                                             // 8-bit outputs of processor
     logic [3:0]NextState, CurrentState;                             // States of the processor
 
     assign LEDR = SW;                                               // connecting switch inputs to red LEDs
@@ -32,10 +32,10 @@ module ProjectB(SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7, KEY, L
     KeyFilter U2(CLOCK_50, Bo, F_out, Strobe);                              // instantiating Keyfilter Module
 
     //Processor( clk, Reset, IR_Out, PC_Out, State, NextState, ALU_A, ALU_B, ALU_Out);
-    Processor U3(F_out, KEY[0], IR_Out, PC_Out, CurrentState, NextState, ALU_A, ALU_B, ALU_Out);
+    Processor U3(F_out, !KEY[0], IR_Out, PC_Out, CurrentState, NextState, ALU_A, ALU_B, ALU_Out);
 
     //module Mux_3w_8_to_1(R, S, T, U, V, W, X, Y, M, S0, S1, S2);
-    Mux_16w_8_to_1 U4({PC_Out, 4'b0, CurrentState}, ALU_A, ALU_B, ALU_Out, {4'b0, NextState, 8'b0}, 16'h0, 16'h0, 16'h0, MUX_Out, SW[15], SW[16], SW[17]);
+    Mux_16w_8_to_1 U4({1'b0, PC_Out, 4'b0, CurrentState}, ALU_A, ALU_B, ALU_Out, {4'b0, NextState, 8'b0}, 16'h0, 16'h0, 16'h0, MUX_Out, SW[15], SW[16], SW[17]);
 
     // /Decoder (data, seg);
     Decoder U5(MUX_Out[15:12], HEX7);   // Decoding all the infor being sent to the board into HEX numbers

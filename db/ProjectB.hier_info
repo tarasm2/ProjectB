@@ -91,7 +91,8 @@ HEX7[3] <= Decoder:U5.port1
 HEX7[2] <= Decoder:U5.port1
 HEX7[1] <= Decoder:U5.port1
 HEX7[0] <= Decoder:U5.port1
-KEY[0] => KEY[0].IN1
+KEY[0] => LEDG[0].DATAIN
+KEY[0] => _.IN1
 KEY[1] => LEDG[1].DATAIN
 KEY[2] => KEY[2].IN1
 KEY[3] => LEDG[3].DATAIN
@@ -313,7 +314,6 @@ PC_Out[3] <= PC_Out[3].DB_MAX_OUTPUT_PORT_TYPE
 PC_Out[4] <= PC_Out[4].DB_MAX_OUTPUT_PORT_TYPE
 PC_Out[5] <= PC_Out[5].DB_MAX_OUTPUT_PORT_TYPE
 PC_Out[6] <= PC_Out[6].DB_MAX_OUTPUT_PORT_TYPE
-PC_Out[7] <= PC_Out[7].DB_MAX_OUTPUT_PORT_TYPE
 PC_clr <= PC_clr.DB_MAX_OUTPUT_PORT_TYPE
 PC_up <= PC_up.DB_MAX_OUTPUT_PORT_TYPE
 IR_ld <= IR_ld.DB_MAX_OUTPUT_PORT_TYPE
@@ -763,7 +763,6 @@ clk => address[3]~reg0.CLK
 clk => address[4]~reg0.CLK
 clk => address[5]~reg0.CLK
 clk => address[6]~reg0.CLK
-clk => address[7]~reg0.CLK
 up => address.OUTPUTSELECT
 up => address.OUTPUTSELECT
 up => address.OUTPUTSELECT
@@ -771,8 +770,6 @@ up => address.OUTPUTSELECT
 up => address.OUTPUTSELECT
 up => address.OUTPUTSELECT
 up => address.OUTPUTSELECT
-up => address.OUTPUTSELECT
-clear => address.OUTPUTSELECT
 clear => address.OUTPUTSELECT
 clear => address.OUTPUTSELECT
 clear => address.OUTPUTSELECT
@@ -787,7 +784,6 @@ address[3] <= address[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 address[4] <= address[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 address[5] <= address[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 address[6] <= address[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-address[7] <= address[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ProjectB|Processor:U3|DataPath:U2
@@ -2929,13 +2925,13 @@ data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[2] => Decoder0.IN1
 data[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
 seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ProjectB|Decoder:U6
@@ -2943,13 +2939,13 @@ data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[2] => Decoder0.IN1
 data[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
 seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ProjectB|Decoder:U7
@@ -2957,13 +2953,13 @@ data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[2] => Decoder0.IN1
 data[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
 seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ProjectB|Decoder:U8
@@ -2971,13 +2967,13 @@ data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[2] => Decoder0.IN1
 data[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
 seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ProjectB|Decoder:U9
@@ -2985,13 +2981,13 @@ data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[2] => Decoder0.IN1
 data[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
 seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ProjectB|Decoder:U10
@@ -2999,13 +2995,13 @@ data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[2] => Decoder0.IN1
 data[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
 seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ProjectB|Decoder:U11
@@ -3013,13 +3009,13 @@ data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[2] => Decoder0.IN1
 data[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
 seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ProjectB|Decoder:U12
@@ -3027,12 +3023,12 @@ data[0] => Decoder0.IN3
 data[1] => Decoder0.IN2
 data[2] => Decoder0.IN1
 data[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
 seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 

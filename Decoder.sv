@@ -8,7 +8,7 @@
 
 module Decoder (data, seg); 		//creating the decoder
 	input [3:0] data;				//4 bit binary input data to be decoded
-	output [6:0] seg;				//output to be sent to HEX display to show the value of the input
+	output [0:6] seg;				//output to be sent to HEX display to show the value of the input
 	
 	always_comb						//creating outputs using cases (create hexidecimal output)
 		case(data)
