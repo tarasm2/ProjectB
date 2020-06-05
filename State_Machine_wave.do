@@ -14,8 +14,8 @@ add wave -noupdate /StateMachine_tb/RF_Ra_addr
 add wave -noupdate /StateMachine_tb/RF_Rb_addr
 add wave -noupdate /StateMachine_tb/ALU_s0
 add wave -noupdate /StateMachine_tb/D_addr
-add wave -noupdate /StateMachine_tb/CurrentState
-add wave -noupdate /StateMachine_tb/NextState
+add wave -noupdate /StateMachine_tb/CurrentStateOut
+add wave -noupdate /StateMachine_tb/NextStateOut
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {68 ps} 0}
 quietly wave cursor active 1

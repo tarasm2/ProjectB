@@ -2,7 +2,7 @@
 // Taras Martynyuk, Ben Mulyarchuk, Kevin Nguyen
 // 5/20/2020
 // ProjectB
-// ALU mdule...
+// ALU module that performs arithmatic operations and outputs the product.  
 
 
 module ALU( A, B, Sel, Q );

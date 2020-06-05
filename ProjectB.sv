@@ -20,13 +20,16 @@ module ProjectB(SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7, KEY, L
     logic [3:0]NextState, CurrentState;                             // States of the processor
 
     assign LEDR = SW;                                               // connecting switch inputs to red LEDs
-    assign LEDG = KEY;                                              // connecting button inputs to green LEDs
+    assign LEDG[0] = !KEY[0];                                              // connecting button inputs to green LEDs
+    assign LEDG[1] = !KEY[1];                                              // connecting button inputs to green LEDs
+    assign LEDG[2] = !KEY[2];                                              // connecting button inputs to green LEDs
+    assign LEDG[3] = !KEY[3];                                              // connecting button inputs to green LEDs
 
-    //ButtonSync( Clock, In, Bo);
+    //ButtonSync( Clock, Bi, Bo);
     ButtonSync U1(CLOCK_50, KEY[2], Bo);                            // instantiating buttonsync module
 
     //KeyFilter( Clock, In, Out, Strobe);
-    KeyFilter U2(CLOCK_50, Bo, F_out);                              // instantiating Keyfilter Module
+    KeyFilter U2(CLOCK_50, Bo, F_out, Strobe);                              // instantiating Keyfilter Module
 
     //Processor( clk, Reset, IR_Out, PC_Out, State, NextState, ALU_A, ALU_B, ALU_Out);
     Processor U3(F_out, KEY[0], IR_Out, PC_Out, CurrentState, NextState, ALU_A, ALU_B, ALU_Out);

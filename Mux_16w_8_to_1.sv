@@ -32,14 +32,14 @@ endmodule
 
     
 module Mux_16w_8_to_1_tb; //testbench to check te 8 to 1 3 wide mux
-		 logic [2:0] R, S, T, U, V, W, X, Y, M;
+		 logic [15:0] R, S, T, U, V, W, X, Y, M;
 		 logic S0, S1, S2;
 		 
-		 Mux_3w_8_to_1 U4(R, S, T, U, V, W, X, Y, M, S0, S1, S2); //instantiating the mux
+		 Mux_16w_8_to_1 U4(R, S, T, U, V, W, X, Y, M, S0, S1, S2); //instantiating the mux
 		 
 
 		 initial begin
-			R = 3'b010; S = 3'b100; T = 3'b101; U = 3'b011; V = 3'b111; W = 3'b000; X = 3'b001; Y = 3'b110; S2 = 0; S1 = 0; S0 = 0; #10; //test to see if correct output is
+			R = 16'b010; S = 16'b100; T = 16'b101; U = 16'b011; V = 16'b111; W = 16'b000; X = 16'b001; Y = 16'b110; S2 = 0; S1 = 0; S0 = 0; #10; //test to see if correct output is
 																																			S2 = 0; S1 = 0; S0 = 1; #10; //selected when select bits are switched
 																																			S2 = 0; S1 = 1; S0 = 0; #10;
 																																			S2 = 0; S1 = 1; S0 = 1; #10;
@@ -48,7 +48,7 @@ module Mux_16w_8_to_1_tb; //testbench to check te 8 to 1 3 wide mux
 																																			S2 = 1; S1 = 1; S0 = 0; #10;
 																																			S2 = 1; S1 = 1; S0 = 1; #10;
 																							
-			R = 3'b000; S = 3'b000; T = 3'b000; U = 3'b000; V = 3'b000; W = 3'b000; X = 3'b000; Y = 3'b000; S2 = 0; S1 = 0; S0 = 0; #10; //edge case with all inputs being 0
+			R = 16'd0; S = 16'd0; T = 16'd0; U = 16'd0; V = 16'd0; W = 16'd0; X = 16'd0; Y = 16'd0; S2 = 0; S1 = 0; S0 = 0; #10; //edge case with all inputs being 0
 																																			S2 = 0; S1 = 0; S0 = 1; #10;
 																																			S2 = 0; S1 = 1; S0 = 0; #10;
 																																			S2 = 0; S1 = 1; S0 = 1; #10;
@@ -57,7 +57,7 @@ module Mux_16w_8_to_1_tb; //testbench to check te 8 to 1 3 wide mux
 																																			S2 = 1; S1 = 1; S0 = 0; #10;
 																																			S2 = 1; S1 = 1; S0 = 1; #10;
 																																			
-			R = 3'b111; S = 3'b111; T = 3'b111; U = 3'b111; V = 3'b111; W = 3'b111; X = 3'b111; Y = 3'b111; S2 = 0; S1 = 0; S0 = 0; #10; //edge case with all inputs being 1
+			R = 16'd7; S = 16'd7; T = 16'd7; U = 16'd7; V = 16'd7; W = 16'd7; X = 16'd7; Y = 16'd7; S2 = 0; S1 = 0; S0 = 0; #10; //edge case with all inputs being 1
 																																			S2 = 0; S1 = 0; S0 = 1; #10;
 																																			S2 = 0; S1 = 1; S0 = 0; #10;
 																																			S2 = 0; S1 = 1; S0 = 1; #10;

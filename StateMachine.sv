@@ -7,7 +7,7 @@
 // processor uses and outputs all the data necessary for the computaions or exectution of the instruction.
 // All the output enable bits are turned off initially in the Fetch block and are enabled when needed in other blocks, and are then turned back of in the Fetch block again
 
-module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, ALU_s0, CurrentState, NextState);
+module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, ALU_s0, CurrentStateOut, NextStateOut);
     input logic [15:0] data;                                              // input to state machine
     input logic clk, reset;                                               // clock and reset signals 
     output logic PC_clr, PC_up, IR_ld, RF_s, RF_W_en, D_wr;               // counter clear, count up, reg load, mux select, reg write, and data write signals
@@ -15,25 +15,13 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
     output logic [2:0] ALU_s0;                                            // ALU select bits
     output logic [7:0] D_addr;                                            // address to be written to/read from in Data Memory
 
-    output logic [3:0] CurrentState, NextState;                     // declaring the two states in the state machine
+    output logic [3:0] CurrentStateOut, NextStateOut;                     // declaring the two states in the state machine
 
+    typedef enum logic [3:0] {Init, Fetch, Decode, NOOP, Load_A, Load_B, Store, Add, Sub, Halt} statetype;
+    statetype CurrentState, NextState  ;
 
-        localparam                          // declaring all the states within the state machine
-            Init   = 4'd0,
-            Fetch  = 4'd1,
-            Decode = 4'd2,
-            NOOP   = 4'd3,
-            Load_A = 4'd4,
-            Load_B = 4'd5,
-            Store  = 4'd6,
-            Add    = 4'd7,
-            Sub    = 4'd8,
-            Halt   = 4'd9;
-
-    // state register
-    always_ff@(posedge clk)
-        if (reset) CurrentState <= Init;
-        else       CurrentState <= NextState;                                              
+    assign CurrentStateOut = CurrentState;
+    assign NextStateOut = NextState;
     
     // next state logic
     always_comb begin
@@ -49,6 +37,7 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
                 IR_ld = 0;
                 PC_clr = 0;
                 PC_up = 0;
+                NextState = CurrentState;
 
         case(CurrentState)
             Init:begin
@@ -56,14 +45,11 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
                     NextState = Fetch;          // Next state is Fetch
             end   
             Fetch:begin
-                    PC_clr = 0;                 // stop the clear signal from going to the PC counter
                     PC_up = 1;                  // increment PC counter
                     IR_ld = 1;                  // load in data from memory
                     NextState = Decode;         // decode state next
             end
             Decode:begin                        // depending on first four numbers of input, choose which operation is going to be done
-                IR_ld = 0;                      // wait until the next fetch to load next signal
-                PC_up = 0;                      // dont count up any more until next fetch
                 if(data[15:12] == 0)      NextState = NOOP;          
                 else if(data[15:12] == 1) NextState = Store;
                 else if(data[15:12] == 2) NextState = Load_A;
@@ -114,6 +100,11 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
             default: NextState = Init;          // initial case is our default case
         endcase
     end
+    
+    // state register
+        always_ff@(posedge clk)
+        if (reset) CurrentState <= Init;
+        else       CurrentState <= NextState;  
 endmodule
 
 module StateMachine_tb();
@@ -122,9 +113,9 @@ module StateMachine_tb();
     logic [3:0] RF_W_addr, RF_Ra_addr, RF_Rb_addr;                 // write, readA, and readB addresses for Regiester File
     logic [2:0] ALU_s0;                                            // ALU select bits
     logic [7:0] D_addr;                                            // address to be written to/read from in Data Memory
-    logic [3:0] CurrentState, NextState;
+    logic [3:0] CurrentStateOut, NextStateOut;
 
-    StateMachine U1(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, ALU_s0, CurrentState, NextState);
+    StateMachine U1(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, ALU_s0, CurrentStateOut, NextStateOut);
 
     always begin        // clock signal
         clk = 0; #10;
@@ -135,18 +126,22 @@ module StateMachine_tb();
         #10; @(negedge clk) reset = 1;              // reset the state machine to set it to the initial state 
         data = 0;                                   // data for NOOP instruction
         @(negedge clk) reset = 0; #22;              // turn reset bit off to start the cycle with a NOOP input
-        wait(NextState == 1); #22;                  // wait until its about to fetch the next instruction within the NOOP cycle
-        $display($time,,,PC_up,,,IR_ld);            // display nessacary info
+        wait(NextStateOut == 1); #22;                  // wait until its about to fetch the next instruction within the NOOP cycle
+        $display("Time =%4d PC_up =%2b IR_ld =%2b", $time, PC_up, IR_ld);            // display nessesary info
         data = 16'b0001_1111_0010_1001;             // move the data in register 15 in reg file into data register 41 (checking the STORE instruction)
-        wait(CurrentState == 6); #22;               // wait until its about to fetch the next instruction
-        $display($time,,,PC_up,,,IR_ld);
+        wait(NextStateOut == 6); #22;               // wait until its about to fetch the next instruction
+        $display("Time =%4d RF_Ra_addr=%7d D_Wr=%1b D_addr=%4d",$time, RF_Ra_addr, D_wr, D_addr);
         data = 16'b0010_0000_1010_0111;             // move the data in data memory register 10 to register 7 in reg file (checking the LOAD instruction)
-        wait(CurrentState == 5); #22;               // wait until its about to fetch the next instruction
+        wait(NextStateOut == 5); #22;               // wait until its about to fetch the next instruction
+        $display("Time =%4d D_Addr=%7d RF_s=%2b RF_W_addr =%4d RF_W_en =%2d",$time, D_addr, RF_s, RF_W_addr, RF_W_en);
         data = 16'b0011_0001_0010_0011;             // add the data in the reg file (register 1 + register 2) and store in the 3rd register in reg file (testing ADD instruction)
-        wait(CurrentState == 7); #22;               // wait until its about to fetch the next instruction
+        wait(NextStateOut == 7); #22;               // wait until its about to fetch the next instruction
+        $display("Time =%4d RF_Ra_addr=%7d RF_Rb_addr=%7d RF_s=%2b ALU_s0 =%1b RF_W_addr =%4d RF_W_en =%2b",$time, RF_Ra_addr, RF_Rb_addr, RF_s, ALU_s0, RF_W_addr, RF_W_en);
         data = 16'b0100_0001_0010_0011;             // subtract data in reg file (data in register 1 - register 2) and store in the 3rd register
-        wait(CurrentState == 8); #22;               // wait until its about to fetch the next instruction
+        wait(NextStateOut == 8); #22;               // wait until its about to fetch the next instruction
+        $display("Time =%4d RF_Ra_addr=%7d RF_Rb_addr=%7d RF_s=%2b ALU_s0 =%1b RF_W_addr =%4d RF_W_en =%2b",$time, RF_Ra_addr, RF_Rb_addr, RF_s, ALU_s0, RF_W_addr, RF_W_en);
         data = 16'b0101_0000_0000_0000; #90;        // test the HALT instruction to see if it just stays there
+        $display("Time =%4d RF_Ra_addr=%7d RF_Rb_addr=%7d RF_s=%2b ALU_s0 =%1b RF_W_addr =%4d RF_W_en =%2b",$time, RF_Ra_addr, RF_Rb_addr, RF_s, ALU_s0, RF_W_addr, RF_W_en);
         reset = 1; #22;                             // see if reset signal reset it to the initial state and resets PC counter
         $stop;
     end
