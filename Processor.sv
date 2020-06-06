@@ -22,13 +22,13 @@ module Processor( clk, Reset, IR_Out, PC_Out, State, NextState, ALU_A, ALU_B, AL
     logic [2:0] ALU_s0;
     logic [7:0] D_Addr;
     logic [3:0] RF_Ra_Addr, RF_Rb_Addr, RF_W_Addr;
-    logic [15:0] data, r_data, wData;
+    logic [15:0] data;
 
     //module ControlUnit(reset, clk, OutState, NextState, D_addr, D_wr,RF_s, RF_W_en, RF_Ra_addr, RF_Rb_addr, RF_W_addr, ALU_s0, PC_Out, PC_clr, PC_up, IR_ld, IR_Out, data);
-    ControlUnit U1(Reset, clk, State, NextState, D_Addr, D_Wr, RF_s, RF_W_en, RF_Ra_Addr, RF_Rb_Addr, RF_W_Addr, ALU_s0, PC_Out, PC_clr, PC_up, IR_ld, IR_Out, data);
+    ControlUnit U1(Reset, clk, State, NextState, D_Addr, D_Wr, RF_s, RF_W_en, RF_Ra_Addr, RF_Rb_Addr, RF_W_Addr, ALU_s0, PC_Out, IR_Out);
 
-    //DataPath(clk, D_Addr, D_WriteEn, MuxS, RegF_W_addr, RegF_W_en, RegF_Ra_addr, RegF_Rb_addr, ALU_S, ALU_A, ALU_B, ALU_Out, r_data, wData);
-    DataPath U2(clk, D_Addr, D_Wr, RF_s, RF_W_Addr, RF_W_en, RF_Ra_Addr, RF_Rb_Addr, ALU_s0, ALU_A, ALU_B, ALU_Out, r_data, wData);
+    //DataPath(clk, D_Addr, D_WriteEn, MuxS, RegF_W_addr, RegF_W_en, RegF_Ra_addr, RegF_Rb_addr, ALU_S, ALU_A, ALU_B, ALU_Out);
+    DataPath U2(clk, D_Addr, D_Wr, RF_s, RF_W_Addr, RF_W_en, RF_Ra_Addr, RF_Rb_Addr, ALU_s0, ALU_A, ALU_B, ALU_Out);
 
 endmodule
 
