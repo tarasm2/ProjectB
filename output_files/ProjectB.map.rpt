@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ProjectB
-Fri Jun 05 22:10:24 2020
+Fri Jun 05 01:45:14 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -26,10 +26,11 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
  18. Port Connectivity Checks: "Mux_16w_8_to_1:U4"
  19. Port Connectivity Checks: "Processor:U3|DataPath:U2"
  20. Port Connectivity Checks: "Processor:U3|ControlUnit:U1"
- 21. Port Connectivity Checks: "KeyFilter:U2"
- 22. Post-Synthesis Netlist Statistics for Top Partition
- 23. Elapsed Time Per Partition
- 24. Analysis & Synthesis Messages
+ 21. Port Connectivity Checks: "Processor:U3"
+ 22. Port Connectivity Checks: "KeyFilter:U2"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
 
 
 
@@ -56,13 +57,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 05 22:10:24 2020       ;
+; Analysis & Synthesis Status        ; Successful - Fri Jun 05 01:45:14 2020       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; ProjectB                                    ;
 ; Top-level Entity Name              ; ProjectB                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 824                                         ;
-;     Total combinational functions  ; 568                                         ;
+; Total logic elements               ; 851                                         ;
+;     Total combinational functions  ; 595                                         ;
 ;     Dedicated logic registers      ; 319                                         ;
 ; Total registers                    ; 319                                         ;
 ; Total pins                         ; 101                                         ;
@@ -222,16 +223,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------+
 ; Resource                                    ; Usage            ;
 +---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 824              ;
+; Estimated Total logic elements              ; 851              ;
 ;                                             ;                  ;
-; Total combinational functions               ; 568              ;
+; Total combinational functions               ; 595              ;
 ; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 460              ;
-;     -- 3 input functions                    ; 57               ;
-;     -- <=2 input functions                  ; 51               ;
+;     -- 4 input functions                    ; 488              ;
+;     -- 3 input functions                    ; 54               ;
+;     -- <=2 input functions                  ; 53               ;
 ;                                             ;                  ;
 ; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 514              ;
+;     -- normal mode                          ; 541              ;
 ;     -- arithmetic mode                      ; 54               ;
 ;                                             ;                  ;
 ; Total registers                             ; 319              ;
@@ -245,8 +246,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                  ;
 ; Maximum fan-out node                        ; KeyFilter:U2|Out ;
 ; Maximum fan-out                             ; 315              ;
-; Total fan-out                               ; 3558             ;
-; Average fan-out                             ; 3.17             ;
+; Total fan-out                               ; 3689             ;
+; Average fan-out                             ; 3.21             ;
 +---------------------------------------------+------------------+
 
 
@@ -255,16 +256,20 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                    ; Entity Name     ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |ProjectB                                       ; 568 (1)             ; 319 (0)                   ; 6144        ; 0            ; 0       ; 0         ; 101  ; 0            ; |ProjectB                                                                                                              ; ProjectB        ; work         ;
+; |ProjectB                                       ; 595 (1)             ; 319 (0)                   ; 6144        ; 0            ; 0       ; 0         ; 101  ; 0            ; |ProjectB                                                                                                              ; ProjectB        ; work         ;
 ;    |ButtonSync:U1|                              ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|ButtonSync:U1                                                                                                ; ButtonSync      ; work         ;
+;    |Decoder:U10|                                ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Decoder:U10                                                                                                  ; Decoder         ; work         ;
+;    |Decoder:U11|                                ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Decoder:U11                                                                                                  ; Decoder         ; work         ;
+;    |Decoder:U12|                                ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Decoder:U12                                                                                                  ; Decoder         ; work         ;
 ;    |Decoder:U5|                                 ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Decoder:U5                                                                                                   ; Decoder         ; work         ;
 ;    |Decoder:U6|                                 ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Decoder:U6                                                                                                   ; Decoder         ; work         ;
 ;    |Decoder:U7|                                 ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Decoder:U7                                                                                                   ; Decoder         ; work         ;
 ;    |Decoder:U8|                                 ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Decoder:U8                                                                                                   ; Decoder         ; work         ;
+;    |Decoder:U9|                                 ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Decoder:U9                                                                                                   ; Decoder         ; work         ;
 ;    |KeyFilter:U2|                               ; 45 (45)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|KeyFilter:U2                                                                                                 ; KeyFilter       ; work         ;
 ;    |Mux_16w_8_to_1:U4|                          ; 51 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4                                                                                            ; Mux_16w_8_to_1  ; work         ;
-;       |Mux_8_to_1:U10|                          ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U10                                                                             ; Mux_8_to_1      ; work         ;
-;          |Mux_2_to_1:U7|                        ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U10|Mux_2_to_1:U7                                                               ; Mux_2_to_1      ; work         ;
+;       |Mux_8_to_1:U10|                          ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U10                                                                             ; Mux_8_to_1      ; work         ;
+;          |Mux_2_to_1:U7|                        ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U10|Mux_2_to_1:U7                                                               ; Mux_2_to_1      ; work         ;
 ;       |Mux_8_to_1:U11|                          ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U11                                                                             ; Mux_8_to_1      ; work         ;
 ;          |Mux_2_to_1:U7|                        ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U11|Mux_2_to_1:U7                                                               ; Mux_2_to_1      ; work         ;
 ;       |Mux_8_to_1:U12|                          ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U12                                                                             ; Mux_8_to_1      ; work         ;
@@ -293,16 +298,16 @@ https://fpgasoftware.intel.com/eula.
 ;          |Mux_2_to_1:U7|                        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U7|Mux_2_to_1:U7                                                                ; Mux_2_to_1      ; work         ;
 ;       |Mux_8_to_1:U8|                           ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U8                                                                              ; Mux_8_to_1      ; work         ;
 ;          |Mux_2_to_1:U7|                        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U8|Mux_2_to_1:U7                                                                ; Mux_2_to_1      ; work         ;
-;       |Mux_8_to_1:U9|                           ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U9                                                                              ; Mux_8_to_1      ; work         ;
-;          |Mux_2_to_1:U7|                        ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U9|Mux_2_to_1:U7                                                                ; Mux_2_to_1      ; work         ;
-;    |Processor:U3|                               ; 441 (0)             ; 283 (0)                   ; 6144        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3                                                                                                 ; Processor       ; work         ;
-;       |ControlUnit:U1|                          ; 49 (0)              ; 27 (0)                    ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|ControlUnit:U1                                                                                  ; ControlUnit     ; work         ;
+;       |Mux_8_to_1:U9|                           ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U9                                                                              ; Mux_8_to_1      ; work         ;
+;          |Mux_2_to_1:U7|                        ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U9|Mux_2_to_1:U7                                                                ; Mux_2_to_1      ; work         ;
+;    |Processor:U3|                               ; 440 (0)             ; 283 (0)                   ; 6144        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3                                                                                                 ; Processor       ; work         ;
+;       |ControlUnit:U1|                          ; 48 (0)              ; 27 (0)                    ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|ControlUnit:U1                                                                                  ; ControlUnit     ; work         ;
 ;          |Instruc_Reg:U4|                       ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|ControlUnit:U1|Instruc_Reg:U4                                                                   ; Instruc_Reg     ; work         ;
 ;          |InstructionMem:U1|                    ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|ControlUnit:U1|InstructionMem:U1                                                                ; InstructionMem  ; work         ;
 ;             |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|ControlUnit:U1|InstructionMem:U1|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;                |altsyncram_2f91:auto_generated| ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|ControlUnit:U1|InstructionMem:U1|altsyncram:altsyncram_component|altsyncram_2f91:auto_generated ; altsyncram_2f91 ; work         ;
 ;          |PC_Counter:U3|                        ; 8 (8)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|ControlUnit:U1|PC_Counter:U3                                                                    ; PC_Counter      ; work         ;
-;          |StateMachine:U2|                      ; 41 (41)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|ControlUnit:U1|StateMachine:U2                                                                  ; StateMachine    ; work         ;
+;          |StateMachine:U2|                      ; 40 (40)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|ControlUnit:U1|StateMachine:U2                                                                  ; StateMachine    ; work         ;
 ;       |DataPath:U2|                             ; 392 (0)             ; 256 (0)                   ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|DataPath:U2                                                                                     ; DataPath        ; work         ;
 ;          |ALU:U4|                               ; 37 (37)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|DataPath:U2|ALU:U4                                                                              ; ALU             ; work         ;
 ;          |DataMem:U1|                           ; 0 (0)               ; 0 (0)                     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|DataPath:U2|DataMem:U1                                                                          ; DataMem         ; work         ;
@@ -570,27 +575,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+-------+----------+----------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Processor:U3|DataPath:U2"                                                                                  ;
-+--------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                                                  ;
-+--------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; r_data ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-; wData  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+----------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Processor:U3|DataPath:U2"                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; r_data ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; wData  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Processor:U3|ControlUnit:U1"                                                                                                                                              ;
-+--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                                                                                                                 ;
-+--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; PC_clr ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (16 bits) it drives.  The 15 most-significant bit(s) in the port expression will be connected to GND. ;
-; PC_up  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                ;
-; IR_ld  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                ;
-; IR_Out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                ;
-; data   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                ;
-+--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Processor:U3|ControlUnit:U1"                                                                                                                                            ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                               ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; PC_Out ; Output ; Warning  ; Output or bidir port (7 bits) is smaller than the port expression (9 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND. ;
+; PC_clr ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; PC_up  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; IR_ld  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; data   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
++--------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Processor:U3"                                                                                                               ;
++--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                   ;
++--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; PC_Out ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (7 bits) it drives; bit(s) "PC_Out[7..7]" have no fanouts ;
++--------+--------+----------+---------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------+
@@ -613,20 +627,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 7                           ;
 ;     SLD               ; 33                          ;
 ;     plain             ; 7                           ;
-; cycloneiii_lcell_comb ; 577                         ;
+; cycloneiii_lcell_comb ; 607                         ;
 ;     arith             ; 54                          ;
 ;         2 data inputs ; 39                          ;
 ;         3 data inputs ; 15                          ;
-;     normal            ; 523                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 10                          ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 42                          ;
-;         4 data inputs ; 460                         ;
+;     normal            ; 553                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 14                          ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 39                          ;
+;         4 data inputs ; 488                         ;
 ; cycloneiii_ram_block  ; 32                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 14.10                       ;
-; Average LUT depth     ; 9.23                        ;
+; Average LUT depth     ; 9.08                        ;
 +-----------------------+-----------------------------+
 
 
@@ -635,7 +649,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -645,7 +659,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Fri Jun 05 22:09:55 2020
+    Info: Processing started: Fri Jun 05 01:45:01 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjectB -c ProjectB
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -732,6 +746,7 @@ Info (12128): Elaborating entity "altsyncram_2f91" for hierarchy "Processor:U3|C
 Info (12128): Elaborating entity "Instruc_Reg" for hierarchy "Processor:U3|ControlUnit:U1|Instruc_Reg:U4" File: C:/Users/taras/Documents/GitHub/ProjectB/ControlUnit.sv Line: 24
 Info (12128): Elaborating entity "StateMachine" for hierarchy "Processor:U3|ControlUnit:U1|StateMachine:U2" File: C:/Users/taras/Documents/GitHub/ProjectB/ControlUnit.sv Line: 27
 Info (12128): Elaborating entity "PC_Counter" for hierarchy "Processor:U3|ControlUnit:U1|PC_Counter:U3" File: C:/Users/taras/Documents/GitHub/ProjectB/ControlUnit.sv Line: 30
+Warning (10230): Verilog HDL assignment warning at PC_Counter.sv(14): truncated value with size 8 to match size of target (7) File: C:/Users/taras/Documents/GitHub/ProjectB/PC_Counter.sv Line: 14
 Info (12128): Elaborating entity "DataPath" for hierarchy "Processor:U3|DataPath:U2" File: C:/Users/taras/Documents/GitHub/ProjectB/Processor.sv Line: 31
 Info (12128): Elaborating entity "DataMem" for hierarchy "Processor:U3|DataPath:U2|DataMem:U1" File: C:/Users/taras/Documents/GitHub/ProjectB/DataPath.sv Line: 20
 Info (12128): Elaborating entity "altsyncram" for hierarchy "Processor:U3|DataPath:U2|DataMem:U1|altsyncram:altsyncram_component" File: C:/Users/taras/Documents/GitHub/ProjectB/DataMem.v Line: 86
@@ -765,43 +780,18 @@ Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:U5" File: C:/U
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "Processor:U3|DataPath:U2|RegisterFile:U3|regfile" is uninferred due to asynchronous read logic File: C:/Users/taras/Documents/GitHub/ProjectB/RegisterFile.sv Line: 17
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/taras/Documents/GitHub/ProjectB/ProjectB.sv Line: 14
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 973 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1000 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 78 output pins
-    Info (21061): Implemented 840 logic cells
+    Info (21061): Implemented 867 logic cells
     Info (21064): Implemented 32 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
-    Info: Peak virtual memory: 4789 megabytes
-    Info: Processing ended: Fri Jun 05 22:10:24 2020
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:58
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4788 megabytes
+    Info: Processing ended: Fri Jun 05 01:45:14 2020
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:27
 
 

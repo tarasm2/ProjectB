@@ -3,19 +3,19 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup '50MHzClk'
-Slack : 13.823
+Slack : 13.975
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Setup 'processorClock'
-Slack : 481.164
+Slack : 481.700
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'processorClock'
+Slack : 0.360
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold '50MHzClk'
 Slack : 0.402
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'processorClock'
-Slack : 0.466
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width '50MHzClk'
@@ -23,47 +23,47 @@ Slack : 9.680
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'processorClock'
-Slack : 249.728
+Slack : 249.711
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup '50MHzClk'
-Slack : 14.246
+Slack : 14.436
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'processorClock'
-Slack : 482.519
+Slack : 482.994
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold '50MHzClk'
-Slack : 0.354
+Slack : 0.353
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'processorClock'
-Slack : 0.420
+Slack : 0.358
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width '50MHzClk'
-Slack : 9.689
+Slack : 9.688
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'processorClock'
-Slack : 249.699
+Slack : 249.729
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup '50MHzClk'
-Slack : 16.485
+Slack : 16.556
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'processorClock'
-Slack : 489.719
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold '50MHzClk'
-Slack : 0.181
+Slack : 490.025
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'processorClock'
-Slack : 0.212
+Slack : 0.139
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold '50MHzClk'
+Slack : 0.182
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width '50MHzClk'
@@ -71,7 +71,7 @@ Slack : 9.265
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'processorClock'
-Slack : 249.702
+Slack : 249.711
 TNS   : 0.000
 
 ------------------------------------------------------------
