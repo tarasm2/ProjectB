@@ -23,8 +23,7 @@ module Data_Mem(addr, Clk, Out, D_wr, data);
 endmodule
 
 // This testbench will check and display readings
-// of data at all locations from 0 to 127
-// the RAM has been initialized using A.mif
+// of data at all locations from 0 to 255
 `timescale 1ns/1ns
 module Data_Mem_tb();
  
@@ -42,9 +41,9 @@ module Data_Mem_tb();
 
   initial begin
     addr = 0; D_wr = 0;                         // Start at address 0
-		for (int k=0; k<255; k++) begin              // loop through first 10 addresses
+		for (int k=0; k<255; k++) begin             // loop through all addresses
 		@(posedge Clk);           
-		#5 $display(k, $time, data,,,,, Out);       // display index, time, Output of Data Memory
+		#5 $display($time, k,,,,, Out);             // display index, time, Output of Data Memory
     addr = k + 1;                               // next address location
 		end
     $stop;

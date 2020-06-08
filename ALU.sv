@@ -50,6 +50,9 @@ module ALU_tb();
 																		  Sel = 3'b111; #10;  // Add 1 to A
 	 $stop;
 	 end 
+
+    initial 
+        $monitor("Time =%0t, A =%16b, B =%16b, Select =%d Output =%16b", $time, A, B, Sel, Q);
 	 
 endmodule
 

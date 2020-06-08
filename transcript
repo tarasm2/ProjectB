@@ -1,5 +1,5 @@
 # Reading C:/intelFPGA_lite/19.1/modelsim_ase/tcl/vsim/pref.tcl
-do runrtl.do
+do runrtl_DataMemory.do
 # 
 # Get rid of current work lib
 # if {[file exists rtl_work]} {
@@ -16,147 +16,39 @@ do runrtl.do
 # Compile Verilog
 #     All Verilog files that are part of this design should have
 #     their own "vlog" line below.
-# vlog -work work +acc "./InstructionMem.v"
+# vlog -work work +acc "./Data_Mem.sv"
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:54:51 on Jun 05,2020
-# vlog -reportprogress 300 -work work "+acc" ./InstructionMem.v 
-# -- Compiling module InstructionMem
+# Start time: 21:24:48 on Jun 07,2020
+# vlog -reportprogress 300 -work work "+acc" ./Data_Mem.sv 
+# -- Compiling module Data_Mem
+# -- Compiling module Data_Mem_tb
 # 
 # Top level modules:
-# 	InstructionMem
-# End time: 01:54:51 on Jun 05,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -work work +acc "./StateMachine.sv"
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:54:51 on Jun 05,2020
-# vlog -reportprogress 300 -work work "+acc" ./StateMachine.sv 
-# -- Compiling module StateMachine
-# ** Note: (vlog-143) Recognized 1 FSM in module "StateMachine(verilog)".
-# -- Compiling module StateMachine_tb
-# 
-# Top level modules:
-# 	StateMachine_tb
-# End time: 01:54:51 on Jun 05,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -work work +acc "./PC_Counter.sv"
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:54:51 on Jun 05,2020
-# vlog -reportprogress 300 -work work "+acc" ./PC_Counter.sv 
-# -- Compiling module PC_Counter
-# -- Compiling module PC_Counter_tb
-# 
-# Top level modules:
-# 	PC_Counter_tb
-# End time: 01:54:52 on Jun 05,2020, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# vlog -work work +acc "./Instruc_Reg.sv"
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:54:52 on Jun 05,2020
-# vlog -reportprogress 300 -work work "+acc" ./Instruc_Reg.sv 
-# -- Compiling module Instruc_Reg
-# -- Compiling module Instruc_Reg_tb
-# 
-# Top level modules:
-# 	Instruc_Reg_tb
-# End time: 01:54:52 on Jun 05,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -work work +acc "./ControlUnit.sv"
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:54:52 on Jun 05,2020
-# vlog -reportprogress 300 -work work "+acc" ./ControlUnit.sv 
-# -- Compiling module ControlUnit
-# -- Compiling module ControlUnit_tb
-# 
-# Top level modules:
-# 	ControlUnit_tb
-# End time: 01:54:52 on Jun 05,2020, Elapsed time: 0:00:00
+# 	Data_Mem_tb
+# End time: 21:24:48 on Jun 07,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -work work +acc "./DataMem.v"
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:54:52 on Jun 05,2020
+# Start time: 21:24:48 on Jun 07,2020
 # vlog -reportprogress 300 -work work "+acc" ./DataMem.v 
 # -- Compiling module DataMem
 # 
 # Top level modules:
 # 	DataMem
-# End time: 01:54:52 on Jun 05,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -work work +acc "./Mux_16_2.sv"
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:54:52 on Jun 05,2020
-# vlog -reportprogress 300 -work work "+acc" ./Mux_16_2.sv 
-# -- Compiling module Mux_16_2
-# -- Compiling module Mux_16_2_tb
-# 
-# Top level modules:
-# 	Mux_16_2_tb
-# End time: 01:54:52 on Jun 05,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -work work +acc "./RegisterFile.sv"
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:54:52 on Jun 05,2020
-# vlog -reportprogress 300 -work work "+acc" ./RegisterFile.sv 
-# -- Compiling module RegisterFile
-# -- Compiling module RegisterFile_tb
-# 
-# Top level modules:
-# 	RegisterFile_tb
-# End time: 01:54:52 on Jun 05,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -work work +acc "./ALU.sv"
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:54:52 on Jun 05,2020
-# vlog -reportprogress 300 -work work "+acc" ./ALU.sv 
-# -- Compiling module ALU
-# -- Compiling module ALU_tb
-# 
-# Top level modules:
-# 	ALU_tb
-# End time: 01:54:52 on Jun 05,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -work work +acc "./DataPath.sv"
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:54:53 on Jun 05,2020
-# vlog -reportprogress 300 -work work "+acc" ./DataPath.sv 
-# -- Compiling module DataPath
-# -- Compiling module DataPath_tb
-# 
-# Top level modules:
-# 	DataPath_tb
-# End time: 01:54:53 on Jun 05,2020, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -work work +acc "./Processor.sv"
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 01:54:53 on Jun 05,2020
-# vlog -reportprogress 300 -work work "+acc" ./Processor.sv 
-# -- Compiling module Processor
-# -- Compiling module Processor_tb
-# 
-# Top level modules:
-# 	Processor_tb
-# End time: 01:54:53 on Jun 05,2020, Elapsed time: 0:00:00
+# End time: 21:24:48 on Jun 07,2020, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # Call vsim to invoke simulator
 #     Make sure the last item on the line is the name of the
 #     testbench module you want to execute.
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Processor_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Processor_tb 
-# Start time: 01:54:53 on Jun 05,2020
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Data_Mem_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Data_Mem_tb 
+# Start time: 21:24:48 on Jun 07,2020
 # Loading sv_std.std
-# Loading work.Processor_tb
-# Loading work.Processor
-# Loading work.ControlUnit
-# Loading work.InstructionMem
-# Loading altera_mf_ver.altsyncram
-# Loading work.Instruc_Reg
-# Loading work.StateMachine
-# Loading work.PC_Counter
-# Loading work.DataPath
+# Loading work.Data_Mem_tb
+# Loading work.Data_Mem
 # Loading work.DataMem
-# Loading work.Mux_16_2
-# Loading work.RegisterFile
-# Loading work.ALU
+# Loading altera_mf_ver.altsyncram
 # Loading altera_mf_ver.altsyncram_body
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
@@ -165,20 +57,21 @@ do runrtl.do
 # Source the wave do file
 #     This should be the file that sets up the signal window for
 #     the module you are testing.
-# do wave.do
+# do Data_Mem_wave.do
 # onerror {resume}
 # quietly WaveActivateNextPane {} 0
-# add wave -noupdate /Processor_tb/clk
-# add wave -noupdate /Processor_tb/Reset
-# add wave -noupdate /Processor_tb/IR_Out
-# add wave -noupdate /Processor_tb/PC_Out
-# add wave -noupdate /Processor_tb/State
-# add wave -noupdate /Processor_tb/NextState
-# add wave -noupdate /Processor_tb/ALU_A
-# add wave -noupdate /Processor_tb/ALU_B
-# add wave -noupdate /Processor_tb/ALU_Out
+# add wave -noupdate /Data_Mem_tb/Clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: taras  Hostname: LAPTOP-3FLST6HL  ProcessID: 135200
+#           Attempting to use alternate WLF file "./wlftbn83cn".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftbn83cn
+# add wave -noupdate /Data_Mem_tb/D_wr
+# add wave -noupdate /Data_Mem_tb/addr
+# add wave -noupdate /Data_Mem_tb/Out
+# add wave -noupdate /Data_Mem_tb/data
 # TreeUpdate [SetDefaultTree]
-# WaveRestoreCursors {{Cursor 1} {63 ps} 0}
+# WaveRestoreCursors {{Cursor 1} {88 ps} 0}
 # quietly wave cursor active 1
 # configure wave -namecolwidth 150
 # configure wave -valuecolwidth 100
@@ -206,49 +99,994 @@ do runrtl.do
 # 
 # Run the simulation
 # run -all
-# Time =0 IR_Out =0xxxx PC_Out =   x State =  x NextState =  0 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =10 IR_Out =0xxxx PC_Out =   x State =  0 NextState =  1 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =30 IR_Out =0xxxx PC_Out =   0 State =  0 NextState =  1 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =70 IR_Out =0xxxx PC_Out =   0 State =  1 NextState =  2 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =90 IR_Out =020b1 PC_Out =   1 State =  2 NextState =  4 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =110 IR_Out =020b1 PC_Out =   1 State =  4 NextState =  5 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =130 IR_Out =020b1 PC_Out =   1 State =  5 NextState =  1 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =150 IR_Out =020b1 PC_Out =   1 State =  1 NextState =  2 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =170 IR_Out =021b2 PC_Out =   2 State =  2 NextState =  4 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =190 IR_Out =021b2 PC_Out =   2 State =  4 NextState =  5 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =210 IR_Out =021b2 PC_Out =   2 State =  5 NextState =  1 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =230 IR_Out =021b2 PC_Out =   2 State =  1 NextState =  2 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =250 IR_Out =02063 PC_Out =   3 State =  2 NextState =  4 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =270 IR_Out =02063 PC_Out =   3 State =  4 NextState =  5 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =290 IR_Out =02063 PC_Out =   3 State =  5 NextState =  1 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =310 IR_Out =02063 PC_Out =   3 State =  1 NextState =  2 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =330 IR_Out =028a4 PC_Out =   4 State =  2 NextState =  4 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =350 IR_Out =028a4 PC_Out =   4 State =  4 NextState =  5 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =370 IR_Out =028a4 PC_Out =   4 State =  5 NextState =  1 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =390 IR_Out =028a4 PC_Out =   4 State =  1 NextState =  2 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =410 IR_Out =04145 PC_Out =   5 State =  2 NextState =  8 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =430 IR_Out =04145 PC_Out =   5 State =  8 NextState =  1 ALU_A =  52229 ALU_B =  41024 ALU_Out =  11205
-# Time =450 IR_Out =04145 PC_Out =   5 State =  1 NextState =  2 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =470 IR_Out =04326 PC_Out =   6 State =  2 NextState =  8 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =490 IR_Out =04326 PC_Out =   6 State =  8 NextState =  1 ALU_A =   4268 ALU_B =    437 ALU_Out =   3831
-# Time =510 IR_Out =04326 PC_Out =   6 State =  1 NextState =  2 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =530 IR_Out =03560 PC_Out =   7 State =  2 NextState =  7 ALU_A =      x ALU_B =      x ALU_Out =      0
-# Time =550 IR_Out =03560 PC_Out =   7 State =  7 NextState =  1 ALU_A =  11205 ALU_B =   3831 ALU_Out =  15036
-# Time =570 IR_Out =03560 PC_Out =   7 State =  1 NextState =  2 ALU_A =  15036 ALU_B =  15036 ALU_Out =      0
-# Time =590 IR_Out =010cd PC_Out =   8 State =  2 NextState =  6 ALU_A =  15036 ALU_B =  15036 ALU_Out =      0
-# Time =610 IR_Out =010cd PC_Out =   8 State =  6 NextState =  1 ALU_A =  15036 ALU_B =  15036 ALU_Out =      0
-# Time =630 IR_Out =010cd PC_Out =   8 State =  1 NextState =  2 ALU_A =  15036 ALU_B =  15036 ALU_Out =      0
-# Time =650 IR_Out =05000 PC_Out =   9 State =  2 NextState =  9 ALU_A =  15036 ALU_B =  15036 ALU_Out =      0
-# Time =670 IR_Out =05000 PC_Out =   9 State =  9 NextState =  9 ALU_A =  15036 ALU_B =  15036 ALU_Out =      0
-# ** Note: $stop    : ./Processor.sv(61)
-#    Time: 732 ps  Iteration: 0  Instance: /Processor_tb
-# Break in Module Processor_tb at ./Processor.sv line 61
+#           0                  15          0        0
+#           1                  35          1        0
+#           2                  55          2        0
+#           3                  75          3        0
+#           4                  95          4        0
+#           5                 115          5        0
+#           6                 135          6     4268
+#           7                 155          7        0
+#           8                 175          8        0
+#           9                 195          9        0
+#          10                 215         10        0
+#          11                 235         11    52229
+#          12                 255         12        0
+#          13                 275         13        0
+#          14                 295         14        0
+#          15                 315         15        0
+#          16                 335         16        0
+#          17                 355         17        0
+#          18                 375         18        0
+#          19                 395         19        0
+#          20                 415         20        0
+#          21                 435         21        0
+#          22                 455         22        0
+#          23                 475         23        0
+#          24                 495         24        0
+#          25                 515         25        0
+#          26                 535         26        0
+#          27                 555         27      437
+#          28                 575         28        0
+#          29                 595         29        0
+#          30                 615         30        0
+#          31                 635         31        0
+#          32                 655         32        0
+#          33                 675         33        0
+#          34                 695         34        0
+#          35                 715         35        0
+#          36                 735         36        0
+#          37                 755         37        0
+#          38                 775         38        0
+#          39                 795         39        0
+#          40                 815         40        0
+#          41                 835         41        0
+#          42                 855         42        0
+#          43                 875         43        0
+#          44                 895         44        0
+#          45                 915         45        0
+#          46                 935         46        0
+#          47                 955         47        0
+#          48                 975         48        0
+#          49                 995         49        0
+#          50                1015         50        0
+#          51                1035         51        0
+#          52                1055         52        0
+#          53                1075         53        0
+#          54                1095         54        0
+#          55                1115         55        0
+#          56                1135         56        0
+#          57                1155         57        0
+#          58                1175         58        0
+#          59                1195         59        0
+#          60                1215         60        0
+#          61                1235         61        0
+#          62                1255         62        0
+#          63                1275         63        0
+#          64                1295         64        0
+#          65                1315         65        0
+#          66                1335         66        0
+#          67                1355         67        0
+#          68                1375         68        0
+#          69                1395         69        0
+#          70                1415         70        0
+#          71                1435         71        0
+#          72                1455         72        0
+#          73                1475         73        0
+#          74                1495         74        0
+#          75                1515         75        0
+#          76                1535         76        0
+#          77                1555         77        0
+#          78                1575         78        0
+#          79                1595         79        0
+#          80                1615         80        0
+#          81                1635         81        0
+#          82                1655         82        0
+#          83                1675         83        0
+#          84                1695         84        0
+#          85                1715         85        0
+#          86                1735         86        0
+#          87                1755         87        0
+#          88                1775         88        0
+#          89                1795         89        0
+#          90                1815         90        0
+#          91                1835         91        0
+#          92                1855         92        0
+#          93                1875         93        0
+#          94                1895         94        0
+#          95                1915         95        0
+#          96                1935         96        0
+#          97                1955         97        0
+#          98                1975         98        0
+#          99                1995         99        0
+#         100                2015        100        0
+#         101                2035        101        0
+#         102                2055        102        0
+#         103                2075        103        0
+#         104                2095        104        0
+#         105                2115        105        0
+#         106                2135        106        0
+#         107                2155        107        0
+#         108                2175        108        0
+#         109                2195        109        0
+#         110                2215        110        0
+#         111                2235        111        0
+#         112                2255        112        0
+#         113                2275        113        0
+#         114                2295        114        0
+#         115                2315        115        0
+#         116                2335        116        0
+#         117                2355        117        0
+#         118                2375        118        0
+#         119                2395        119        0
+#         120                2415        120        0
+#         121                2435        121        0
+#         122                2455        122        0
+#         123                2475        123        0
+#         124                2495        124        0
+#         125                2515        125        0
+#         126                2535        126        0
+#         127                2555        127        0
+#         128                2575        128        0
+#         129                2595        129        0
+#         130                2615        130        0
+#         131                2635        131        0
+#         132                2655        132        0
+#         133                2675        133        0
+#         134                2695        134        0
+#         135                2715        135        0
+#         136                2735        136        0
+#         137                2755        137        0
+#         138                2775        138    41024
+#         139                2795        139        0
+#         140                2815        140        0
+#         141                2835        141        0
+#         142                2855        142        0
+#         143                2875        143        0
+#         144                2895        144        0
+#         145                2915        145        0
+#         146                2935        146        0
+#         147                2955        147        0
+#         148                2975        148        0
+#         149                2995        149        0
+#         150                3015        150        0
+#         151                3035        151        0
+#         152                3055        152        0
+#         153                3075        153        0
+#         154                3095        154        0
+#         155                3115        155        0
+#         156                3135        156        0
+#         157                3155        157        0
+#         158                3175        158        0
+#         159                3195        159        0
+#         160                3215        160        0
+#         161                3235        161        0
+#         162                3255        162        0
+#         163                3275        163        0
+#         164                3295        164        0
+#         165                3315        165        0
+#         166                3335        166        0
+#         167                3355        167        0
+#         168                3375        168        0
+#         169                3395        169        0
+#         170                3415        170        0
+#         171                3435        171        0
+#         172                3455        172        0
+#         173                3475        173        0
+#         174                3495        174        0
+#         175                3515        175        0
+#         176                3535        176        0
+#         177                3555        177        0
+#         178                3575        178        0
+#         179                3595        179        0
+#         180                3615        180        0
+#         181                3635        181        0
+#         182                3655        182        0
+#         183                3675        183        0
+#         184                3695        184        0
+#         185                3715        185        0
+#         186                3735        186        0
+#         187                3755        187        0
+#         188                3775        188        0
+#         189                3795        189        0
+#         190                3815        190        0
+#         191                3835        191        0
+#         192                3855        192        0
+#         193                3875        193        0
+#         194                3895        194        0
+#         195                3915        195        0
+#         196                3935        196        0
+#         197                3955        197        0
+#         198                3975        198        0
+#         199                3995        199        0
+#         200                4015        200        0
+#         201                4035        201        0
+#         202                4055        202        0
+#         203                4075        203        0
+#         204                4095        204        0
+#         205                4115        205        0
+#         206                4135        206        0
+#         207                4155        207        0
+#         208                4175        208        0
+#         209                4195        209        0
+#         210                4215        210        0
+#         211                4235        211        0
+#         212                4255        212        0
+#         213                4275        213        0
+#         214                4295        214        0
+#         215                4315        215        0
+#         216                4335        216        0
+#         217                4355        217        0
+#         218                4375        218        0
+#         219                4395        219        0
+#         220                4415        220        0
+#         221                4435        221        0
+#         222                4455        222        0
+#         223                4475        223        0
+#         224                4495        224        0
+#         225                4515        225        0
+#         226                4535        226        0
+#         227                4555        227        0
+#         228                4575        228        0
+#         229                4595        229        0
+#         230                4615        230        0
+#         231                4635        231        0
+#         232                4655        232        0
+#         233                4675        233        0
+#         234                4695        234        0
+#         235                4715        235        0
+#         236                4735        236        0
+#         237                4755        237        0
+#         238                4775        238        0
+#         239                4795        239        0
+#         240                4815        240        0
+#         241                4835        241        0
+#         242                4855        242        0
+#         243                4875        243        0
+#         244                4895        244        0
+#         245                4915        245        0
+#         246                4935        246        0
+#         247                4955        247        0
+#         248                4975        248        0
+#         249                4995        249        0
+#         250                5015        250        0
+#         251                5035        251        0
+#         252                5055        252        0
+#         253                5075        253        0
+#         254                5095        254        0
+# ** Note: $stop    : ./Data_Mem.sv(49)
+#    Time: 5095 ns  Iteration: 0  Instance: /Data_Mem_tb
+# Break in Module Data_Mem_tb at ./Data_Mem.sv line 49
 # 
 # View the entire wave display
 # wave zoomfull
 # 0 ps
-# 769 ps
+# 5349750 ps
 # 
 # End
-# End time: 02:02:16 on Jun 05,2020, Elapsed time: 0:07:23
-# Errors: 0, Warnings: 1
+do runrtl_DataMemory.do
+# 
+# Get rid of current work lib
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# Error 31: Unable to unlink file "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work/_lib.qdb".
+# Error 133: Unable to remove directory "C:/Users/taras/Documents/GitHub/ProjectB/rtl_work".
+# 
+# Create work library and map it to 'work'
+# vlib rtl_work
+# ** Error: (vlib-35) Failed to create directory "rtl_work".
+# File exists. (errno = EEXIST)
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Modifying modelsim.ini
+# 
+# Compile Verilog
+#     All Verilog files that are part of this design should have
+#     their own "vlog" line below.
+# vlog -work work +acc "./Data_Mem.sv"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:25:39 on Jun 07,2020
+# vlog -reportprogress 300 -work work "+acc" ./Data_Mem.sv 
+# -- Compiling module Data_Mem
+# -- Compiling module Data_Mem_tb
+# 
+# Top level modules:
+# 	Data_Mem_tb
+# End time: 21:25:39 on Jun 07,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -work work +acc "./DataMem.v"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:25:39 on Jun 07,2020
+# vlog -reportprogress 300 -work work "+acc" ./DataMem.v 
+# -- Compiling module DataMem
+# 
+# Top level modules:
+# 	DataMem
+# End time: 21:25:39 on Jun 07,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Call vsim to invoke simulator
+#     Make sure the last item on the line is the name of the
+#     testbench module you want to execute.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc" -fsmdebug  Data_Mem_tb
+# End time: 21:25:45 on Jun 07,2020, Elapsed time: 0:00:57
+# Errors: 0, Warnings: 3
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" -fsmdebug Data_Mem_tb 
+# Start time: 21:25:45 on Jun 07,2020
+# Loading sv_std.std
+# Loading work.Data_Mem_tb
+# Loading work.Data_Mem
+# Loading work.DataMem
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# 
+# Source the wave do file
+#     This should be the file that sets up the signal window for
+#     the module you are testing.
+# do Data_Mem_wave.do
+# onerror {resume}
+# quietly WaveActivateNextPane {} 0
+# add wave -noupdate /Data_Mem_tb/Clk
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: taras  Hostname: LAPTOP-3FLST6HL  ProcessID: 135200
+#           Attempting to use alternate WLF file "./wlftsarja3".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftsarja3
+# add wave -noupdate /Data_Mem_tb/D_wr
+# add wave -noupdate /Data_Mem_tb/addr
+# add wave -noupdate /Data_Mem_tb/Out
+# add wave -noupdate /Data_Mem_tb/data
+# TreeUpdate [SetDefaultTree]
+# WaveRestoreCursors {{Cursor 1} {88 ps} 0}
+# quietly wave cursor active 1
+# configure wave -namecolwidth 150
+# configure wave -valuecolwidth 100
+# configure wave -justifyvalue left
+# configure wave -signalnamewidth 0
+# configure wave -snapdistance 10
+# configure wave -datasetprefix 0
+# configure wave -rowmargin 4
+# configure wave -childrowmargin 2
+# configure wave -gridoffset 0
+# configure wave -gridperiod 1
+# configure wave -griddelta 40
+# configure wave -timeline 0
+# configure wave -timelineunits ps
+# update
+# WaveRestoreZoom {0 ps} {1 ns}
+# 
+# Set the window types
+# view wave
+# .main_pane.wave.interior.cs.body.pw.wf
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# 
+# Run the simulation
+# run -all
+#                   15          0        0
+#                   35          1        0
+#                   55          2        0
+#                   75          3        0
+#                   95          4        0
+#                  115          5        0
+#                  135          6     4268
+#                  155          7        0
+#                  175          8        0
+#                  195          9        0
+#                  215         10        0
+#                  235         11    52229
+#                  255         12        0
+#                  275         13        0
+#                  295         14        0
+#                  315         15        0
+#                  335         16        0
+#                  355         17        0
+#                  375         18        0
+#                  395         19        0
+#                  415         20        0
+#                  435         21        0
+#                  455         22        0
+#                  475         23        0
+#                  495         24        0
+#                  515         25        0
+#                  535         26        0
+#                  555         27      437
+#                  575         28        0
+#                  595         29        0
+#                  615         30        0
+#                  635         31        0
+#                  655         32        0
+#                  675         33        0
+#                  695         34        0
+#                  715         35        0
+#                  735         36        0
+#                  755         37        0
+#                  775         38        0
+#                  795         39        0
+#                  815         40        0
+#                  835         41        0
+#                  855         42        0
+#                  875         43        0
+#                  895         44        0
+#                  915         45        0
+#                  935         46        0
+#                  955         47        0
+#                  975         48        0
+#                  995         49        0
+#                 1015         50        0
+#                 1035         51        0
+#                 1055         52        0
+#                 1075         53        0
+#                 1095         54        0
+#                 1115         55        0
+#                 1135         56        0
+#                 1155         57        0
+#                 1175         58        0
+#                 1195         59        0
+#                 1215         60        0
+#                 1235         61        0
+#                 1255         62        0
+#                 1275         63        0
+#                 1295         64        0
+#                 1315         65        0
+#                 1335         66        0
+#                 1355         67        0
+#                 1375         68        0
+#                 1395         69        0
+#                 1415         70        0
+#                 1435         71        0
+#                 1455         72        0
+#                 1475         73        0
+#                 1495         74        0
+#                 1515         75        0
+#                 1535         76        0
+#                 1555         77        0
+#                 1575         78        0
+#                 1595         79        0
+#                 1615         80        0
+#                 1635         81        0
+#                 1655         82        0
+#                 1675         83        0
+#                 1695         84        0
+#                 1715         85        0
+#                 1735         86        0
+#                 1755         87        0
+#                 1775         88        0
+#                 1795         89        0
+#                 1815         90        0
+#                 1835         91        0
+#                 1855         92        0
+#                 1875         93        0
+#                 1895         94        0
+#                 1915         95        0
+#                 1935         96        0
+#                 1955         97        0
+#                 1975         98        0
+#                 1995         99        0
+#                 2015        100        0
+#                 2035        101        0
+#                 2055        102        0
+#                 2075        103        0
+#                 2095        104        0
+#                 2115        105        0
+#                 2135        106        0
+#                 2155        107        0
+#                 2175        108        0
+#                 2195        109        0
+#                 2215        110        0
+#                 2235        111        0
+#                 2255        112        0
+#                 2275        113        0
+#                 2295        114        0
+#                 2315        115        0
+#                 2335        116        0
+#                 2355        117        0
+#                 2375        118        0
+#                 2395        119        0
+#                 2415        120        0
+#                 2435        121        0
+#                 2455        122        0
+#                 2475        123        0
+#                 2495        124        0
+#                 2515        125        0
+#                 2535        126        0
+#                 2555        127        0
+#                 2575        128        0
+#                 2595        129        0
+#                 2615        130        0
+#                 2635        131        0
+#                 2655        132        0
+#                 2675        133        0
+#                 2695        134        0
+#                 2715        135        0
+#                 2735        136        0
+#                 2755        137        0
+#                 2775        138    41024
+#                 2795        139        0
+#                 2815        140        0
+#                 2835        141        0
+#                 2855        142        0
+#                 2875        143        0
+#                 2895        144        0
+#                 2915        145        0
+#                 2935        146        0
+#                 2955        147        0
+#                 2975        148        0
+#                 2995        149        0
+#                 3015        150        0
+#                 3035        151        0
+#                 3055        152        0
+#                 3075        153        0
+#                 3095        154        0
+#                 3115        155        0
+#                 3135        156        0
+#                 3155        157        0
+#                 3175        158        0
+#                 3195        159        0
+#                 3215        160        0
+#                 3235        161        0
+#                 3255        162        0
+#                 3275        163        0
+#                 3295        164        0
+#                 3315        165        0
+#                 3335        166        0
+#                 3355        167        0
+#                 3375        168        0
+#                 3395        169        0
+#                 3415        170        0
+#                 3435        171        0
+#                 3455        172        0
+#                 3475        173        0
+#                 3495        174        0
+#                 3515        175        0
+#                 3535        176        0
+#                 3555        177        0
+#                 3575        178        0
+#                 3595        179        0
+#                 3615        180        0
+#                 3635        181        0
+#                 3655        182        0
+#                 3675        183        0
+#                 3695        184        0
+#                 3715        185        0
+#                 3735        186        0
+#                 3755        187        0
+#                 3775        188        0
+#                 3795        189        0
+#                 3815        190        0
+#                 3835        191        0
+#                 3855        192        0
+#                 3875        193        0
+#                 3895        194        0
+#                 3915        195        0
+#                 3935        196        0
+#                 3955        197        0
+#                 3975        198        0
+#                 3995        199        0
+#                 4015        200        0
+#                 4035        201        0
+#                 4055        202        0
+#                 4075        203        0
+#                 4095        204        0
+#                 4115        205        0
+#                 4135        206        0
+#                 4155        207        0
+#                 4175        208        0
+#                 4195        209        0
+#                 4215        210        0
+#                 4235        211        0
+#                 4255        212        0
+#                 4275        213        0
+#                 4295        214        0
+#                 4315        215        0
+#                 4335        216        0
+#                 4355        217        0
+#                 4375        218        0
+#                 4395        219        0
+#                 4415        220        0
+#                 4435        221        0
+#                 4455        222        0
+#                 4475        223        0
+#                 4495        224        0
+#                 4515        225        0
+#                 4535        226        0
+#                 4555        227        0
+#                 4575        228        0
+#                 4595        229        0
+#                 4615        230        0
+#                 4635        231        0
+#                 4655        232        0
+#                 4675        233        0
+#                 4695        234        0
+#                 4715        235        0
+#                 4735        236        0
+#                 4755        237        0
+#                 4775        238        0
+#                 4795        239        0
+#                 4815        240        0
+#                 4835        241        0
+#                 4855        242        0
+#                 4875        243        0
+#                 4895        244        0
+#                 4915        245        0
+#                 4935        246        0
+#                 4955        247        0
+#                 4975        248        0
+#                 4995        249        0
+#                 5015        250        0
+#                 5035        251        0
+#                 5055        252        0
+#                 5075        253        0
+#                 5095        254        0
+# ** Note: $stop    : ./Data_Mem.sv(49)
+#    Time: 5095 ns  Iteration: 0  Instance: /Data_Mem_tb
+# Break in Module Data_Mem_tb at ./Data_Mem.sv line 49
+# 
+# View the entire wave display
+# wave zoomfull
+# 0 ps
+# 5349750 ps
+# 
+# End
+do runlab_Mux_16_2.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:39:46 on Jun 07,2020
+# vlog -reportprogress 300 ./Mux_16_2.sv 
+# -- Compiling module Mux_16_2
+# -- Compiling module Mux_16_2_tb
+# 
+# Top level modules:
+# 	Mux_16_2_tb
+# End time: 21:39:46 on Jun 07,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:39:51 on Jun 07,2020, Elapsed time: 0:14:06
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work Mux_16_2_tb 
+# Start time: 21:39:51 on Jun 07,2020
+# Loading sv_std.std
+# Loading work.Mux_16_2_tb
+# Loading work.Mux_16_2
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: taras  Hostname: LAPTOP-3FLST6HL  ProcessID: 135200
+#           Attempting to use alternate WLF file "./wlftdbws5d".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftdbws5d
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# Time =0, rData =    7, aluData =   15, Select =1
+# Time =22, rData =    7, aluData =   15, Select =0
+# Time =42, rData =    1, aluData =    0, Select =1
+# Time =64, rData =    1, aluData =    0, Select =0
+do runlab_Mux_16_2.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:41:01 on Jun 07,2020
+# vlog -reportprogress 300 ./Mux_16_2.sv 
+# -- Compiling module Mux_16_2
+# -- Compiling module Mux_16_2_tb
+# 
+# Top level modules:
+# 	Mux_16_2_tb
+# End time: 21:41:01 on Jun 07,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:41:03 on Jun 07,2020, Elapsed time: 0:01:12
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work Mux_16_2_tb 
+# Start time: 21:41:03 on Jun 07,2020
+# Loading sv_std.std
+# Loading work.Mux_16_2_tb
+# Loading work.Mux_16_2
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: taras  Hostname: LAPTOP-3FLST6HL  ProcessID: 135200
+#           Attempting to use alternate WLF file "./wlftmvvmw9".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftmvvmw9
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# Time =0, rData =    7, aluData =   15, Select =1, Output =    7
+# Time =22, rData =    7, aluData =   15, Select =0, Output =   15
+# Time =42, rData =    1, aluData =    0, Select =1, Output =    1
+# Time =64, rData =    1, aluData =    0, Select =0, Output =    0
+do runlab_ALU.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:47:45 on Jun 07,2020
+# vlog -reportprogress 300 ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:47:45 on Jun 07,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:47:47 on Jun 07,2020, Elapsed time: 0:06:44
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work ALU_tb 
+# Start time: 21:47:47 on Jun 07,2020
+# Loading sv_std.std
+# Loading work.ALU_tb
+# Loading work.ALU
+# ** Error: Cannot open macro file: wave_ALU.do
+# Error in macro ./runlab_ALU.do line 18
+# Cannot open macro file: wave_ALU.do
+#     while executing
+# "do wave_ALU.do"
+add wave -position insertpoint  \
+sim:/ALU_tb/Sel \
+sim:/ALU_tb/A \
+sim:/ALU_tb/B \
+sim:/ALU_tb/Q
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: taras  Hostname: LAPTOP-3FLST6HL  ProcessID: 135200
+#           Attempting to use alternate WLF file "./wlftzix6xy".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftzix6xy
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/taras/Documents/GitHub/ProjectB/wave_ALU.do
+do runlab_ALU.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:48:54 on Jun 07,2020
+# vlog -reportprogress 300 ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:48:54 on Jun 07,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:48:56 on Jun 07,2020, Elapsed time: 0:01:09
+# Errors: 3, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work ALU_tb 
+# Start time: 21:48:56 on Jun 07,2020
+# Loading sv_std.std
+# Loading work.ALU_tb
+# Loading work.ALU
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: taras  Hostname: LAPTOP-3FLST6HL  ProcessID: 135200
+#           Attempting to use alternate WLF file "./wlftwi2b3f".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftwi2b3f
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# Time =0, A =0000000000000000, B =0000000000000001, Output =0000000000000000
+# Time =10, A =0000000000000000, B =0000000000000001, Output =0000000000000001
+# Time =20, A =0000000000000001, B =0000000000000001, Output =0000000000000000
+# Time =30, A =0000000000000001, B =0000000000000001, Output =0000000000000010
+# Time =40, A =0000000000000001, B =0000000000000001, Output =0000000000000001
+# Time =50, A =0000000000000001, B =0000000000000001, Output =0000000000000000
+# Time =60, A =0000000000000001, B =0000000000000001, Output =0000000000000001
+# Time =70, A =0000000000000000, B =0000000000000001, Output =0000000000000000
+# Time =80, A =0000000000000000, B =0000000000000001, Output =0000000000000001
+# ** Note: $stop    : ./ALU.sv(51)
+#    Time: 90 ps  Iteration: 0  Instance: /ALU_tb
+# Break in Module ALU_tb at ./ALU.sv line 51
+do runlab_ALU.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:49:58 on Jun 07,2020
+# vlog -reportprogress 300 ./ALU.sv 
+# -- Compiling module ALU
+# -- Compiling module ALU_tb
+# 
+# Top level modules:
+# 	ALU_tb
+# End time: 21:49:58 on Jun 07,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:50:03 on Jun 07,2020, Elapsed time: 0:01:07
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work ALU_tb 
+# Start time: 21:50:03 on Jun 07,2020
+# Loading sv_std.std
+# Loading work.ALU_tb
+# Loading work.ALU
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: taras  Hostname: LAPTOP-3FLST6HL  ProcessID: 135200
+#           Attempting to use alternate WLF file "./wlftgv5d4n".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftgv5d4n
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# Time =0, A =0000000000000000, B =0000000000000001, Select =0 Output =0000000000000000
+# Time =10, A =0000000000000000, B =0000000000000001, Select =1 Output =0000000000000001
+# Time =20, A =0000000000000001, B =0000000000000001, Select =2 Output =0000000000000000
+# Time =30, A =0000000000000001, B =0000000000000001, Select =1 Output =0000000000000010
+# Time =40, A =0000000000000001, B =0000000000000001, Select =3 Output =0000000000000001
+# Time =50, A =0000000000000001, B =0000000000000001, Select =4 Output =0000000000000000
+# Time =60, A =0000000000000001, B =0000000000000001, Select =5 Output =0000000000000001
+# Time =70, A =0000000000000000, B =0000000000000001, Select =6 Output =0000000000000000
+# Time =80, A =0000000000000000, B =0000000000000001, Select =7 Output =0000000000000001
+# ** Note: $stop    : ./ALU.sv(51)
+#    Time: 90 ps  Iteration: 0  Instance: /ALU_tb
+# Break in Module ALU_tb at ./ALU.sv line 51
+do ButtonSync
+# Cannot open macro file: ButtonSync
+do ButtonSync.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:54:37 on Jun 07,2020
+# vlog -reportprogress 300 ./ButtonSync.sv 
+# -- Compiling module ButtonSync
+# -- Compiling module ButtonSync_tb
+# 
+# Top level modules:
+# 	ButtonSync_tb
+# End time: 21:54:37 on Jun 07,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 21:54:40 on Jun 07,2020, Elapsed time: 0:04:37
+# Errors: 1, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work ButtonSync_tb 
+# Start time: 21:54:40 on Jun 07,2020
+# Loading sv_std.std
+# Loading work.ButtonSync_tb
+# Loading work.ButtonSync
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: taras  Hostname: LAPTOP-3FLST6HL  ProcessID: 135200
+#           Attempting to use alternate WLF file "./wlft5wa7t5".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft5wa7t5
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#                    0  0
+#                   50  1
+#                   70  0
+# ** Note: $stop    : ./ButtonSync.sv(89)
+#    Time: 135 ps  Iteration: 0  Instance: /ButtonSync_tb
+# Break in Module ButtonSync_tb at ./ButtonSync.sv line 89
+do runlab_KeyFilter.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:10:16 on Jun 07,2020
+# vlog -reportprogress 300 ./KeyFilter.sv 
+# -- Compiling module KeyFilter
+# -- Compiling module KeyFilter_tb
+# 
+# Top level modules:
+# 	KeyFilter_tb
+# End time: 22:10:17 on Jun 07,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 22:10:24 on Jun 07,2020, Elapsed time: 0:15:44
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work KeyFilter_tb 
+# Start time: 22:10:24 on Jun 07,2020
+# Loading sv_std.std
+# Loading work.KeyFilter_tb
+# Loading work.KeyFilter
+# ** Error: Cannot open macro file: wave_KeyFilter.do
+# Error in macro ./runlab_KeyFilter.do line 18
+# Cannot open macro file: wave_KeyFilter.do
+#     while executing
+# "do wave_KeyFilter.do"
+add wave -position insertpoint  \
+sim:/KeyFilter_tb/Out \
+sim:/KeyFilter_tb/clk \
+sim:/KeyFilter_tb/In
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: taras  Hostname: LAPTOP-3FLST6HL  ProcessID: 135200
+#           Attempting to use alternate WLF file "./wlftneb0ck".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftneb0ck
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/taras/Documents/GitHub/ProjectB/wave_KeyFilter.do
+do runlab_KeyFilter.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:10:56 on Jun 07,2020
+# vlog -reportprogress 300 ./KeyFilter.sv 
+# -- Compiling module KeyFilter
+# -- Compiling module KeyFilter_tb
+# 
+# Top level modules:
+# 	KeyFilter_tb
+# End time: 22:10:57 on Jun 07,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 22:11:00 on Jun 07,2020, Elapsed time: 0:00:36
+# Errors: 3, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work KeyFilter_tb 
+# Start time: 22:11:00 on Jun 07,2020
+# Loading sv_std.std
+# Loading work.KeyFilter_tb
+# Loading work.KeyFilter
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: taras  Hostname: LAPTOP-3FLST6HL  ProcessID: 135200
+#           Attempting to use alternate WLF file "./wlft44eevs".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft44eevs
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#                    0  0  x
+#                   10  0  0
+#                   40  1  0
+#                   50  1  1
+#                   70  1  0
+#                  240  0  0
+# Break key hit
+# Break in Module KeyFilter_tb at ./KeyFilter.sv line 43
+do runlab_KeyFilter.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:11:31 on Jun 07,2020
+# vlog -reportprogress 300 ./KeyFilter.sv 
+# -- Compiling module KeyFilter
+# -- Compiling module KeyFilter_tb
+# 
+# Top level modules:
+# 	KeyFilter_tb
+# End time: 22:11:31 on Jun 07,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 22:11:37 on Jun 07,2020, Elapsed time: 0:00:37
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work KeyFilter_tb 
+# Start time: 22:11:37 on Jun 07,2020
+# Loading sv_std.std
+# Loading work.KeyFilter_tb
+# Loading work.KeyFilter
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: taras  Hostname: LAPTOP-3FLST6HL  ProcessID: 135200
+#           Attempting to use alternate WLF file "./wlftdt127h".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftdt127h
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#                    0  0  x
+#                   10  0  0
+#                   40  1  0
+#                   50  1  1
+#                   70  1  0
+#                  240  0  0
+# ** Note: $stop    : ./KeyFilter.sv(51)
+#    Time: 262 ps  Iteration: 0  Instance: /KeyFilter_tb
+# Break in Module KeyFilter_tb at ./KeyFilter.sv line 51
+do runlab_KeyFilter.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 22:13:10 on Jun 07,2020
+# vlog -reportprogress 300 ./KeyFilter.sv 
+# -- Compiling module KeyFilter
+# -- Compiling module KeyFilter_tb
+# 
+# Top level modules:
+# 	KeyFilter_tb
+# End time: 22:13:10 on Jun 07,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 22:13:16 on Jun 07,2020, Elapsed time: 0:01:39
+# Errors: 0, Warnings: 2
+# vsim -voptargs=""+acc"" -t 1ps -lib work KeyFilter_tb 
+# Start time: 22:13:16 on Jun 07,2020
+# Loading sv_std.std
+# Loading work.KeyFilter_tb
+# Loading work.KeyFilter
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: taras  Hostname: LAPTOP-3FLST6HL  ProcessID: 135200
+#           Attempting to use alternate WLF file "./wlftztyk51".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftztyk51
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+#                    0  0  x
+#                   10  0  0
+#                   40  1  0
+#                   50  1  1
+#                   70  1  0
+#                  270  1  1
+#                  290  1  0
+#                  340  0  0
+# ** Note: $stop    : ./KeyFilter.sv(51)
+#    Time: 362 ps  Iteration: 0  Instance: /KeyFilter_tb
+# Break in Module KeyFilter_tb at ./KeyFilter.sv line 51
+# WARNING: No extended dataflow license exists
+# End time: 22:52:39 on Jun 07,2020, Elapsed time: 0:39:23
+# Errors: 0, Warnings: 3

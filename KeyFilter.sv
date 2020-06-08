@@ -7,12 +7,12 @@
 // is on, set output to on for that clock cycle and set clock to count down from 5Mhz. Once it has counted down,
 // the cycle restarts. Strobe just turns on whenever the input signal is bein read.
 
-	module KeyFilter( Clock, In, Out, Strobe);
+	module KeyFilter ( Clock, In, Out, Strobe);
 	
 		input Clock, In;					// clock and input signal
 		output logic Out, Strobe;			// Output and Strobe signals
 		
-			localparam DUR = 5_000_000 - 1;		// 50MHz / 5MHz allows for 10 output signals per second
+			parameter DUR = 5_000_000 - 1;		// 50MHz / 5MHz allows for 10 output signals per second
 			logic [32:0] Countdown = 0;			
 			
 		always @ (posedge Clock) begin
@@ -33,4 +33,24 @@
 			end
 		end
 	endmodule
-				
+	
+	module KeyFilter_tb();
+		logic Out, Strobe, clk, In;						
+		
+		KeyFilter #(10) DUT (clk, In, Out, Strobe);
+		
+		always begin        // clock signal
+			clk = 0; #10;
+			clk = 1; #10;
+		end
+
+		initial begin
+			In = 0; #40;
+			@(negedge clk) In = 1; #300;
+			@(negedge clk) In = 0; #22;
+			$stop;
+		end
+
+		initial
+			$monitor($time,,,In,,,Out);
+	endmodule

@@ -55,7 +55,7 @@ module Instruc_Mem_tb();
       Reset = 1; // assert reset
       #53;
       Reset = 0; // disassert reset
-		for (int k=0; k<255; k++) begin
+		for (int k=0; k<127; k++) begin
 		@(posedge Clk); 
 		#5 $display(k, $time, Dout);
 		end

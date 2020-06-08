@@ -29,4 +29,6 @@ module Mux_16_2_tb();
         S = 1; #22;
         S = 0; #20;
     end
+    initial
+        $monitor("Time =%0t, rData =%d, aluData =%d, Select =%d, Output =%d", $time, rData, aluData, S, wData);
 endmodule

@@ -80,7 +80,7 @@ module ButtonSync_tb();
 		#10;
 	end
   
-  Button DUT(Clk, Bi, Bo);
+  ButtonSync DUT(Clk, Bi, Bo);
   
   initial begin
     Bi = 1'b0; #35; // generate your input sequence
@@ -90,7 +90,7 @@ module ButtonSync_tb();
   end
   
   initial
-    $monitor($time,,,Bo);
+    $monitor($time,,,Bi,,,Bo);
   
 endmodule
 
