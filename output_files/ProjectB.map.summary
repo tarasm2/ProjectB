@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sun Jun 07 22:49:07 2020
+Analysis & Synthesis Status : Successful - Tue Jun 09 01:58:00 2020
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : ProjectB
 Top-level Entity Name : ProjectB
 Family : Cyclone IV E
-Total logic elements : 851
-    Total combinational functions : 595
+Total logic elements : 850
+    Total combinational functions : 594
     Dedicated logic registers : 319
 Total registers : 319
 Total pins : 101

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ProjectB
-Sun Jun 07 22:49:07 2020
+Tue Jun 09 01:58:00 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -57,13 +57,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jun 07 22:49:07 2020       ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 09 01:58:00 2020       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; ProjectB                                    ;
 ; Top-level Entity Name              ; ProjectB                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 851                                         ;
-;     Total combinational functions  ; 595                                         ;
+; Total logic elements               ; 850                                         ;
+;     Total combinational functions  ; 594                                         ;
 ;     Dedicated logic registers      ; 319                                         ;
 ; Total registers                    ; 319                                         ;
 ; Total pins                         ; 101                                         ;
@@ -173,9 +173,9 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -223,16 +223,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------+
 ; Resource                                    ; Usage            ;
 +---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 851              ;
+; Estimated Total logic elements              ; 850              ;
 ;                                             ;                  ;
-; Total combinational functions               ; 595              ;
+; Total combinational functions               ; 594              ;
 ; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 488              ;
-;     -- 3 input functions                    ; 54               ;
-;     -- <=2 input functions                  ; 53               ;
+;     -- 4 input functions                    ; 485              ;
+;     -- 3 input functions                    ; 59               ;
+;     -- <=2 input functions                  ; 50               ;
 ;                                             ;                  ;
 ; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 541              ;
+;     -- normal mode                          ; 540              ;
 ;     -- arithmetic mode                      ; 54               ;
 ;                                             ;                  ;
 ; Total registers                             ; 319              ;
@@ -246,7 +246,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                  ;
 ; Maximum fan-out node                        ; KeyFilter:U2|Out ;
 ; Maximum fan-out                             ; 315              ;
-; Total fan-out                               ; 3689             ;
+; Total fan-out                               ; 3686             ;
 ; Average fan-out                             ; 3.21             ;
 +---------------------------------------------+------------------+
 
@@ -256,7 +256,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                    ; Entity Name     ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |ProjectB                                       ; 595 (1)             ; 319 (0)                   ; 6144        ; 0            ; 0       ; 0         ; 101  ; 0            ; |ProjectB                                                                                                              ; ProjectB        ; work         ;
+; |ProjectB                                       ; 594 (1)             ; 319 (0)                   ; 6144        ; 0            ; 0       ; 0         ; 101  ; 0            ; |ProjectB                                                                                                              ; ProjectB        ; work         ;
 ;    |ButtonSync:U1|                              ; 2 (2)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|ButtonSync:U1                                                                                                ; ButtonSync      ; work         ;
 ;    |Decoder:U10|                                ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Decoder:U10                                                                                                  ; Decoder         ; work         ;
 ;    |Decoder:U11|                                ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Decoder:U11                                                                                                  ; Decoder         ; work         ;
@@ -268,8 +268,8 @@ https://fpgasoftware.intel.com/eula.
 ;    |Decoder:U9|                                 ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Decoder:U9                                                                                                   ; Decoder         ; work         ;
 ;    |KeyFilter:U2|                               ; 45 (45)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|KeyFilter:U2                                                                                                 ; KeyFilter       ; work         ;
 ;    |Mux_16w_8_to_1:U4|                          ; 51 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4                                                                                            ; Mux_16w_8_to_1  ; work         ;
-;       |Mux_8_to_1:U10|                          ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U10                                                                             ; Mux_8_to_1      ; work         ;
-;          |Mux_2_to_1:U7|                        ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U10|Mux_2_to_1:U7                                                               ; Mux_2_to_1      ; work         ;
+;       |Mux_8_to_1:U10|                          ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U10                                                                             ; Mux_8_to_1      ; work         ;
+;          |Mux_2_to_1:U7|                        ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U10|Mux_2_to_1:U7                                                               ; Mux_2_to_1      ; work         ;
 ;       |Mux_8_to_1:U11|                          ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U11                                                                             ; Mux_8_to_1      ; work         ;
 ;          |Mux_2_to_1:U7|                        ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U11|Mux_2_to_1:U7                                                               ; Mux_2_to_1      ; work         ;
 ;       |Mux_8_to_1:U12|                          ; 4 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U12                                                                             ; Mux_8_to_1      ; work         ;
@@ -298,9 +298,9 @@ https://fpgasoftware.intel.com/eula.
 ;          |Mux_2_to_1:U7|                        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U7|Mux_2_to_1:U7                                                                ; Mux_2_to_1      ; work         ;
 ;       |Mux_8_to_1:U8|                           ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U8                                                                              ; Mux_8_to_1      ; work         ;
 ;          |Mux_2_to_1:U7|                        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U8|Mux_2_to_1:U7                                                                ; Mux_2_to_1      ; work         ;
-;       |Mux_8_to_1:U9|                           ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U9                                                                              ; Mux_8_to_1      ; work         ;
-;          |Mux_2_to_1:U7|                        ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U9|Mux_2_to_1:U7                                                                ; Mux_2_to_1      ; work         ;
-;    |Processor:U3|                               ; 440 (0)             ; 283 (0)                   ; 6144        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3                                                                                                 ; Processor       ; work         ;
+;       |Mux_8_to_1:U9|                           ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U9                                                                              ; Mux_8_to_1      ; work         ;
+;          |Mux_2_to_1:U7|                        ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U9|Mux_2_to_1:U7                                                                ; Mux_2_to_1      ; work         ;
+;    |Processor:U3|                               ; 439 (0)             ; 283 (0)                   ; 6144        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3                                                                                                 ; Processor       ; work         ;
 ;       |ControlUnit:U1|                          ; 48 (0)              ; 27 (0)                    ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|ControlUnit:U1                                                                                  ; ControlUnit     ; work         ;
 ;          |Instruc_Reg:U4|                       ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|ControlUnit:U1|Instruc_Reg:U4                                                                   ; Instruc_Reg     ; work         ;
 ;          |InstructionMem:U1|                    ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|ControlUnit:U1|InstructionMem:U1                                                                ; InstructionMem  ; work         ;
@@ -308,13 +308,13 @@ https://fpgasoftware.intel.com/eula.
 ;                |altsyncram_2f91:auto_generated| ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|ControlUnit:U1|InstructionMem:U1|altsyncram:altsyncram_component|altsyncram_2f91:auto_generated ; altsyncram_2f91 ; work         ;
 ;          |PC_Counter:U3|                        ; 8 (8)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|ControlUnit:U1|PC_Counter:U3                                                                    ; PC_Counter      ; work         ;
 ;          |StateMachine:U2|                      ; 40 (40)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|ControlUnit:U1|StateMachine:U2                                                                  ; StateMachine    ; work         ;
-;       |DataPath:U2|                             ; 392 (0)             ; 256 (0)                   ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|DataPath:U2                                                                                     ; DataPath        ; work         ;
+;       |DataPath:U2|                             ; 391 (0)             ; 256 (0)                   ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|DataPath:U2                                                                                     ; DataPath        ; work         ;
 ;          |ALU:U4|                               ; 37 (37)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|DataPath:U2|ALU:U4                                                                              ; ALU             ; work         ;
 ;          |DataMem:U1|                           ; 0 (0)               ; 0 (0)                     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|DataPath:U2|DataMem:U1                                                                          ; DataMem         ; work         ;
 ;             |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|DataPath:U2|DataMem:U1|altsyncram:altsyncram_component                                          ; altsyncram      ; work         ;
 ;                |altsyncram_onh1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|DataPath:U2|DataMem:U1|altsyncram:altsyncram_component|altsyncram_onh1:auto_generated           ; altsyncram_onh1 ; work         ;
 ;          |Mux_16_2:U2|                          ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|DataPath:U2|Mux_16_2:U2                                                                         ; Mux_16_2        ; work         ;
-;          |RegisterFile:U3|                      ; 339 (339)           ; 256 (256)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|DataPath:U2|RegisterFile:U3                                                                     ; RegisterFile    ; work         ;
+;          |RegisterFile:U3|                      ; 338 (338)           ; 256 (256)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ProjectB|Processor:U3|DataPath:U2|RegisterFile:U3                                                                     ; RegisterFile    ; work         ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -382,10 +382,10 @@ Encoding Type:  User-Encoded
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
 ; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |ProjectB|Processor:U3|ControlUnit:U1|PC_Counter:U3|address[5] ;
 ; 3:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |ProjectB|KeyFilter:U2|Countdown[21]                           ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |ProjectB|Processor:U3|DataPath:U2|ALU:U4|Mux13                ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |ProjectB|Processor:U3|DataPath:U2|ALU:U4|Mux12                ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U5|Mux_2_to_1:u5|M      ;
 ; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U13|Mux_2_to_1:u5|M     ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U11|Mux_2_to_1:U7|M     ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |ProjectB|Mux_16w_8_to_1:U4|Mux_8_to_1:U10|Mux_2_to_1:U7|M     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
 
 
@@ -627,16 +627,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 7                           ;
 ;     SLD               ; 33                          ;
 ;     plain             ; 7                           ;
-; cycloneiii_lcell_comb ; 607                         ;
+; cycloneiii_lcell_comb ; 606                         ;
 ;     arith             ; 54                          ;
 ;         2 data inputs ; 39                          ;
 ;         3 data inputs ; 15                          ;
-;     normal            ; 553                         ;
+;     normal            ; 552                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 14                          ;
-;         2 data inputs ; 11                          ;
-;         3 data inputs ; 39                          ;
-;         4 data inputs ; 488                         ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 44                          ;
+;         4 data inputs ; 485                         ;
 ; cycloneiii_ram_block  ; 32                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 14.10                       ;
@@ -649,7 +649,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:06     ;
 +----------------+--------------+
 
 
@@ -659,7 +659,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Sun Jun 07 22:48:53 2020
+    Info: Processing started: Tue Jun 09 01:57:41 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ProjectB -c ProjectB
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -670,7 +670,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file instruc
     Info (12023): Found entity 1: InstructionMem File: C:/Users/taras/Documents/GitHub/ProjectB/InstructionMem.v Line: 40
 Info (12021): Found 2 design units, including 2 entities, in source file statemachine.sv
     Info (12023): Found entity 1: StateMachine File: C:/Users/taras/Documents/GitHub/ProjectB/StateMachine.sv Line: 10
-    Info (12023): Found entity 2: StateMachine_tb File: C:/Users/taras/Documents/GitHub/ProjectB/StateMachine.sv Line: 110
+    Info (12023): Found entity 2: StateMachine_tb File: C:/Users/taras/Documents/GitHub/ProjectB/StateMachine.sv Line: 112
 Info (12021): Found 2 design units, including 2 entities, in source file registerfile.sv
     Info (12023): Found entity 1: RegisterFile File: C:/Users/taras/Documents/GitHub/ProjectB/RegisterFile.sv Line: 7
     Info (12023): Found entity 2: RegisterFile_tb File: C:/Users/taras/Documents/GitHub/ProjectB/RegisterFile.sv Line: 28
@@ -695,7 +695,7 @@ Info (12021): Found 2 design units, including 2 entities, in source file keyfilt
     Info (12023): Found entity 2: KeyFilter_tb File: C:/Users/taras/Documents/GitHub/ProjectB/KeyFilter.sv Line: 37
 Info (12021): Found 2 design units, including 2 entities, in source file instruc_reg.sv
     Info (12023): Found entity 1: Instruc_Reg File: C:/Users/taras/Documents/GitHub/ProjectB/Instruc_Reg.sv Line: 8
-    Info (12023): Found entity 2: Instruc_Reg_tb File: C:/Users/taras/Documents/GitHub/ProjectB/Instruc_Reg.sv Line: 24
+    Info (12023): Found entity 2: Instruc_Reg_tb File: C:/Users/taras/Documents/GitHub/ProjectB/Instruc_Reg.sv Line: 20
 Info (12021): Found 2 design units, including 2 entities, in source file instruc_mem.sv
     Info (12023): Found entity 1: Instruc_Mem File: C:/Users/taras/Documents/GitHub/ProjectB/Instruc_Mem.sv Line: 7
     Info (12023): Found entity 2: Instruc_Mem_tb File: C:/Users/taras/Documents/GitHub/ProjectB/Instruc_Mem.sv Line: 41
@@ -782,15 +782,15 @@ Info (276014): Found 1 instances of uninferred RAM logic
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1000 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 999 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 78 output pins
-    Info (21061): Implemented 867 logic cells
+    Info (21061): Implemented 866 logic cells
     Info (21064): Implemented 32 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4788 megabytes
-    Info: Processing ended: Sun Jun 07 22:49:07 2020
-    Info: Elapsed time: 00:00:14
+    Info: Processing ended: Tue Jun 09 01:58:00 2020
+    Info: Elapsed time: 00:00:19
     Info: Total CPU time (on all processors): 00:00:32
 
 
