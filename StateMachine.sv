@@ -124,11 +124,11 @@ module StateMachine_tb();
         clk = 1; #10;
     end
 
-    initial begin                                   // #22 is chosen to go a little over 1 clock cycle to make wait statements work
+    initial begin                                   
         reset = 0;
         data = 0;                                   // data for NOOP instruction
-        @(negedge clk) reset = 1;                   // turn reset bit off to start the cycle with a NOOP input
-        wait(NextStateOut == 1); #22;               // wait until its about to fetch the next instruction within the NOOP cycle
+        @(negedge clk) reset = 1; #22;              // turn reset bit off to start the cycle with a NOOP input
+        wait(NextStateOut == 1); #22;                  // wait until its about to fetch the next instruction within the NOOP cycle
         $display("Time =%4d PC_up =%2b IR_ld =%2b", $time, PC_up, IR_ld);            // display nessesary info
         data = 16'b0001_1111_0010_1001;             // move the data in register 15 in reg file into data register 41 (checking the STORE instruction)
         wait(NextStateOut == 6); #22;               // wait until its about to fetch the next instruction
