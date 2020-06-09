@@ -51,8 +51,8 @@ module ControlUnit_tb();
     end
 
     initial begin
-        reset = 1; #52;
-        reset = 0; #22;
+        reset = 0; 
+        @(negedge clk) reset = 1;
         wait (NextState == 1); // LOAD DataMem[11] into RegFile[1]
         $display("Time =%0t PC_Out =%7b Instruction Data =%16b Instruction Register Output =%16b RF_Ra_addr =%4b RF_Rb_addr =%4b RF_W_addr =%4b D_addr =%8b OutState =%4b ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);        
         #22;

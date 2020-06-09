@@ -54,11 +54,13 @@ module Processor_tb();
     end
 
     initial begin
-        Reset = 1; #52;
-        Reset = 0; #22;
-        wait (State == 9);       // Wait until the last instruction (HALT) is completed
-        #62;                      // Show that Halt Worked
-        $stop;
+    $display( "\nBegin Simulation." );
+    Reset = 0;         // reset for one clock
+    @ ( posedge clk ) 
+    #10 Reset = 1;
+    wait( IR_Out == 16'h5000 );  // halt instruction
+    $display( "\nEnd of Simulation.\n" );
+    $stop;
     end
     initial begin
         $monitor("Time =%0t IR_Out =%5h PC_Out =%4d State =%3d NextState =%3d ALU_A =%7d ALU_B =%7d ALU_Out =%7d", $time, IR_Out, PC_Out, State, NextState, ALU_A, ALU_B, ALU_Out);

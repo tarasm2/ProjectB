@@ -37,7 +37,6 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
                 IR_ld = 0;
                 PC_clr = 0;
                 PC_up = 0;
-                NextState = CurrentState;
 
         case(CurrentState)
             Init:begin
@@ -55,14 +54,14 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
                 else if(data[15:12] == 2) NextState = Load_A;
                 else if(data[15:12] == 3) NextState = Add;
                 else if(data[15:12] == 4) NextState = Sub;
-                else                      NextState = Halt;
+                else if(data[15:12] == 5) NextState = Halt;
+                else                      NextState = NOOP;
             end
             NOOP:   NextState = Fetch;          // no operations in this state, go back to fetch
             Load_A:begin
                 D_addr = data[11:4];            // address being sent to datapath memory to be read/written
                 RF_s = 1;                       // select bit for the mux chooses to load in something from the data Memory
                 RF_W_addr = data[3:0];          // address in the Register file where the data will be written to
-                RF_W_en = 1;                    // enable the write command in the register file to allow writing to it
                 NextState = Load_B;             // Nextstate will go to the Next load cycle                                 
             end
             Load_B: begin
@@ -72,7 +71,7 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
                 RF_W_en = 1;                    // enable the write command in the register file to allow writing to it
                 NextState = Fetch;              // the Load operation takes two clock cycles to toggle, this is a stopgap to take a clockcycle
             end
-				Store:begin
+			Store:begin
                 D_addr = data[7:0];             // address being sent to datapath memory where the information will be stored within it
                 D_wr = 1;                       // write enable bit for data memory
                 RF_Ra_addr = data[11:8];        // data being saved from register to data memeory
@@ -87,6 +86,7 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
                 RF_s = 0;                       // input being selected by the Mux is output from ALU
                 NextState = Fetch;              // Nextstate will go back to fetch next command
             end
+
             Sub:begin
                 RF_W_addr = data[3:0];          // address that the sum will be written to within the register file
                 RF_W_en = 1;                    // enable to write to the register file
@@ -96,15 +96,17 @@ module StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, 
                 RF_s = 0;                       // input being selected by the Mux is output from ALU
                 NextState = Fetch;              // Nextstate will go back to fetch next command
             end
+
             Halt:   NextState = Halt;           // Halt the entire system by constantly staying in the Halt State
+
             default: NextState = Init;          // initial case is our default case
         endcase
     end
     
     // state register
-        always_ff@(posedge clk)
-        if (reset) CurrentState <= Init;
-        else       CurrentState <= NextState;  
+        always_ff @(posedge clk)
+        if (!reset) CurrentState <= Init;
+        else        CurrentState <= NextState;  
 endmodule
 
 module StateMachine_tb();
@@ -123,10 +125,10 @@ module StateMachine_tb();
     end
 
     initial begin                                   // #22 is chosen to go a little over 1 clock cycle to make wait statements work
-        #10; @(negedge clk) reset = 1;              // reset the state machine to set it to the initial state 
+        reset = 0;
         data = 0;                                   // data for NOOP instruction
-        @(negedge clk) reset = 0; #22;              // turn reset bit off to start the cycle with a NOOP input
-        wait(NextStateOut == 1); #22;                  // wait until its about to fetch the next instruction within the NOOP cycle
+        @(negedge clk) reset = 1;                   // turn reset bit off to start the cycle with a NOOP input
+        wait(NextStateOut == 1); #22;               // wait until its about to fetch the next instruction within the NOOP cycle
         $display("Time =%4d PC_up =%2b IR_ld =%2b", $time, PC_up, IR_ld);            // display nessesary info
         data = 16'b0001_1111_0010_1001;             // move the data in register 15 in reg file into data register 41 (checking the STORE instruction)
         wait(NextStateOut == 6); #22;               // wait until its about to fetch the next instruction
@@ -142,7 +144,7 @@ module StateMachine_tb();
         $display("Time =%4d RF_Ra_addr=%7d RF_Rb_addr=%7d RF_s=%2b ALU_s0 =%1b RF_W_addr =%4d RF_W_en =%2b",$time, RF_Ra_addr, RF_Rb_addr, RF_s, ALU_s0, RF_W_addr, RF_W_en);
         data = 16'b0101_0000_0000_0000; #90;        // test the HALT instruction to see if it just stays there
         $display("Time =%4d RF_Ra_addr=%7d RF_Rb_addr=%7d RF_s=%2b ALU_s0 =%1b RF_W_addr =%4d RF_W_en =%2b",$time, RF_Ra_addr, RF_Rb_addr, RF_s, ALU_s0, RF_W_addr, RF_W_en);
-        reset = 1; #22;                             // see if reset signal reset it to the initial state and resets PC counter
+        reset = 0; #22;                             // see if reset signal reset it to the initial state and resets PC counter
         $stop;
     end
 endmodule

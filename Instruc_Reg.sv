@@ -11,13 +11,9 @@ module Instruc_Reg (clk, data, load, out);
     input logic load, clk;      // load and clock signals
     output logic [15:0] out;    // instruction that is sent out to state machine
 
-    logic [15:0] register;      // register that contains that current instruction
-
-    assign out = register;          // connects the instruction to the output of the register
-
     always@(posedge clk) begin
-        if(load) register <= data;      // if load is on, load thte data into the register
-        else     register <= register;  // else keep the value in the register the same
+        if(load) out <= data;      // if load is on, load thte data into the register
+        else     out <= out;  // else keep the value in the register the same
     end
 endmodule
 
@@ -40,5 +36,7 @@ module Instruc_Reg_tb();
                    load = 1; #22;       // set load to 1 and make sure that the new value takes over the old value in the register
         $stop;
     end
+    initial 
+        $monitor($time,,,data,,,out);
 endmodule
         

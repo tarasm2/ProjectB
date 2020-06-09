@@ -1,16 +1,18 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate /Processor_tb/clk
-add wave -noupdate /Processor_tb/Reset
-add wave -noupdate /Processor_tb/IR_Out
-add wave -noupdate /Processor_tb/PC_Out
-add wave -noupdate /Processor_tb/State
-add wave -noupdate /Processor_tb/NextState
-add wave -noupdate /Processor_tb/ALU_A
-add wave -noupdate /Processor_tb/ALU_B
-add wave -noupdate /Processor_tb/ALU_Out
+add wave -noupdate /testProcessor/Clk
+add wave -noupdate /testProcessor/Reset
+add wave -noupdate /testProcessor/IR_Out
+add wave -noupdate /testProcessor/PC_Out
+add wave -noupdate /testProcessor/State
+add wave -noupdate /testProcessor/NextState
+add wave -noupdate /testProcessor/ALU_A
+add wave -noupdate /testProcessor/ALU_B
+add wave -noupdate /testProcessor/ALU_Out
+
+
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {63 ps} 0}
+WaveRestoreCursors {{Cursor 1} {554 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
@@ -24,6 +26,6 @@ configure wave -gridoffset 0
 configure wave -gridperiod 1
 configure wave -griddelta 40
 configure wave -timeline 0
-configure wave -timelineunits ps
+configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {1 ns}
+WaveRestoreZoom {0 ps} {1507 ps}
