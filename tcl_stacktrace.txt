@@ -5,3 +5,19 @@ Trace back: Macro Break
     (command for "WM_DELETE_WINDOW" window manager protocol)
   <2:C:/intelFPGA_lite/19.1/modelsim_ase/win32aloem/tk8.5/bgerror.tcl:92: ::tkerror {Macro Break}
   <1:eval:1: ::tk::dialog::error::bgerror {Macro Break}
+Thu Jun 11 03:30:31 PDT 2020
+Trace back: Bad sequence in.main_pane.memory.interior.cs.body.tree.lwchildsite.clipper.canvas.sfchildsite.tree, aborting query. (2)
+    while executing
+"$itk_component(tree) insertquery end """
+    (object "::.main_pane.memory.interior.cs.body.tree" method "::vsimwidgets::Hierarchy::requery" body line 3)
+    invoked from within
+"requery"
+    (object "::.main_pane.memory.interior.cs.body.tree" method "::FlatMemlist::UpdateFlatMemList" body line 8)
+    invoked from within
+"$tree UpdateFlatMemList"
+    (procedure "Memview::delayedUpdateMemoryList" line 6)
+    invoked from within
+"Memview::delayedUpdateMemoryList"
+    ("after" script)
+  <2:C:/intelFPGA_lite/19.1/modelsim_ase/win32aloem/tk8.5/bgerror.tcl:92: ::tkerror {Bad sequence in.main_pane.memory.interior.cs.body.tree.lwchildsite.clipper.canvas.sfchildsite.tree, aborting query. (2)}
+  <1:proc:24: ::tk::dialog::error::bgerror {Bad sequence in.main_pane.memory.interior.cs.body.tree.lwchildsite.clipper.canvas.sfchildsite.tree, aborting query. (2)}

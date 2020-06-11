@@ -24,7 +24,7 @@ module ControlUnit(reset, clk, OutState, NextState, D_addr, D_wr,RF_s, RF_W_en, 
     Instruc_Reg U4(clk, data, IR_ld, IR_Out);
 
     //StateMachine (clk, data, reset, IR_ld, PC_clr, PC_up, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, ALU_s0, CurrentStateOut, NextStateOut);
-	StateMachine U2(clk, data, reset, IR_ld, PC_clr, PC_up, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, ALU_s0, OutState, NextState);
+	StateMachine U2(clk, IR_Out, reset, IR_ld, PC_clr, PC_up, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, ALU_s0, OutState, NextState);
 
     //PC_Counter(clk, up, clear, address);
     PC_Counter U3(clk, PC_up, PC_clr, PC_Out);
@@ -54,31 +54,31 @@ module ControlUnit_tb();
         reset = 0; 
         @(negedge clk) reset = 1; #11;
         wait (NextState == 1); // LOAD DataMem[11] into RegFile[1]
-        $display("Time =%0t PC_Out =%7b Instruction Data =%16b Instruction Register Output =%16b RF_Ra_addr =%4b RF_Rb_addr =%4b RF_W_addr =%4b D_addr =%8b OutState =%4b ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);        
+        $display("Time =%0t PC_Out =%d Instruction Data =%h Instruction Register Output =%h RF_Ra_addr =%h RF_Rb_addr =%h RF_W_addr =%h D_addr =%h OutState =%d ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);        
         #22;
         wait (NextState == 1); // LOAD DataMem[27] into RegFile[2]
-        $display("Time =%0t PC_Out =%7b Instruction Data =%16b Instruction Register Output =%16b RF_Ra_addr =%4b RF_Rb_addr =%4b RF_W_addr =%4b D_addr =%8b OutState =%4b ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);        
+        $display("Time =%0t PC_Out =%d Instruction Data =%h Instruction Register Output =%h RF_Ra_addr =%h RF_Rb_addr =%h RF_W_addr =%h D_addr =%h OutState =%d ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);        
         #22;
         wait (NextState == 1); // LOAD DataMem[6] into RegFile[3]
-        $display("Time =%0t PC_Out =%7b Instruction Data =%16b Instruction Register Output =%16b RF_Ra_addr =%4b RF_Rb_addr =%4b RF_W_addr =%4b D_addr =%8b OutState =%4b ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);
+        $display("Time =%0t PC_Out =%d Instruction Data =%h Instruction Register Output =%h RF_Ra_addr =%h RF_Rb_addr =%h RF_W_addr =%h D_addr =%h OutState =%d ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);        
         #22;
         wait (NextState == 1); // LOAD DataMem[138] into RegFile[4]     
-        $display("Time =%0t PC_Out =%7b Instruction Data =%16b Instruction Register Output =%16b RF_Ra_addr =%4b RF_Rb_addr =%4b RF_W_addr =%4b D_addr =%8b OutState =%4b ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);
+        $display("Time =%0t PC_Out =%d Instruction Data =%h Instruction Register Output =%h RF_Ra_addr =%h RF_Rb_addr =%h RF_W_addr =%h D_addr =%h OutState =%d ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);        
         #22;
         wait (NextState == 1); // SUB Reg_File[1] - Reg_File[4] into Reg_File[5] 
-        $display("Time =%0t PC_Out =%7b Instruction Data =%16b Instruction Register Output =%16b RF_Ra_addr =%4b RF_Rb_addr =%4b RF_W_addr =%4b D_addr =%8b OutState =%4b ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);
+        $display("Time =%0t PC_Out =%d Instruction Data =%h Instruction Register Output =%h RF_Ra_addr =%h RF_Rb_addr =%h RF_W_addr =%h D_addr =%h OutState =%d ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);        
         #22;
         wait (NextState == 1); // SUB Reg_File[3] - Reg_File[2] into Reg_File[6] 
-        $display("Time =%0t PC_Out =%7b Instruction Data =%16b Instruction Register Output =%16b RF_Ra_addr =%4b RF_Rb_addr =%4b RF_W_addr =%4b D_addr =%8b OutState =%4b ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);
+        $display("Time =%0t PC_Out =%d Instruction Data =%h Instruction Register Output =%h RF_Ra_addr =%h RF_Rb_addr =%h RF_W_addr =%h D_addr =%h OutState =%d ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);        
         #22;
         wait (NextState == 1); // ADD Reg_File[5] + Reg_File[6] into Reg_File[0] 
-        $display("Time =%0t PC_Out =%7b Instruction Data =%16b Instruction Register Output =%16b RF_Ra_addr =%4b RF_Rb_addr =%4b RF_W_addr =%4b D_addr =%8b OutState =%4b ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);
+        $display("Time =%0t PC_Out =%d Instruction Data =%h Instruction Register Output =%h RF_Ra_addr =%h RF_Rb_addr =%h RF_W_addr =%h D_addr =%h OutState =%d ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);        
         #22;
         wait (NextState == 1); // STORE Reg_File[0] into data Memory[205]
-        $display("Time =%0t PC_Out =%7b Instruction Data =%16b Instruction Register Output =%16b RF_Ra_addr =%4b RF_Rb_addr =%4b RF_W_addr =%4b D_addr =%8b OutState =%4b ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);
+        $display("Time =%0t PC_Out =%d Instruction Data =%h Instruction Register Output =%h RF_Ra_addr =%h RF_Rb_addr =%h RF_W_addr =%h D_addr =%h OutState =%d ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);        
         #22;
         wait (OutState == 9); // HALT
-        $display("Time =%0t PC_Out =%7b Instruction Data =%16b Instruction Register Output =%16b RF_Ra_addr =%4b RF_Rb_addr =%4b RF_W_addr =%4b D_addr =%8b OutState =%4b ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);
+        $display("Time =%0t PC_Out =%d Instruction Data =%h Instruction Register Output =%h RF_Ra_addr =%h RF_Rb_addr =%h RF_W_addr =%h D_addr =%h OutState =%d ALU_s0 =%3b D_Wr =%1b RF_s =%1b RF_W_en =%1b", $time, PC_Out, data, IR_Out, RF_Ra_addr, RF_Rb_addr, RF_W_addr, D_addr, OutState, ALU_s0, D_wr, RF_s, RF_W_en);        
         #62;                      // Show that Halt is working  
         $stop;
     end

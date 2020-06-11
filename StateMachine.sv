@@ -121,7 +121,7 @@ module StateMachine_tb();
     logic [7:0] D_addr;                                            // address to be written to/read from in Data Memory
     logic [3:0] CurrentStateOut, NextStateOut;
 
-    StateMachine U1(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, ALU_s0, CurrentStateOut, NextStateOut);
+	StateMachine DUT(clk, data, reset, IR_ld, PC_clr, PC_up, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, ALU_s0, CurrentStateOut, NextStateOut);
 
     always begin        // clock signal
         clk = 0; #10;

@@ -1,7 +1,7 @@
 // TCES 330
 // Testbench  for the programmable processor
 
-`timescale 1 ps / 1 ps
+`timescale 1 ns / 1 ps
 module testProcessor;
  
   logic Clk;             // system clock
@@ -27,14 +27,14 @@ initial	// Test stimulus
     $display( "\nBegin Simulation." );
     Reset = 0;         // reset for one clock
     @ ( posedge Clk ) 
-    #22 Reset = 1;
+    #10; Reset = 1;
     wait( IR_Out == 16'h5000 );  // halt instruction
     $display( "\nEnd of Simulation.\n" );
     $stop;
   end
   
 initial begin
-    $monitor( "Time is %0t : Reset = %b  State = %h  ALU A = %h  ALU B = %h ALU Out = %h", $stime, Reset, State, ALU_A, ALU_B, ALU_Out );
+    $monitor( "Time is %0t : Reset = %b PC_Out = %d IR_Out =%h State = %h  ALU A = %h  ALU B = %h ALU Out = %h", $stime, Reset, PC_Out, IR_Out, State, ALU_A, ALU_B, ALU_Out );
    
 end
 /*initial begin

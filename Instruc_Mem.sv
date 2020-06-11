@@ -6,7 +6,7 @@
 
 module Instruc_Mem(Clk, Reset, Out);
   input Clk, Reset;
-  output [6:0] Out; // 7-bit data to be read
+  output [15:0] Out; // 7-bit data to be read
   
   logic [6:0]addr = 7'd0;
   
@@ -41,7 +41,7 @@ endmodule
 module Instruc_Mem_tb();
  
   logic Clk, Reset;
-  logic [7:0] Dout;
+  logic [15:0] Dout;
   
   
   Instruc_Mem DUT(Clk, Reset, Dout);

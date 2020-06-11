@@ -10,7 +10,7 @@ cModel Technology
 Z0 dC:/Users/taras/Documents/GitHub/ProjectB
 vALU
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1591866204
+Z2 !s110 1591871830
 !i10b 1
 !s100 6b1GJ?oGFD_Nj^[OC:_kG1
 IEZN4OkoEfQjfLPkd@_c^90
@@ -26,7 +26,7 @@ Z8 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z9 !s108 1591866204.000000
+Z9 !s108 1591871830.000000
 Z10 !s107 ./ALU.sv|
 Z11 !s90 -reportprogress|300|-work|work|+acc|./ALU.sv|
 !i113 1
@@ -60,15 +60,15 @@ R13
 n@a@l@u_tb
 vControlUnit
 R1
-Z14 !s110 1591866203
+Z14 !s110 1591871828
 !i10b 1
-!s100 CZZ4C:D2eJ>mFnVW7D;K]0
-Ieang^Xn8[3=NfkXDb;X6?3
+!s100 <5:j6Ljgz`8W6;?DSCCk>3
+If4jl7PRYXbm[hAZ<9LNJE0
 R3
 Z15 !s105 ControlUnit_sv_unit
 S1
 R0
-Z16 w1591866113
+Z16 w1591871781
 Z17 8./ControlUnit.sv
 Z18 F./ControlUnit.sv
 Z19 L0 10
@@ -76,7 +76,7 @@ R8
 r1
 !s85 0
 31
-Z20 !s108 1591866203.000000
+Z20 !s108 1591871828.000000
 Z21 !s107 ./ControlUnit.sv|
 Z22 !s90 -reportprogress|300|-work|work|+acc|./ControlUnit.sv|
 !i113 1
@@ -87,8 +87,8 @@ vControlUnit_tb
 R1
 R14
 !i10b 1
-!s100 SBhjQB[`jgdR>J_GcY<H70
-I]gZe1Th1on2OT9EcZCeRJ2
+!s100 VGRg@N?zkHWPd[U:QOl452
+ImXbOA9d?SNW1UNI?56j9o3
 R3
 R15
 S1
@@ -109,7 +109,7 @@ R12
 R13
 n@control@unit_tb
 vDataMem
-R14
+Z23 !s110 1591871829
 !i10b 1
 !s100 YcEkJ4j3^;zRbYnB7Z9>X1
 I_IBUdfVoO[>EWUGZS8>`m0
@@ -118,7 +118,7 @@ R0
 w1590659394
 8./DataMem.v
 F./DataMem.v
-Z23 L0 40
+Z24 L0 40
 R8
 r1
 !s85 0
@@ -137,20 +137,20 @@ R2
 !s100 9O8;PeO;OAYjCCIJAK6_z2
 I@QZ[2kP5WhT>IaZW]R3HR1
 R3
-Z24 !s105 DataPath_sv_unit
+Z25 !s105 DataPath_sv_unit
 S1
 R0
-Z25 w1591686317
-Z26 8./DataPath.sv
-Z27 F./DataPath.sv
+Z26 w1591686317
+Z27 8./DataPath.sv
+Z28 F./DataPath.sv
 R19
 R8
 r1
 !s85 0
 31
 R9
-Z28 !s107 ./DataPath.sv|
-Z29 !s90 -reportprogress|300|-work|work|+acc|./DataPath.sv|
+Z29 !s107 ./DataPath.sv|
+Z30 !s90 -reportprogress|300|-work|work|+acc|./DataPath.sv|
 !i113 1
 R12
 R13
@@ -162,20 +162,20 @@ R2
 !s100 MX6m8HNf`[7cj9I3[iEV?1
 I43G][0lZEQJU;736:Na3d1
 R3
-R24
+R25
 S1
 R0
-R25
 R26
 R27
+R28
 L0 38
 R8
 r1
 !s85 0
 31
 R9
-R28
 R29
+R30
 !i113 1
 R12
 R13
@@ -187,20 +187,20 @@ R14
 !s100 0LQZja4eXj1j_JMP3O8F@3
 IF`cY64LKPDc>Vz8PjJ^Ud2
 R3
-Z30 !s105 Instruc_Reg_sv_unit
+Z31 !s105 Instruc_Reg_sv_unit
 S1
 R0
-Z31 w1591691580
-Z32 8./Instruc_Reg.sv
-Z33 F./Instruc_Reg.sv
+Z32 w1591691580
+Z33 8./Instruc_Reg.sv
+Z34 F./Instruc_Reg.sv
 L0 8
 R8
 r1
 !s85 0
 31
 R20
-Z34 !s107 ./Instruc_Reg.sv|
-Z35 !s90 -reportprogress|300|-work|work|+acc|./Instruc_Reg.sv|
+Z35 !s107 ./Instruc_Reg.sv|
+Z36 !s90 -reportprogress|300|-work|work|+acc|./Instruc_Reg.sv|
 !i113 1
 R12
 R13
@@ -212,26 +212,26 @@ R14
 !s100 aRK19ciMAOZ?[cnAJK[;m0
 I791;WkRj=U15C67FIRG4C3
 R3
-R30
+R31
 S1
 R0
-R31
 R32
 R33
+R34
 L0 20
 R8
 r1
 !s85 0
 31
 R20
-R34
 R35
+R36
 !i113 1
 R12
 R13
 n@instruc_@reg_tb
 vInstructionMem
-!s110 1591866202
+R14
 !i10b 1
 !s100 j@WCN5X_[ZdYnQo1^ZYn53
 IilRjmfEh4XhGZe=kKk>1B0
@@ -240,12 +240,12 @@ R0
 w1591343011
 8./InstructionMem.v
 F./InstructionMem.v
-R23
+R24
 R8
 r1
 !s85 0
 31
-Z36 !s108 1591866202.000000
+R20
 !s107 ./InstructionMem.v|
 !s90 -reportprogress|300|-work|work|+acc|./InstructionMem.v|
 !i113 1
@@ -254,7 +254,7 @@ R13
 n@instruction@mem
 vMux_16_2
 R1
-R14
+R23
 !i10b 1
 !s100 =k?5VLa9JhM8BP9<o?1Sm1
 IQZ4A:PLmokYk8XWRCX=MA2
@@ -270,16 +270,16 @@ R8
 r1
 !s85 0
 31
-R20
-Z41 !s107 ./Mux_16_2.sv|
-Z42 !s90 -reportprogress|300|-work|work|+acc|./Mux_16_2.sv|
+Z41 !s108 1591871829.000000
+Z42 !s107 ./Mux_16_2.sv|
+Z43 !s90 -reportprogress|300|-work|work|+acc|./Mux_16_2.sv|
 !i113 1
 R12
 R13
 n@mux_16_2
 vMux_16_2_tb
 R1
-R14
+R23
 !i10b 1
 !s100 ?^J1F99C>AD<b:kGT6;7g3
 Iica?ooGbFbNGD>[:5iGRa1
@@ -295,9 +295,9 @@ R8
 r1
 !s85 0
 31
-R20
 R41
 R42
+R43
 !i113 1
 R12
 R13
@@ -309,20 +309,20 @@ R14
 !s100 <jVz2J2bn[dh>ZAm`g5BB2
 IoADc5kND5ZnhN[g3T7[Cc1
 R3
-Z43 !s105 PC_Counter_sv_unit
+Z44 !s105 PC_Counter_sv_unit
 S1
 R0
-Z44 w1591690590
-Z45 8./PC_Counter.sv
-Z46 F./PC_Counter.sv
+Z45 w1591690590
+Z46 8./PC_Counter.sv
+Z47 F./PC_Counter.sv
 L0 9
 R8
 r1
 !s85 0
 31
 R20
-Z47 !s107 ./PC_Counter.sv|
-Z48 !s90 -reportprogress|300|-work|work|+acc|./PC_Counter.sv|
+Z48 !s107 ./PC_Counter.sv|
+Z49 !s90 -reportprogress|300|-work|work|+acc|./PC_Counter.sv|
 !i113 1
 R12
 R13
@@ -334,20 +334,20 @@ R14
 !s100 TZ;9[4n?kaXg8Q^clNLzM2
 I<F2TK6C<RVk<gOJJQDgfk1
 R3
-R43
+R44
 S1
 R0
-R44
 R45
 R46
+R47
 L0 22
 R8
 r1
 !s85 0
 31
 R20
-R47
 R48
+R49
 !i113 1
 R12
 R13
@@ -359,20 +359,20 @@ R2
 !s100 `0mCCzoeCAUmaikO8@25Q0
 IcXNTRzjDmSM6F?1F]am8^0
 R3
-Z49 !s105 Processor_sv_unit
+Z50 !s105 Processor_sv_unit
 S1
 R0
-Z50 w1591692380
-Z51 8./Processor.sv
-Z52 F./Processor.sv
+Z51 w1591692380
+Z52 8./Processor.sv
+Z53 F./Processor.sv
 R19
 R8
 r1
 !s85 0
 31
 R9
-Z53 !s107 ./Processor.sv|
-Z54 !s90 -reportprogress|300|-work|work|+acc|./Processor.sv|
+Z54 !s107 ./Processor.sv|
+Z55 !s90 -reportprogress|300|-work|work|+acc|./Processor.sv|
 !i113 1
 R12
 R13
@@ -384,77 +384,77 @@ R2
 !s100 DNS2k0YghQjM>3lbmAbGb0
 IEjfMCnZ]NR6mFh5gUNFf<2
 R3
-R49
+R50
 S1
 R0
-R50
 R51
 R52
+R53
 L0 37
 R8
 r1
 !s85 0
 31
 R9
-R53
 R54
+R55
 !i113 1
 R12
 R13
 n@processor_tb
 vRegisterFile
 R1
-R14
+R23
 !i10b 1
 !s100 m:XB=^AiD2IUde7CGNGA=2
 IHfz0HHSgI0a136HI<6bHQ3
 R3
-Z55 !s105 RegisterFile_sv_unit
+Z56 !s105 RegisterFile_sv_unit
 S1
 R0
-Z56 w1591731052
-Z57 8./RegisterFile.sv
-Z58 F./RegisterFile.sv
+Z57 w1591731052
+Z58 8./RegisterFile.sv
+Z59 F./RegisterFile.sv
 L0 7
 R8
 r1
 !s85 0
 31
-R20
-Z59 !s107 ./RegisterFile.sv|
-Z60 !s90 -reportprogress|300|-work|work|+acc|./RegisterFile.sv|
+R41
+Z60 !s107 ./RegisterFile.sv|
+Z61 !s90 -reportprogress|300|-work|work|+acc|./RegisterFile.sv|
 !i113 1
 R12
 R13
 n@register@file
 vRegisterFile_tb
 R1
-R14
+R23
 !i10b 1
 !s100 BcnQ1UHGG6CDhiMRZK@1D3
 I=`OoXjK6[kb??Imb;DcL;1
 R3
-R55
+R56
 S1
 R0
-R56
 R57
 R58
+R59
 L0 28
 R8
 r1
 !s85 0
 31
-R20
-R59
+R41
 R60
+R61
 !i113 1
 R12
 R13
 n@register@file_tb
 vStateMachine
 R1
-Z61 DXx4 work 20 StateMachine_sv_unit 0 22 3;0=EMK2OK8`ba2kmCAhY0
+Z62 DXx4 work 20 StateMachine_sv_unit 0 22 3;0=EMK2OK8`ba2kmCAhY0
 R3
 r1
 !s85 0
@@ -462,17 +462,17 @@ r1
 !i10b 1
 !s100 Gnzk?VgPSdJ1b6IPCCKQ32
 IMDd?S^oS`jnBcO?fUW3fd0
-Z62 !s105 StateMachine_sv_unit
+Z63 !s105 StateMachine_sv_unit
 S1
 R0
-Z63 w1591865803
-Z64 8./StateMachine.sv
-Z65 F./StateMachine.sv
+Z64 w1591870192
+Z65 8./StateMachine.sv
+Z66 F./StateMachine.sv
 L0 13
 R8
-R36
-Z66 !s107 ./StateMachine.sv|
-Z67 !s90 -reportprogress|300|-work|work|+acc|./StateMachine.sv|
+R20
+Z67 !s107 ./StateMachine.sv|
+Z68 !s90 -reportprogress|300|-work|work|+acc|./StateMachine.sv|
 !i113 1
 R12
 R13
@@ -489,54 +489,54 @@ I3;0=EMK2OK8`ba2kmCAhY0
 !i103 1
 S1
 R0
-R63
 R64
 R65
+R66
 R19
 R8
-R36
-R66
+R20
 R67
+R68
 !i113 1
 R12
 R13
 n@state@machine_sv_unit
 vStateMachine_tb
 R1
-R61
+R62
 R3
 r1
 !s85 0
 31
 !i10b 1
-!s100 ong:lDZ_Y1L5?K[cZ_S<91
-I7n>OA`hERLfU97K<jQ@j71
-R62
+!s100 DUb@o;Fn:>DSN=PBhZ_1K0
+IfGB?Dc3V<IYmD8akHPIOF1
+R63
 S1
 R0
-R63
 R64
 R65
+R66
 L0 116
 R8
-R36
-R66
+R20
 R67
+R68
 !i113 1
 R12
 R13
 n@state@machine_tb
 vtestProcessor
 R1
-R2
+!s110 1591871831
 !i10b 1
-!s100 `YcU=6YcXDR[l5EmFH4N>3
-INzLTzIc;c4P9Cg=f2ed=P1
+!s100 `2PKE_2[Rkj6?IAZQda<61
+IgIh^QeP`U;^5LfK[MGX>]3
 R3
 !s105 testProcessor_sv_unit
 S1
 R0
-w1591733384
+w1591868307
 8./testProcessor.sv
 F./testProcessor.sv
 L0 5

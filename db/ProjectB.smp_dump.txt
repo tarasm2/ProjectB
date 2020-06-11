@@ -1,16 +1,16 @@
 
 State Machine - |ProjectB|Processor:U3|ControlUnit:U1|StateMachine:U2|CurrentState
 Name CurrentState~5 CurrentState~4 CurrentState~3 CurrentState~2 
-CurrentState.Init 0 0 0 0 
-CurrentState.Fetch 0 0 0 1 
-CurrentState.Decode 0 0 1 0 
-CurrentState.NOOP 0 0 1 1 
-CurrentState.Load_A 0 1 0 0 
-CurrentState.Load_B 0 1 0 1 
-CurrentState.Store 0 1 1 0 
-CurrentState.Add 0 1 1 1 
-CurrentState.Sub 1 0 0 0 
-CurrentState.Halt 1 0 0 1 
+CurrentState.A 0 0 0 0 
+CurrentState.B 0 0 0 1 
+CurrentState.C 0 0 1 0 
+CurrentState.D 0 0 1 1 
+CurrentState.E 0 1 0 0 
+CurrentState.F 0 1 0 1 
+CurrentState.G 0 1 1 0 
+CurrentState.H 0 1 1 1 
+CurrentState.I 1 0 0 0 
+CurrentState.J 1 0 0 1 
 
 State Machine - |ProjectB|ButtonSync:U1|State
 Name State~3 State~2 
