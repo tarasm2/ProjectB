@@ -23,8 +23,8 @@ module ControlUnit(reset, clk, OutState, NextState, D_addr, D_wr,RF_s, RF_W_en, 
     //Instruc_Reg (clk, data, load, out);
     Instruc_Reg U4(clk, data, IR_ld, IR_Out);
 
-    //StateMachine(clk, reset, data, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, ALU_s0, CurrentState, NextState);
-    StateMachine U2(clk, reset, IR_Out, PC_clr, PC_up, IR_ld, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, ALU_s0, OutState, NextState);
+    //StateMachine (clk, data, reset, IR_ld, PC_clr, PC_up, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, ALU_s0, CurrentStateOut, NextStateOut);
+	StateMachine U2(clk, data, reset, IR_ld, PC_clr, PC_up, D_addr, D_wr, RF_s, RF_W_addr, RF_W_en, RF_Ra_addr, RF_Rb_addr, ALU_s0, OutState, NextState);
 
     //PC_Counter(clk, up, clear, address);
     PC_Counter U3(clk, PC_up, PC_clr, PC_Out);
